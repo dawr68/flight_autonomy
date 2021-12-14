@@ -1,6 +1,6 @@
 #include "FlightAutonomy/FlightAutonomy.h"
 
-FlightAutonomy::FlightAutonomy(ros::NodeHandle &_nh) : nh(_nh), imgRec(_nh, "/iris_race/c920/image_raw"), flCtrl()
+FlightAutonomy::FlightAutonomy(ros::NodeHandle &_nh) : nh(_nh), imgRec(_nh, "/iris_race/c920/image_raw"), flightCtrl()
 {
 #ifdef FA_DEBUG
     cv::namedWindow(OPENCV_WINDOW);
@@ -16,16 +16,20 @@ FlightAutonomy::~FlightAutonomy()
 
 bool FlightAutonomy::connect()
 {
-    if(flCtrl.connect("udp://:14445"))
+    if (flightCtrl.connect())
     {
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
 }
 
-void FlightAutonomy::readArgs(int argc, char **argv)
+void FlightAutonomy::readArgs(const int argc, char **argv)
 {
+    if (argc >= 2)
+    {
+        flightCtrl.setConnectionURL(argv[1]);
+    }
 }
 
 void FlightAutonomy::spinOnce()
@@ -35,4 +39,5 @@ void FlightAutonomy::spinOnce()
     cv::imshow(OPENCV_WINDOW, imgRec.getImage());
     cv::waitKey(1);
 #endif
+
 }

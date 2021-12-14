@@ -22,13 +22,16 @@ class FlightAutonomy
 
     ros::NodeHandle &nh;
     ImageReceiver imgRec;
-    FlightControl flCtrl;
+    FlightControl flightCtrl;
 
 public:
     FlightAutonomy(ros::NodeHandle &);
     ~FlightAutonomy();
 
     bool connect();
-    void readArgs(int argc, char **argv);
+    void readArgs(const int argc, char **argv);
     void spinOnce();
+
+private:
+    std::string getArg(const std::string option);
 };

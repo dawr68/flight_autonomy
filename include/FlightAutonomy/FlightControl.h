@@ -10,9 +10,12 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <mavsdk/plugins/offboard/offboard.h>
 
+#include "TelemetryData.h"
 
 class FlightControl
 {
+    std::string connectionURL;
+
     mavsdk::Mavsdk mavsdk;
     std::shared_ptr<mavsdk::System> system;
     std::shared_ptr<mavsdk::Info> info;
@@ -20,11 +23,19 @@ class FlightControl
     std::shared_ptr<mavsdk::Action> action;
     std::shared_ptr<mavsdk::Offboard> offboard;
 
+    TelemetryData telemData;
+
     std::shared_ptr<mavsdk::System> getSystem();
+    void subscribeTelem();
 
 public:
+
     FlightControl();
     ~FlightControl();
 
-    bool connect(const std::string connectionUrl);
+    bool connect();
+
+    void setConnectionURL(const std::string url);
+
+    void printTelem();
 };
