@@ -5,6 +5,7 @@ project(flight_autonomy)
 # add_compile_options(-std=c++11)
 
 set(OpenCV_DIR /usr/share/OpenCV/)
+set(MAVSDK_DIR /usr/lib/cmake/MAVSDK/)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -13,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   cv_bridge
+  MAVSDK REQUIRED
 )
 
 ## System dependencies are found with CMake's conventions
@@ -135,7 +137,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/flight_autonomy_node.cpp src/FlightAutonomy.cpp src/ImageReceiver.cpp)
+add_executable(${PROJECT_NAME}_node src/flight_autonomy_node.cpp src/FlightAutonomy.cpp src/ImageReceiver.cpp src/FlightControl.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,6 +153,11 @@ add_executable(${PROJECT_NAME}_node src/flight_autonomy_node.cpp src/FlightAuton
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
+  MAVSDK::mavsdk_telemetry
+  MAVSDK::mavsdk_offboard
+  MAVSDK::mavsdk_info
+  MAVSDK::mavsdk_action
+  MAVSDK::mavsdk
 )
 
 #############

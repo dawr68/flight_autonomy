@@ -1,27 +1,27 @@
 #pragma once
 
 #include <ros/ros.h>
-#include <cv_bridge/cv_bridge.h>
 #include <image_transport/image_transport.h>
-#include <opencv2/opencv.hpp>
+#include <cv_bridge/cv_bridge.h>
+#include <opencv2/imgproc/imgproc.hpp>
 
 /**
- * @brief Image receiving class that supports diferrent types of imput video streams. 
+ * @brief Image receiving class that supports diferrent types of imput video streams.
  * It converts input video stream into OpenCV mat
  */
 class ImageReceiver
 {
-    ros::NodeHandle &nh; /**< Handle to node */
-    ros::Subscriber imageSub; /**< Subscriber to ros camera image topic */
-    std::string cameraTopic; /**< Name of camera topic */
-    cv::Mat cameraImage; /**< Last frame from camera stream */
+    ros::NodeHandle &nh;    /**< Handle to node */
+    ros::Subscriber imgSub; /**< Subscriber to ros camera image topic */
+    std::string camTopic;   /**< Name of camera topic */
+    cv::Mat camImage;       /**< Last frame from camera stream */
 
 public:
     ImageReceiver(ros::NodeHandle &_nh, std::string topic);
-    ImageReceiver();
     ~ImageReceiver();
 
-private:
+    cv::Mat getImage();
 
+private:
     void imgSubCallback(const sensor_msgs::ImageConstPtr &img);
 };

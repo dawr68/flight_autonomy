@@ -1,8 +1,9 @@
 #include "FlightAutonomy/ImageReceiver.h"
 
-ImageReceiver::ImageReceiver(ros::NodeHandle &_nh, std::string topic) : nh(_nh), cameraTopic(topic)
+ImageReceiver::ImageReceiver(ros::NodeHandle &_nh, std::string topic) : nh(_nh), camTopic(topic)
 {
-    _nh.subscribe(cameraTopic, 1, &ImageReceiver::imgSubCallback, this);
+    imgSub = nh.subscribe(camTopic, 1, &ImageReceiver::imgSubCallback, this);
+    camImage = cv::Mat::zeros(cv::Size(640, 640), CV_64FC1);
 }
 
 ImageReceiver::~ImageReceiver()
@@ -11,15 +12,19 @@ ImageReceiver::~ImageReceiver()
 
 void ImageReceiver::imgSubCallback(const sensor_msgs::ImageConstPtr &img)
 {
-    cv_bridge::CvImagePtr cvPtr;
-
     try
     {
-        cvPtr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::BGR8);
+        cv_bridge::CvImagePtr cvPtr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::BGR8);
+        camImage = cvPtr->image;
     }
     catch (cv_bridge::Exception &e)
     {
         ROS_ERROR("cv_bridge exception: %s", e.what());
         return;
     }
+}
+
+cv::Mat ImageReceiver::getImage()
+{
+    return camImage;
 }
