@@ -34,10 +34,14 @@ void FlightAutonomy::readArgs(const int argc, char **argv)
 
 void FlightAutonomy::spinOnce()
 {
-#ifdef FA_DEBUG
     cv::Mat img = imgRec.getImage();
-    cv::imshow(OPENCV_WINDOW, imgRec.getImage());
+    
+    objDetect.detect(img);
+
+#ifdef FA_DEBUG
+    cv::imshow(OPENCV_WINDOW, img);
     cv::waitKey(1);
 #endif
 
+    flightCtrl.printTelem();
 }
