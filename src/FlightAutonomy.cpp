@@ -16,12 +16,17 @@ FlightAutonomy::~FlightAutonomy()
 
 bool FlightAutonomy::connect()
 {
-    if (flightCtrl.connect())
+    if (!flightCtrl.connect())
     {
-        return true;
+        return false;
     }
 
-    return false;
+    // if (!flightCtrl.startOffbard())
+    // {
+    //     return false;
+    // }
+
+    return true;
 }
 
 void FlightAutonomy::readArgs(const int argc, char **argv)
@@ -35,7 +40,7 @@ void FlightAutonomy::readArgs(const int argc, char **argv)
 void FlightAutonomy::spinOnce()
 {
     cv::Mat img = imgRec.getImage();
-    
+
     objDetect.detect(img);
 
 #ifdef FA_DEBUG
@@ -43,5 +48,5 @@ void FlightAutonomy::spinOnce()
     cv::waitKey(1);
 #endif
 
-    flightCtrl.printTelem();
+    // flightCtrl.printTelem();
 }

@@ -19,10 +19,10 @@ int main(int argc, char **argv)
     ros::Rate rate(30);
 
     FlightAutonomy fa(nh);
-    
+
     fa.readArgs(argc, argv);
 
-    if (fa.connect())
+    if (!fa.connect())
     {
         std::cerr << "Autopilot connection error" << std::endl;
         return 1;

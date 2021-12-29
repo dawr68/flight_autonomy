@@ -36,14 +36,15 @@ public:
     FlightAutonomy(ros::NodeHandle &);
 
     /**
-     * @brief Destuktor w trybie debugowania niszczący okno opencv.
+     * @brief Destuktor. W trybie debugowania niszczący okno opencv.
      */
     ~FlightAutonomy();
 
     /**
-     * @brief Inicjalizuje połączenie z autopilotem poprzez protokół MavLink.
+     * @brief Inicjalizuje połączenie z autopilotem poprzez protokół MavLink oraz uruchamia tryb offboard.
      *
-     * @return Stan
+     * @return true Połączenie zostało nawiązane.
+     * @return false Wystąpił błąd poczas nawiązywania połączenia.
      */
     bool connect();
 

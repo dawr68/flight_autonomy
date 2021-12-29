@@ -35,7 +35,34 @@ public:
 
     bool connect();
 
+    /**
+     * @brief Ustawia wartość pola connectionURL.
+     * 
+     * @param url Nowy url do ustawienia. 
+     */
     void setConnectionURL(const std::string url);
 
     void printTelem();
+
+    /**
+     * @brief Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0.
+     * 
+     * @return true Pomyślnie aktywowano kontrolę offboard.
+     * @return false Wystąpił błąd podczas aktywowania kontroli offboard.
+     */
+    bool startOffbard();
+    
+    /**
+     * @brief Zatrzymuje kontrolę w trybie offboard.
+     * 
+     * @return true Pomyślnie zatrzymano kontrolę offboard.
+     * @return false Wystąpił błąd podczas zatrzymywania kontroli offboard.
+     */
+    bool stopOffboard();
+
+    /**
+     * @brief Ustawia prędkości liniowe dla ciała w trybie offboard.
+     * 
+     */
+    void setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);
 };

@@ -2,27 +2,22 @@
 
 void FlightControl::subscribeTelem()
 {
-    telemetry->subscribe_health([this](mavsdk::Telemetry::Health health) {
+    telemetry->subscribe_health([this](mavsdk::Telemetry::Health health)
+                                {
         if (health.is_local_position_ok && health.is_armable)
-            this->telemData.health = true;
-    });
+            this->telemData.health = true; });
 
-    telemetry->subscribe_armed([this](bool armed) {
-        this->telemData.isArmed = armed;
-    });
+    telemetry->subscribe_armed([this](bool armed)
+                               { this->telemData.isArmed = armed; });
 
+    telemetry->subscribe_in_air([this](bool inAir)
+                                { this->telemData.inAir = inAir; });
 
-    telemetry->subscribe_in_air([this](bool inAir) {
-        this->telemData.inAir = inAir;
-    });
+    telemetry->subscribe_battery([this](mavsdk::Telemetry::Battery bat)
+                                 { this->telemData.batteryPercent = bat.remaining_percent; });
 
-    telemetry->subscribe_battery([this](mavsdk::Telemetry::Battery bat) {
-        this->telemData.batteryPercent = bat.remaining_percent;
-    });
-
-    telemetry->subscribe_odometry([this](mavsdk::Telemetry::Odometry odo) {
-        this->telemData.odom = odo;
-    });
+    telemetry->subscribe_odometry([this](mavsdk::Telemetry::Odometry odo)
+                                  { this->telemData.odom = odo; });
 }
 
 FlightControl::FlightControl()
@@ -39,13 +34,13 @@ bool FlightControl::connect()
 
     if (conRes != mavsdk::ConnectionResult::Success)
     {
-        return 1;
+        return false;
     }
 
     system = getSystem();
     if (!system)
     {
-        return 1;
+        return false;
     }
 
     info = std::make_shared<mavsdk::Info>(system);
@@ -60,7 +55,7 @@ bool FlightControl::connect()
 
     subscribeTelem();
 
-    return 0;
+    return true;
 }
 
 std::shared_ptr<mavsdk::System> FlightControl::getSystem()
@@ -84,7 +79,6 @@ std::shared_ptr<mavsdk::System> FlightControl::getSystem()
     return future.get();
 }
 
-
 void FlightControl::setConnectionURL(const std::string url)
 {
     connectionURL = url;
@@ -94,5 +88,34 @@ void FlightControl::printTelem()
 {
     std::cout << telemData.isArmed << std::endl;
     std::cout << telemData.batteryPercent << std::endl;
-    std::cout << "\n\n\n";
+    std::cout << "\n";
+}
+
+bool FlightControl::startOffbard()
+{
+
+    offboard->set_velocity_body({0.0f, 0.0f, 0.0f, 0.0f});
+    mavsdk::Offboard::Result startResult = offboard->start();
+    if (startResult != mavsdk::Offboard::Result::Success)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool FlightControl::stopOffboard()
+{
+    mavsdk::Offboard::Result stopResult = offboard->stop();
+    if(stopResult != mavsdk::Offboard::Result::Success)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+void FlightControl::setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed)
+{
+    offboard->set_velocity_body(veloBodyYawspeed);
 }
