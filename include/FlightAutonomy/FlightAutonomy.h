@@ -1,20 +1,22 @@
 #pragma once
 
+// Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery
+#define FA_DEBUG
+
 #include <ros/ros.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/opencv.hpp>
+#ifdef FA_DEBUG
 #include <opencv2/highgui/highgui.hpp>
+#endif
 
 #include "FlightAutonomy/ImageReceiver.h"
 #include "FlightAutonomy/FlightControl.h"
 #include "FlightAutonomy/ObjectDetector.h"
 
-// Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery
-#define FA_DEBUG
-
 /**
- * @brief Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wyzyjnej.
+ * @brief Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wizyjnej.
  * W klasie realizowany jest algorytm analizujący obraz odbierany z kamery i w przypadku wykrycia przeszkody wykonanie odpowiedniej reakcji w postaci zmianu trajektori lotu maszyny.
  * Wykorzystywany jest protokół MavLink do dwukierunkowej komunikacji z autopilotem i przesyłania komend sterujących.
  */
@@ -36,7 +38,7 @@ public:
     FlightAutonomy(ros::NodeHandle &);
 
     /**
-     * @brief Destuktor. W trybie debugowania niszczący okno opencv.
+     * @brief Destuktor. W trybie debugowania niszczący okno OpenCV.
      */
     ~FlightAutonomy();
 
@@ -44,7 +46,7 @@ public:
      * @brief Inicjalizuje połączenie z autopilotem poprzez protokół MavLink oraz uruchamia tryb offboard.
      *
      * @return true Połączenie zostało nawiązane.
-     * @return false Wystąpił błąd poczas nawiązywania połączenia.
+     * @return false Wystąpił błąd podczas nawiązywania połączenia.
      */
     bool connect();
 

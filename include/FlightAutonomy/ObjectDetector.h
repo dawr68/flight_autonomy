@@ -18,7 +18,7 @@ class ObjectDetector
     cv::Ptr<cv::aruco::DetectorParameters> params;
     cv::Ptr<cv::aruco::Dictionary> dict;
 
-    cv::Vec3f objPostion;
+    cv::Point2i objPostion;
 
 public:
     ObjectDetector();

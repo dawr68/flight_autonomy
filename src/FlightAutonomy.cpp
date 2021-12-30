@@ -21,10 +21,10 @@ bool FlightAutonomy::connect()
         return false;
     }
 
-    // if (!flightCtrl.startOffbard())
-    // {
-    //     return false;
-    // }
+    if (!flightCtrl.startOffbard())
+    {
+        return false;
+    }
 
     return true;
 }
@@ -41,7 +41,25 @@ void FlightAutonomy::spinOnce()
 {
     cv::Mat img = imgRec.getImage();
 
-    objDetect.detect(img);
+    if (objDetect.detect(img))
+    {
+        cv::Vec3f arPos = objDetect.getPosition();
+        cv::Vec3f halfFrameSize(img.cols / 2, img.rows / 2, 0.f);
+        cv::Vec3f normalVec = (arPos - halfFrameSize);
+        normalVec = cv::Vec3f(-normalVec[1] / halfFrameSize[1], normalVec[0] / halfFrameSize[0], cv::abs(normalVec[2]));
+        
+        if(pow(normalVec[0], 2) + pow(normalVec[1], 2) < 0.5)
+        {
+            normalVec[2] = 0.5f;
+        }
+        std::cout << normalVec << std::endl;
+
+        flightCtrl.setOffbardVelo({normalVec[0] * 1 , normalVec[1] * 1, normalVec[2], 0.0f});
+    }
+    else
+    {
+        flightCtrl.setOffbardVelo({0.f, 0.f, 0.f, 0.f});
+    }
 
 #ifdef FA_DEBUG
     cv::imshow(OPENCV_WINDOW, img);

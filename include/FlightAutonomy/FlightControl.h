@@ -63,6 +63,8 @@ public:
     /**
      * @brief Ustawia prędkości liniowe dla ciała w trybie offboard.
      * 
+     * @return true Pomyślnie ustawiono prędkość.
+     * @return false Wystąpił błąd podczas ustawiania prędkości.
      */
-    void setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);
+    bool setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);
 };

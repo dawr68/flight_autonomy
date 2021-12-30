@@ -93,7 +93,6 @@ void FlightControl::printTelem()
 
 bool FlightControl::startOffbard()
 {
-
     offboard->set_velocity_body({0.0f, 0.0f, 0.0f, 0.0f});
     mavsdk::Offboard::Result startResult = offboard->start();
     if (startResult != mavsdk::Offboard::Result::Success)
@@ -107,7 +106,7 @@ bool FlightControl::startOffbard()
 bool FlightControl::stopOffboard()
 {
     mavsdk::Offboard::Result stopResult = offboard->stop();
-    if(stopResult != mavsdk::Offboard::Result::Success)
+    if (stopResult != mavsdk::Offboard::Result::Success)
     {
         return false;
     }
@@ -115,7 +114,16 @@ bool FlightControl::stopOffboard()
     return true;
 }
 
-void FlightControl::setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed)
+bool FlightControl::setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed)
 {
-    offboard->set_velocity_body(veloBodyYawspeed);
+    if (offboard->is_active())
+    {
+        offboard->set_velocity_body(veloBodyYawspeed);
+    }
+    else
+    {
+        return 0;
+    }
+
+    return 1;
 }
