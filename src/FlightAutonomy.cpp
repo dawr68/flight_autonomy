@@ -43,6 +43,11 @@ void FlightAutonomy::spinOnce()
 
     if (objDetect.detect(img))
     {
+        if(flightCtrl.getAltitude() < 0.8)
+        {
+            flightCtrl.land();
+            return;
+        }
         cv::Vec3f arPos = objDetect.getPosition();
         cv::Vec3f halfFrameSize(img.cols / 2, img.rows / 2, 0.f);
         cv::Vec3f normalVec = (arPos - halfFrameSize);
@@ -61,10 +66,12 @@ void FlightAutonomy::spinOnce()
         flightCtrl.setOffbardVelo({0.f, 0.f, 0.f, 0.f});
     }
 
+
+
 #ifdef FA_DEBUG
     cv::imshow(OPENCV_WINDOW, img);
     cv::waitKey(1);
 #endif
 
-    // flightCtrl.printTelem();
+    flightCtrl.printTelem();
 }

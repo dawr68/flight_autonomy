@@ -16,16 +16,14 @@ void FlightControl::subscribeTelem()
     telemetry->subscribe_battery([this](mavsdk::Telemetry::Battery bat)
                                  { this->telemData.batteryPercent = bat.remaining_percent; });
 
+    telemetry->subscribe_position([this](mavsdk::Telemetry::Position pos)
+                                  { this->telemData.altitude = pos.relative_altitude_m; });
+
+    telemetry->subscribe_attitude_euler([this](mavsdk::Telemetry::EulerAngle eur)
+                                        { this->telemData.eulerAngle = eur; });
+
     telemetry->subscribe_odometry([this](mavsdk::Telemetry::Odometry odo)
                                   { this->telemData.odom = odo; });
-}
-
-FlightControl::FlightControl()
-{
-}
-
-FlightControl::~FlightControl()
-{
 }
 
 bool FlightControl::connect()
@@ -88,6 +86,7 @@ void FlightControl::printTelem()
 {
     std::cout << telemData.isArmed << std::endl;
     std::cout << telemData.batteryPercent << std::endl;
+    std::cout << telemData.eulerAngle << std::endl;
     std::cout << "\n";
 }
 
@@ -126,4 +125,21 @@ bool FlightControl::setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBo
     }
 
     return 1;
+}
+
+bool FlightControl::land()
+{
+    if (action->land() == mavsdk::Action::Result::Success)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+float FlightControl::getAltitude()
+{
+    return telemData.altitude;
 }

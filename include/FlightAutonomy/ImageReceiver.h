@@ -6,7 +6,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 /**
- * @brief Image receiving class that supports diferrent types of imput video streams.
+ * @brief Image receiving class that supports diferrent types of input video streams.
  * It converts input video stream into OpenCV mat
  */
 class ImageReceiver
@@ -16,11 +16,13 @@ class ImageReceiver
     std::string camTopic;   /**< Name of camera topic */
     cv::Mat camImage;       /**< Last frame from camera stream */
 
+
 public:
     ImageReceiver(ros::NodeHandle &_nh, std::string topic);
     ~ImageReceiver();
 
     cv::Mat getImage();
+
 
 private:
     void imgSubCallback(const sensor_msgs::ImageConstPtr &img);

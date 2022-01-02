@@ -29,10 +29,22 @@ class FlightControl
     void subscribeTelem();
 
 public:
+    /**
+     * @brief Tworzy nowy obiekt klasy FlightControl.
+     */
+    FlightControl() = default;
 
-    FlightControl();
-    ~FlightControl();
+    /**
+     * @brief Niszczy dany obiekt klasy FlightControl.
+     */
+    ~FlightControl() = default;
 
+    /**
+     * @brief Inicjalizuje połączenie z autopilotem. 
+     * 
+     * @return true Pomyślnie nawiązano połącznie.
+     * @return false Wystąpił błąd podczan nawiązywania połączenia.
+     */
     bool connect();
 
     /**
@@ -42,7 +54,18 @@ public:
      */
     void setConnectionURL(const std::string url);
 
+    /**
+     * @brief Wyświetla w konsoli podstawowe dane telemetryczne.
+     */
     void printTelem();
+
+    /**
+     * @brief Sprawdzenie czy maszyna jest w trakcie lotu.
+     * 
+     * @return true Maszyna jest w trakcie lotu.
+     * @return false Maszyna nie jest w trakcie lotu.
+     */
+    bool observeInAir();
 
     /**
      * @brief Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0.
@@ -67,4 +90,20 @@ public:
      * @return false Wystąpił błąd podczas ustawiania prędkości.
      */
     bool setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);
+
+    /**
+     * @brief Wyzwala tryb lądowania w obecnym punkcie.
+     * 
+     * @return true Pomyślnie aktywowano tryb lądowanie.
+     * @return false Wystąpił błąd podczas aktywowania trybu lądowania.
+     */
+    bool land();
+
+    /**
+     * @brief Zwraca ostatnią wysokość relatywną maszyny nad ziemią.
+     * 
+     * @return float Wysokość AGL maszyny.
+     */
+    float getAltitude();
+
 };

@@ -17,7 +17,7 @@
 
 /**
  * @brief Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wizyjnej.
- * W klasie realizowany jest algorytm analizujący obraz odbierany z kamery i w przypadku wykrycia przeszkody wykonanie odpowiedniej reakcji w postaci zmianu trajektori lotu maszyny.
+ * W klasie realizowany jest algorytm analizujący obraz odbierany z kamery i w przypadku wykrycia przeszkody wykonanie odpowiedniej reakcji w postaci zmiany trajektorii lotu maszyny.
  * Wykorzystywany jest protokół MavLink do dwukierunkowej komunikacji z autopilotem i przesyłania komend sterujących.
  */
 class FlightAutonomy
