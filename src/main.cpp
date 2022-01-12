@@ -1,4 +1,3 @@
-#include <ros/ros.h>
 #include "FlightAutonomy/FlightAutonomy.h"
 
 void printHelp(std::string progName)
@@ -14,10 +13,6 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    ros::init(argc, argv, "flight_autonomy");
-    ros::NodeHandle nh;
-    ros::Rate rate(30);
-
     FlightAutonomy fa(nh);
 
     fa.readArgs(argc, argv);
@@ -28,9 +23,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    while (ros::ok())
+    while (fa.ok())
     {
-        ros::spinOnce();
         fa.spinOnce();
         rate.sleep();
     }

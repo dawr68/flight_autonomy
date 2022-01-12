@@ -1,6 +1,6 @@
 #include "FlightAutonomy/FlightAutonomy.h"
 
-FlightAutonomy::FlightAutonomy(ros::NodeHandle &_nh) : nh(_nh), imgRec(_nh, "/iris_race/c920/image_raw"), flightCtrl()
+FlightAutonomy::FlightAutonomy()
 {
 #ifdef FA_DEBUG
     cv::namedWindow(OPENCV_WINDOW);
@@ -37,8 +37,15 @@ void FlightAutonomy::readArgs(const int argc, char **argv)
     }
 }
 
+bool FlightAutonomy::ok()
+{
+    return true;
+}
+
 void FlightAutonomy::spinOnce()
 {
+    imgRec.receiveImage()
+
     cv::Mat img = imgRec.getImage();
 
     if (objDetect.detect(img))

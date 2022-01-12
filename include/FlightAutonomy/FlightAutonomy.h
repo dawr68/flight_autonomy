@@ -3,9 +3,6 @@
 // Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery
 #define FA_DEBUG
 
-#include <ros/ros.h>
-#include <cv_bridge/cv_bridge.h>
-#include <sensor_msgs/image_encodings.h>
 #include <opencv2/opencv.hpp>
 #ifdef FA_DEBUG
 #include <opencv2/highgui/highgui.hpp>
@@ -14,6 +11,7 @@
 #include "FlightAutonomy/ImageReceiver.h"
 #include "FlightAutonomy/FlightControl.h"
 #include "FlightAutonomy/ObjectDetector.h"
+#include "FlightAutonomy/algorithms.h"
 
 /**
  * @brief Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wizyjnej.
@@ -26,16 +24,16 @@ class FlightAutonomy
     const std::string OPENCV_WINDOW = "Cam View";
 #endif
 
-    ros::NodeHandle &nh;      /**< Uchwyt bieżącego węzła ROS */
     ImageReceiver imgRec;     /**< Odbiornik obrazu z kamery */
     FlightControl flightCtrl; /**< Kontrola lotu maszyny */
     ObjectDetector objDetect; /**< Wykrywacz obiektów na obrazie z kamery */
+    Algorithms currAlg;       /**< Obecnie wykonywany algorytm */
 
 public:
     /**
-     * @brief Konstruuje obiekt FlightAutonomy inicjalizując obiekty domyślnymi wartościami.
+     * @brief Konstruuje obiekt FlightAutonomy inicjalizując pola domyślnymi wartościami.
      */
-    FlightAutonomy(ros::NodeHandle &);
+    FlightAutonomy();
 
     /**
      * @brief Destuktor. W trybie debugowania niszczący okno OpenCV.
@@ -63,6 +61,14 @@ public:
      * Powinna być wywoływana jednokrotnie w trakcie każdego obrotu pętli głównej programu.
      */
     void spinOnce();
+
+    /**
+     * @brief Sprawdza czy wszystkie elementy działają prawidłowo i czy nie pojawił się warunek wyjścia.
+     * 
+     * @return true Wszystkie komponenty działają prawidłowo i nie pojawił się warunek wyjścia.
+     * @return false Pojawił się błąd działania lub warunek wyjścia.
+     */ 
+    bool ok();
 
 private:
     std::string getArg(const std::string option);
