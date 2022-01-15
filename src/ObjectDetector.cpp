@@ -11,34 +11,55 @@ ObjectDetector::ObjectDetector(cv::Ptr<cv::aruco::DetectorParameters> _params, c
 {
 }
 
-bool ObjectDetector::detect(const cv::Mat &img)
+cv::Point2f ObjectDetector::detectArucoSingle(const cv::Mat &img, int arucoID)
 {
+    cv::Point2f center(-1., -1.);
+
     cv::aruco::detectMarkers(img, dict, markCor, markIds, params, rejected);
 
 #ifdef FA_DEBUG
     cv::aruco::drawDetectedMarkers(img, markCor, markIds);
 #endif
 
-    if (markIds.size() == 0)
+    for (int i = 0; i < markIds.size(); i++)
     {
-        objPostion = cv::Point2i(-1, -1);
-        return 0;
+        if (markIds[i] == arucoID)
+        {
+            center = calcArucoCenter(markCor[i]);
+        }
     }
 
-    for (auto mCor : markCor)
-    {
-        objPostion = calcArucoCenter(mCor);
-    }
-
-    return 1;
+    return center;
 }
 
-cv::Vec3f ObjectDetector::getPosition()
+// cv::Point2i ObjectDetector::detectGateSingle(const cv::Mat &img, int arucoIDs[4])
+// {
+//     cv::aruco::detectMarkers(img, dict, markCor, markIds, params, rejected);
+
+// #ifdef FA_DEBUG
+//     cv::aruco::drawDetectedMarkers(img, markCor, markIds);
+// #endif
+
+//     if (markIds.size() == 0)
+//     {
+//         objPostion = cv::Point2i(-1, -1);
+//         return 0;
+//     }
+
+//     for (auto mCor : markCor)
+//     {
+//         objPostion = calcArucoCenter(mCor);
+//     }
+
+//     return 1;
+// }
+
+cv::Point2f ObjectDetector::calcArucoCenter(std::vector<cv::Point2f> corners)
 {
-    return cv::Vec3f(objPostion.x, objPostion.y, 0.f);
+    return cv::Point((corners[0] + corners[2]) / 2);
 }
 
-cv::Point2i calcArucoCenter(std::vector<cv::Point2f> corners)
+cv::Point2f ObjectDetector::calcGateCenter(std::vector<cv::Point2f> corners)
 {
     return cv::Point((corners[0] + corners[2]) / 2);
 }

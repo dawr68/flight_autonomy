@@ -2,32 +2,41 @@
 
 void printHelp(std::string progName)
 {
-    std::cerr << "Usage: " + progName + " <drone_connection_URL>" << std::endl;
+    std::cout << "Usage:" << std::endl;
+    std::cout << progName + "algorithm drone_connection_URL [cameraID]" << std::endl;
+    std::cout << "For example" << std::endl;
+    std::cout << progName + "landing udp://:14445 0" << std::endl;
 }
 
 int main(int argc, char **argv)
 {
-    if (argc != 2)
+    FlightAutonomy fa;
+
+    if (!fa.readArgs(argc, argv))
     {
         printHelp(argv[0]);
         return 0;
     }
 
-    FlightAutonomy fa(nh);
-
-    fa.readArgs(argc, argv);
-
     if (!fa.connect())
     {
-        std::cerr << "Autopilot connection error" << std::endl;
         return 1;
+    }
+
+    if (!fa.isReady())
+    {
+        std::cerr << "Drone not ready, exiting..." << std::endl;
+        return 2;
     }
 
     while (fa.ok())
     {
         fa.spinOnce();
-        rate.sleep();
     }
+
+    fa.printExitStatus();
+
+    std::cout << "Exitted successfully." << std::endl;
 
     return 0;
 }

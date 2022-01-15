@@ -1,6 +1,6 @@
 #include "FlightAutonomy/ImageReceiver.h"
 
-ImageReceiver(int _deviceID, int _apiID = 0) : deviceID(_deviceID), apiID(_apiID)
+ImageReceiver::ImageReceiver(int _deviceID, int _apiID) : deviceID(_deviceID), apiID(_apiID)
 {
 }
 
@@ -8,11 +8,11 @@ bool ImageReceiver::open()
 {
     cap.open(deviceID, apiID);
 
-    if(cap.isOpen())
+    if (cap.isOpened())
     {
         return 1;
     }
-    else 
+    else
     {
         return 0;
     }
@@ -21,9 +21,9 @@ bool ImageReceiver::open()
 void ImageReceiver::receiveImage()
 {
     cv::Mat newFrame;
-    cap.read(newFrame):
+    cap.read(newFrame);
 
-    if(!newFrame.empty())
+    if (!newFrame.empty())
     {
         camImage = newFrame;
     }
@@ -33,8 +33,13 @@ void ImageReceiver::receiveImage()
     }
 }
 
+void ImageReceiver::setDevice(int _deviceID, int _apiID)
+{
+    deviceID = _deviceID;
+    apiID = _apiID;
+}
 
 cv::Mat ImageReceiver::getImage()
 {
-    return camImage
+    return camImage;
 }
