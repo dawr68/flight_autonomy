@@ -147,6 +147,7 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
     {
         flightCtrl.setOffbardVelo(velo);
         flightCtrl.land();
+        currAlg = arucoLanding;
         exitCode = 1;
         return true;
     }
@@ -161,7 +162,6 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
         normalVec.x = (arPos.x - halfFrameSize.x) / halfFrameSize.x;
         normalVec.y = (arPos.y - halfFrameSize.y) / halfFrameSize.y;
 
-        std::cout << "Normal vec" << normalVec << std::endl;
         if (pow(normalVec.x, 2) + pow(normalVec.y, 2) < MID_THRESHOLD)
         {
             velo.down_m_s = MAX_VELO_VERT_MS;
@@ -174,7 +174,6 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
 
         velo.forward_m_s = -normalVec.y * MAX_VELO_HORI_MS;
         velo.right_m_s = normalVec.x * MAX_VELO_HORI_MS;
-        std::cout << "VELO: " << velo << std::endl;
     }
     else
     {
@@ -188,7 +187,48 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
 
 bool FlightAutonomy::avoidingStep(cv::Mat &img)
 {
-    return true;
+    int gateArucos[] = {10, 11, 12, 13};
+    bool returnCode = true;
+    cv::Point2f halfFrameSize(img.cols / 2.f, img.rows / 2.f);
+    mavsdk::Offboard::VelocityBodyYawspeed velo = {};
+
+    std::tuple<cv::Point2f, int> gatePosSize = objDetect.detectArucoGate(img, gateArucos);
+
+    cv::Point2f gatePos = std::get<0>(gatePosSize);
+    int size = std::get<1>(gatePosSize);
+
+    if (size > 0.8 * 2 * halfFrameSize.x)
+    {
+        velo.forward_m_s = 0.5 * MAX_VELO_HORI_MS;
+        flightCtrl.setOffbardVelo(velo);
+        currAlg = forwardFlight;
+        returnCode = true;
+    }
+
+    if (gatePos != cv::Point2f(-1, -1))
+    {
+        // Normalized vector
+        cv::Point2f normalVec;
+        normalVec.x = (gatePos.x - halfFrameSize.x) / halfFrameSize.x;
+        normalVec.y = (gatePos.y - halfFrameSize.y) / halfFrameSize.y;
+
+        // // Drone lean compensation
+        // mavsdk::Telemetry::EulerAngle droneAngles = flightCtrl.getEulerAngle();
+        // normalVec.x -= droneAngles.pitch_deg / (0.5 * CAM_VFOV);
+        // normalVec.y -= droneAngles.roll_deg / (0.5 * CAM_HFOV);
+
+        velo.forward_m_s = -normalVec.y * MAX_VELO_HORI_MS;
+        velo.yawspeed_deg_s = normalVec.x * MAX_YAWSPEED;
+    }
+    else
+    {
+        velo.yawspeed_deg_s = 0.5 * MAX_YAWSPEED;
+        returnCode = false;
+    }
+
+    flightCtrl.setOffbardVelo(velo);
+
+    return returnCode;
 }
 
 bool FlightAutonomy::spinOnce()
@@ -201,30 +241,53 @@ bool FlightAutonomy::spinOnce()
     switch (currAlg)
     {
     case arucoLanding:
+    {
         returnCode = landingStep(img);
         break;
-
+    }
     case gateRacing:
+    {
         returnCode = avoidingStep(img);
         break;
-
+    }
     case normalLanding:
+    {
         if (!flightCtrl.observeInAir())
         {
             exitCode = 1;
         }
         break;
+    }
+    case forwardFlight:
+    {
+        mavsdk::Offboard::VelocityBodyYawspeed velo = {0.5f * MAX_VELO_HORI_MS, 0.f, 0.f, 0.f};
+        returnCode = 0;
+        flightCtrl.setOffbardVelo(velo);
+        break;
+    }
 
     default:
+    {
         break;
+    }
     }
 
     if (returnCode == 0)
     {
         std::chrono::steady_clock::time_point tNow = std::chrono::steady_clock::now();
-        if (std::chrono::duration_cast<std::chrono::seconds>(tNow - timeoutCounter).count() >= NO_DETECT_TIMEOUT)
+        if (currAlg != forwardFlight)
         {
-            exitCode = 3;
+            if (std::chrono::duration_cast<std::chrono::seconds>(tNow - timeoutCounter).count() >= NO_DETECT_TIMEOUT)
+            {
+                exitCode = 3;
+            }
+        }
+        else
+        {
+            if (std::chrono::duration_cast<std::chrono::seconds>(tNow - timeoutCounter).count() >= FORWARD_FLIGHT_TIMEOUT)
+            {
+                currAlg = gateRacing;
+            }
         }
     }
     else

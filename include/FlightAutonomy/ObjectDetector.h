@@ -1,6 +1,7 @@
 #pragma once
 #include "FlightAutonomy/defines.h"
 
+#include <tuple>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/aruco.hpp>
@@ -47,13 +48,13 @@ public:
     cv::Point2f detectArucoSingle(const cv::Mat &img, int arucoID);
 
     /**
-     * @brief Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-1, -1) jeżeli nie wykryto bramki.
+     * @brief Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-1, -1, -1) jeżeli nie wykryto bramki.
      *
      * @param img Ramka obrazu na której mają zostać wykryte znaczniki.
      * @param arucoIDs Tablica identyfikatorów kolejnych znaczników tworzących bramkę.
-     * @return cv::Point2f Koordynaty środka wykrytej bramki.
+     * @return std::tuple<cv::Point2f, int> Koordynaty środka bramki i jej rozmiar.
      */
-    cv::Point2f detectArucoGate(const cv::Mat &img, int arucoIDs[4]);
+    std::tuple<cv::Point2f, int> detectArucoGate(const cv::Mat &img, int arucoIDs[4]);
 
 private:
     /**
@@ -62,13 +63,6 @@ private:
      * @param corners Wektor zawierający koordynaty kolejnych wierzchołków znacznika.
      * @return cv::Point2f Obliczony środek znacznika.
      */
-    cv::Point2f calcArucoCenter(std::vector<cv::Point2f> corners);
+    cv::Point2f calcCenter(std::vector<cv::Point2f> corners);
 
-    /**
-     * @brief Oblicza środek bramki na podstawie przekazanego wektora koordynatów wierzchołków.
-     *
-     * @param corners Wektor zawierający koordynaty kolejnych wierzchołków bramki.
-     * @return cv::Point2f Obliczony środek bramki.
-     */
-    cv::Point2f calcGateCenter(std::vector<cv::Point2f> corners);
 };
