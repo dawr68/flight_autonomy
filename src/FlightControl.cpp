@@ -46,14 +46,31 @@ bool FlightControl::connect()
     action = std::make_shared<mavsdk::Action>(system);
     offboard = std::make_shared<mavsdk::Offboard>(system);
 
-    while (!telemetry->health_all_ok())
+    int i = 0;
+    while (!telemetry->health_all_ok() && i < 10)
     {
-        std::this_thread::sleep_for(std::chrono::seconds(3));
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        i++;
+    }
+
+    if(i == 9)
+    {
+        return false;
     }
 
     subscribeTelem();
 
     return true;
+}
+
+bool FlightControl::checkStatus()
+{
+    return telemetry->health_all_ok();
+}
+
+bool FlightControl::observeInAir()
+{
+    return telemData.inAir;
 }
 
 std::shared_ptr<mavsdk::System> FlightControl::getSystem()
@@ -77,6 +94,11 @@ std::shared_ptr<mavsdk::System> FlightControl::getSystem()
     return future.get();
 }
 
+mavsdk::Telemetry::EulerAngle FlightControl::getEulerAngle()
+{
+    return telemData.eulerAngle;
+}
+
 void FlightControl::setConnectionURL(const std::string url)
 {
     connectionURL = url;
@@ -92,7 +114,8 @@ void FlightControl::printTelem()
 
 bool FlightControl::startOffbard()
 {
-    offboard->set_velocity_body({0.0f, 0.0f, 0.0f, 0.0f});
+    mavsdk::Offboard::VelocityBodyYawspeed velo = {};
+    offboard->set_velocity_body(velo);
     mavsdk::Offboard::Result startResult = offboard->start();
     if (startResult != mavsdk::Offboard::Result::Success)
     {

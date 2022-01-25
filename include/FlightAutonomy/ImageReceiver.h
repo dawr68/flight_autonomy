@@ -1,29 +1,59 @@
 #pragma once
 
-#include <ros/ros.h>
-#include <image_transport/image_transport.h>
-#include <cv_bridge/cv_bridge.h>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/videoio.hpp>
 
 /**
- * @brief Image receiving class that supports diferrent types of input video streams.
- * It converts input video stream into OpenCV mat
+ * @brief Klasa odbierająca stream wideo z podanego źródła.
  */
 class ImageReceiver
 {
-    ros::NodeHandle &nh;    /**< Handle to node */
-    ros::Subscriber imgSub; /**< Subscriber to ros camera image topic */
-    std::string camTopic;   /**< Name of camera topic */
-    cv::Mat camImage;       /**< Last frame from camera stream */
-
+    cv::VideoCapture cap;    /**< Obiekt przechwytujący stream video */
+    int deviceID = 0;        /**< Kamera 0 - domyślna */
+    int apiID = cv::CAP_ANY; /**< Domyślnie autodetekcja */
+    cv::Mat camImage;        /**< Najnowsza ramka odebrana z kamery*/
 
 public:
-    ImageReceiver(ros::NodeHandle &_nh, std::string topic);
-    ~ImageReceiver();
+    /**
+     * @brief Konstruuje obiekt ImageReceiver.
+     */
+    ImageReceiver() = default;
 
+    /**
+     * @brief Konstruuje obiekt ImageReceiver wpisując przekazane wartości do pól tworzonego obiektu.
+     */
+    ImageReceiver(int deviceID, int apiID = 0);
+
+    /**
+     * @brief Niszczy obiekt ImageReceiver.
+     */
+    ~ImageReceiver() = default;
+
+    /**
+     * @brief Otwiera wejście kamery
+     *
+     * @return true Pomyślnie otwarto wejście kamery.
+     * @return false Wystąpił błąd podczas otwierania wejścia kamery.
+     */
+    bool open();
+
+    /**
+     * @brief Pobiera ramkę z wejścia kamery
+     */
+    void receiveImage();
+
+    /**
+     * @brief Set the Device object
+     *
+     * @param _deviceID
+     * @param _apiID
+     */
+    void setDevice(int _deviceID, int _apiID = 0);
+
+    /**
+     * @brief Zwraca najnowszą odebraną ramkę obrazu.
+     *
+     * @return Ramka obrazu.
+     */
     cv::Mat getImage();
-
-
-private:
-    void imgSubCallback(const sensor_msgs::ImageConstPtr &img);
 };

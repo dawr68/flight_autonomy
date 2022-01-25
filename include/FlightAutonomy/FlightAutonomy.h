@@ -1,19 +1,17 @@
 #pragma once
 
-// Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery
-#define FA_DEBUG
+#include "FlightAutonomy/defines.h"
 
-#include <ros/ros.h>
-#include <cv_bridge/cv_bridge.h>
-#include <sensor_msgs/image_encodings.h>
 #include <opencv2/opencv.hpp>
 #ifdef FA_DEBUG
 #include <opencv2/highgui/highgui.hpp>
 #endif
+#include <chrono>
 
 #include "FlightAutonomy/ImageReceiver.h"
 #include "FlightAutonomy/FlightControl.h"
 #include "FlightAutonomy/ObjectDetector.h"
+#include "FlightAutonomy/algorithms.h"
 
 /**
  * @brief Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wizyjnej.
@@ -26,16 +24,19 @@ class FlightAutonomy
     const std::string OPENCV_WINDOW = "Cam View";
 #endif
 
-    ros::NodeHandle &nh;      /**< Uchwyt bieżącego węzła ROS */
     ImageReceiver imgRec;     /**< Odbiornik obrazu z kamery */
     FlightControl flightCtrl; /**< Kontrola lotu maszyny */
     ObjectDetector objDetect; /**< Wykrywacz obiektów na obrazie z kamery */
+    Algorithms currAlg;       /**< Obecnie wykonywany algorytm */
+    int landingPadID = 68;    /**< ID znacznika Aruco lądowiska */
+    int exitCode;             /**< Kod wyjścia z systemu: 0 - kontynuuj pracę, 1 - wyjście normalne, 2 - niepoprawna wysokość, 3 - nie wykryto znaczników przez zadany czas */
+    std::chrono::steady_clock::time_point timeoutCounter;       /**< Odlicza czas do automatycznego wyjścia z programu w przypadku nie wykrywania znaczników */
 
 public:
     /**
-     * @brief Konstruuje obiekt FlightAutonomy inicjalizując obiekty domyślnymi wartościami.
+     * @brief Konstruuje obiekt FlightAutonomy inicjalizując pola domyślnymi wartościami.
      */
-    FlightAutonomy(ros::NodeHandle &);
+    FlightAutonomy();
 
     /**
      * @brief Destuktor. W trybie debugowania niszczący okno OpenCV.
@@ -51,19 +52,69 @@ public:
     bool connect();
 
     /**
+     * @brief Sprawdza czy maszyna jest gotowa do wykonywania algorytmu.
+     *
+     * @return true Maszyna jest gotowa.
+     * @return false Maszyna nie jest gotowa.
+     */
+    bool isReady();
+
+    /**
      * @brief Wczytuje przekazane do programu parametry.
      *
      * @param argc Liczba parametrów
      * @param argv Wskaźnik na tablicę parametrów
+     *
+     * @return true Poprawnie wczytano parametry.
+     * @return false Nie można wczytać parametrów.
      */
-    void readArgs(const int argc, char **argv);
+    bool readArgs(const int argc, char **argv);
 
     /**
      * @brief Wykonuje pojedynczy krok algorytmu.
      * Powinna być wywoływana jednokrotnie w trakcie każdego obrotu pętli głównej programu.
      */
-    void spinOnce();
+    bool spinOnce();
+
+    /**
+     * @brief Sprawdza czy wszystkie elementy działają prawidłowo i czy nie pojawił się warunek wyjścia.
+     *
+     * @return true Wszystkie komponenty działają prawidłowo i nie pojawił się warunek wyjścia.
+     * @return false Pojawił się błąd działania lub warunek wyjścia.
+     */
+    bool ok();
+
+    /**
+     * @brief Zwraca wartość kodu wyjścia.
+     *
+     * @return int Wartość kodu wyjścia.
+     */
+    int getExitCode();
+
+    /**
+     * @brief Wyświetla status wyjścia według kodu w zmiennej exitCode.
+     *
+     */
+    void printExitStatus();
 
 private:
-    std::string getArg(const std::string option);
+    /**
+     * @brief Wykonuje jeden krok algorytmu lądowania.
+     *
+     * @param img Najnowsza ramka obrazu.
+     *
+     * @return true Poprawnie wykonano krok algorytmu.
+     * @return false Błąd podczas wykonywania kroku algorytmu.
+     */
+    bool landingStep(cv::Mat &img);
+
+    /**
+     * @brief Wykonuje jeden krok algorytmu lądowania.
+     *
+     * @param img Najnowsza ramka obrazu.
+     *
+     * @return true Poprawnie wykonano krok algorytmu.
+     * @return false Błąd podczas wykonywania kroku algorytmu.
+     */
+    bool avoidingStep(cv::Mat &img);
 };

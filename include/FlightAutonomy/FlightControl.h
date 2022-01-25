@@ -40,17 +40,32 @@ public:
     ~FlightControl() = default;
 
     /**
-     * @brief Inicjalizuje połączenie z autopilotem. 
-     * 
+     * @brief Inicjalizuje połączenie z autopilotem.
+     *
      * @return true Pomyślnie nawiązano połącznie.
      * @return false Wystąpił błąd podczan nawiązywania połączenia.
      */
     bool connect();
 
     /**
+     * @brief Sprawdza stan maszyny pod kątem gotowości do działania systemu.
+     *
+     * @return true Maszyna jest gotowa do wykonywania algorytmu.
+     * @return false Maszyna nie jest gotowa do wykonywania algorytmu.
+     */
+    bool checkStatus();
+
+    /**
+     * @brief Zwraca aktualne kąty pochylenia maszyny.
+     *
+     * @return mavsdk::Telemetry::EulerAngle Kąty Eulera
+     */
+    mavsdk::Telemetry::EulerAngle getEulerAngle();
+
+    /**
      * @brief Ustawia wartość pola connectionURL.
-     * 
-     * @param url Nowy url do ustawienia. 
+     *
+     * @param url Nowy url do ustawienia.
      */
     void setConnectionURL(const std::string url);
 
@@ -61,7 +76,7 @@ public:
 
     /**
      * @brief Sprawdzenie czy maszyna jest w trakcie lotu.
-     * 
+     *
      * @return true Maszyna jest w trakcie lotu.
      * @return false Maszyna nie jest w trakcie lotu.
      */
@@ -69,15 +84,15 @@ public:
 
     /**
      * @brief Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0.
-     * 
+     *
      * @return true Pomyślnie aktywowano kontrolę offboard.
      * @return false Wystąpił błąd podczas aktywowania kontroli offboard.
      */
     bool startOffbard();
-    
+
     /**
      * @brief Zatrzymuje kontrolę w trybie offboard.
-     * 
+     *
      * @return true Pomyślnie zatrzymano kontrolę offboard.
      * @return false Wystąpił błąd podczas zatrzymywania kontroli offboard.
      */
@@ -85,7 +100,7 @@ public:
 
     /**
      * @brief Ustawia prędkości liniowe dla ciała w trybie offboard.
-     * 
+     *
      * @return true Pomyślnie ustawiono prędkość.
      * @return false Wystąpił błąd podczas ustawiania prędkości.
      */
@@ -93,7 +108,7 @@ public:
 
     /**
      * @brief Wyzwala tryb lądowania w obecnym punkcie.
-     * 
+     *
      * @return true Pomyślnie aktywowano tryb lądowanie.
      * @return false Wystąpił błąd podczas aktywowania trybu lądowania.
      */
@@ -101,9 +116,8 @@ public:
 
     /**
      * @brief Zwraca ostatnią wysokość relatywną maszyny nad ziemią.
-     * 
+     *
      * @return float Wysokość AGL maszyny.
      */
     float getAltitude();
-
 };
