@@ -10,6 +10,23 @@ find_package(OpenCV 3 REQUIRED)
 # set(MAVSDK_DIR /usr/lib/cmake/MAVSDK)
 find_package(MAVSDK REQUIRED)
 
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  sensor_msgs
+  cv_bridge
+)
+
+###################################
+## catkin specific configuration ##
+###################################
+catkin_package(
+ INCLUDE_DIRS include
+#  LIBRARIES Flight-autonomy
+#  CATKIN_DEPENDS roscpp
+#  DEPENDS system_lib
+)
+
+
 ###########
 ## Build ##
 ###########
@@ -18,6 +35,7 @@ find_package(MAVSDK REQUIRED)
 ## Your package locations should be listed before other locations
 include_directories(
   include
+  ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
   /usr/include/mavsdk
 )
@@ -33,6 +51,7 @@ add_executable(${PROJECT_NAME} src/main.cpp src/FlightAutonomy.cpp src/ImageRece
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
+  ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
   opencv_aruco
   MAVSDK::mavsdk_telemetry

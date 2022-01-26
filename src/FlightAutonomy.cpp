@@ -1,6 +1,6 @@
 #include "FlightAutonomy/FlightAutonomy.h"
 
-FlightAutonomy::FlightAutonomy()
+FlightAutonomy::FlightAutonomy(ros::NodeHandle &_nh) : imgRec(_nh, "/iris_race/c920/image_raw")
 {
     exitCode = 0;
     timeoutCounter = std::chrono::steady_clock::now();
@@ -18,11 +18,11 @@ FlightAutonomy::~FlightAutonomy()
 
 bool FlightAutonomy::connect()
 {
-    if (!imgRec.open())
-    {
-        std::cerr << "[ERROR] Autopilot connection error" << std::endl;
-        return false;
-    }
+    // if (!imgRec.open())
+    // {
+    //     std::cerr << "[ERROR] Image stream opening error" << std::endl;
+    //     return false;
+    // }
 
     if (!flightCtrl.connect())
     {
@@ -42,13 +42,13 @@ bool FlightAutonomy::connect()
 bool FlightAutonomy::isReady()
 {
     int i = 0;
-    for (; i < 10, !flightCtrl.observeInAir(); i++)
+    for (; i < 10 && !flightCtrl.observeInAir(); i++)
     {
         std::cout << "Waiting for drone to be in air..." << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
-    if (i == 9)
+    if (i > 9)
     {
         return false;
     }
@@ -74,6 +74,11 @@ bool FlightAutonomy::ok()
             return flightCtrl.checkStatus();
         }
     }
+}
+
+bool FlightAutonomy::stop()
+{
+    return flightCtrl.stopOffboard();
 }
 
 int FlightAutonomy::getExitCode()
@@ -143,12 +148,11 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
 {
     mavsdk::Offboard::VelocityBodyYawspeed velo = {};
 
-    if (flightCtrl.getAltitude() < 0.8)
+    if (flightCtrl.getAltitude() < LAND_ALT)
     {
         flightCtrl.setOffbardVelo(velo);
         flightCtrl.land();
-        currAlg = arucoLanding;
-        exitCode = 1;
+        currAlg = normalLanding;
         return true;
     }
 
@@ -157,7 +161,7 @@ bool FlightAutonomy::landingStep(cv::Mat &img)
     if (arPos != cv::Point2f(-1, -1))
     {
         cv::Point2f halfFrameSize(img.cols / 2.f, img.rows / 2.f);
-        // Normalized vector
+
         cv::Point2f normalVec;
         normalVec.x = (arPos.x - halfFrameSize.x) / halfFrameSize.x;
         normalVec.y = (arPos.y - halfFrameSize.y) / halfFrameSize.y;
@@ -192,14 +196,15 @@ bool FlightAutonomy::avoidingStep(cv::Mat &img)
     cv::Point2f halfFrameSize(img.cols / 2.f, img.rows / 2.f);
     mavsdk::Offboard::VelocityBodyYawspeed velo = {};
 
-    std::tuple<cv::Point2f, int> gatePosSize = objDetect.detectArucoGate(img, gateArucos);
+    std::tuple<cv::Point2f, float, float> gatePosSizeAng = objDetect.detectArucoGate(img, gateArucos);
 
-    cv::Point2f gatePos = std::get<0>(gatePosSize);
-    int size = std::get<1>(gatePosSize);
+    cv::Point2f gatePos = std::get<0>(gatePosSizeAng);
+    float size = std::get<1>(gatePosSizeAng);
+    float angle = std::get<2>(gatePosSizeAng) * 180 / CV_PI;
 
-    if (size > 0.8 * 2 * halfFrameSize.x)
+    if (size > 0.45)
     {
-        velo.forward_m_s = 0.5 * MAX_VELO_HORI_MS;
+        velo.forward_m_s = 1 * MAX_VELO_HORI_MS;
         flightCtrl.setOffbardVelo(velo);
         currAlg = forwardFlight;
         returnCode = true;
@@ -207,23 +212,44 @@ bool FlightAutonomy::avoidingStep(cv::Mat &img)
 
     if (gatePos != cv::Point2f(-1, -1))
     {
-        // Normalized vector
+#ifdef FA_DEBUG
+        cv::circle(img, gatePos, 10, cv::Scalar(0, 0, 255), 4);
+#endif
+
         cv::Point2f normalVec;
         normalVec.x = (gatePos.x - halfFrameSize.x) / halfFrameSize.x;
         normalVec.y = (gatePos.y - halfFrameSize.y) / halfFrameSize.y;
 
         // // Drone lean compensation
-        // mavsdk::Telemetry::EulerAngle droneAngles = flightCtrl.getEulerAngle();
-        // normalVec.x -= droneAngles.pitch_deg / (0.5 * CAM_VFOV);
-        // normalVec.y -= droneAngles.roll_deg / (0.5 * CAM_HFOV);
+        mavsdk::Telemetry::EulerAngle droneAngles = flightCtrl.getEulerAngle();
+        angle = angle + droneAngles.roll_deg;
 
-        velo.forward_m_s = -normalVec.y * MAX_VELO_HORI_MS;
+        if (angle < 1.25)
+        {
+            velo.forward_m_s = 0.25 * MAX_VELO_HORI_MS;
+        } else {
+            velo.forward_m_s = 0.05 * MAX_VELO_HORI_MS;
+        }
         velo.yawspeed_deg_s = normalVec.x * MAX_YAWSPEED;
+        velo.right_m_s = angle * 0.075 * MAX_VELO_HORI_MS;
     }
     else
     {
-        velo.yawspeed_deg_s = 0.5 * MAX_YAWSPEED;
+        velo.yawspeed_deg_s = -0.2 * MAX_YAWSPEED;
         returnCode = false;
+    }
+
+    float currAlt = flightCtrl.getAltitude();
+    if (currAlt < 0.9)
+    {
+        velo.down_m_s = -0.2;
+    }
+    else
+    {
+        if (currAlt > 1.1)
+        {
+            velo.down_m_s = 0.2;
+        }
     }
 
     flightCtrl.setOffbardVelo(velo);
@@ -233,7 +259,7 @@ bool FlightAutonomy::avoidingStep(cv::Mat &img)
 
 bool FlightAutonomy::spinOnce()
 {
-    imgRec.receiveImage();
+    // imgRec.receiveImage();
     cv::Mat img = imgRec.getImage();
 
     bool returnCode;
@@ -262,6 +288,18 @@ bool FlightAutonomy::spinOnce()
     {
         mavsdk::Offboard::VelocityBodyYawspeed velo = {0.5f * MAX_VELO_HORI_MS, 0.f, 0.f, 0.f};
         returnCode = 0;
+        float currAlt = flightCtrl.getAltitude();
+        if (currAlt < 0.9)
+        {
+            velo.down_m_s = -0.2;
+        }
+        else
+        {
+            if (currAlt > 1.1)
+            {
+                velo.down_m_s = 0.2;
+            }
+        }
         flightCtrl.setOffbardVelo(velo);
         break;
     }
@@ -272,9 +310,9 @@ bool FlightAutonomy::spinOnce()
     }
     }
 
+    std::chrono::steady_clock::time_point tNow = std::chrono::steady_clock::now();
     if (returnCode == 0)
     {
-        std::chrono::steady_clock::time_point tNow = std::chrono::steady_clock::now();
         if (currAlg != forwardFlight)
         {
             if (std::chrono::duration_cast<std::chrono::seconds>(tNow - timeoutCounter).count() >= NO_DETECT_TIMEOUT)
@@ -296,6 +334,7 @@ bool FlightAutonomy::spinOnce()
     }
 
 #ifdef FA_DEBUG
+    cv::resize(img, img, cv::Size(320, 240));
     cv::imshow(OPENCV_WINDOW, imgRec.getImage());
     cv::waitKey(1);
 #endif

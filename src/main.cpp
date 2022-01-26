@@ -1,16 +1,21 @@
+#include <ros/ros.h>
 #include "FlightAutonomy/FlightAutonomy.h"
 
 void printHelp(std::string progName)
 {
     std::cout << "Usage:" << std::endl;
-    std::cout << progName + "algorithm drone_connection_URL [cameraID]" << std::endl;
+    std::cout << progName + " algorithm drone_connection_URL [cameraID]" << std::endl;
     std::cout << "For example" << std::endl;
     std::cout << progName + "landing udp://:14445 0" << std::endl;
 }
 
 int main(int argc, char **argv)
 {
-    FlightAutonomy fa;
+    ros::init(argc, argv, "flight_autonomy");
+    ros::NodeHandle nh;
+    ros::Rate rate(30);
+
+    FlightAutonomy fa(nh);
 
     if (!fa.readArgs(argc, argv))
     {
@@ -31,9 +36,12 @@ int main(int argc, char **argv)
 
     while (fa.ok())
     {
+        ros::spinOnce();
         fa.spinOnce();
+        rate.sleep();
     }
 
+    fa.stop();
     fa.printExitStatus();
 
     std::cout << "Exitted successfully." << std::endl;

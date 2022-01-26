@@ -2,6 +2,7 @@
 
 #include "FlightAutonomy/defines.h"
 
+#include <ros/ros.h>
 #include <opencv2/opencv.hpp>
 #ifdef FA_DEBUG
 #include <opencv2/highgui/highgui.hpp>
@@ -24,19 +25,20 @@ class FlightAutonomy
     const std::string OPENCV_WINDOW = "Cam View";
 #endif
 
-    ImageReceiver imgRec;     /**< Odbiornik obrazu z kamery */
-    FlightControl flightCtrl; /**< Kontrola lotu maszyny */
-    ObjectDetector objDetect; /**< Wykrywacz obiektów na obrazie z kamery */
-    Algorithms currAlg;       /**< Obecnie wykonywany algorytm */
-    int landingPadID = 68;    /**< ID znacznika Aruco lądowiska */
-    int exitCode;             /**< Kod wyjścia z systemu: 0 - kontynuuj pracę, 1 - wyjście normalne, 2 - niepoprawna wysokość, 3 - nie wykryto znaczników przez zadany czas */
-    std::chrono::steady_clock::time_point timeoutCounter;       /**< Odlicza czas do automatycznego wyjścia z programu w przypadku nie wykrywania znaczników */
+    ImageReceiver imgRec;                                 /**< Odbiornik obrazu z kamery */
+    FlightControl flightCtrl;                             /**< Kontrola lotu maszyny */
+    ObjectDetector objDetect;                             /**< Wykrywacz obiektów na obrazie z kamery */
+    Algorithms currAlg;                                   /**< Obecnie wykonywany algorytm */
+    int landingPadID = 68;                                /**< ID znacznika Aruco lądowiska */
+    int exitCode;                                         /**< Kod wyjścia z systemu: 0 - kontynuuj pracę, 1 - wyjście normalne, 2 - niepoprawna wysokość, 3 - nie wykryto znaczników przez zadany czas */
+    std::chrono::steady_clock::time_point timeoutCounter; /**< Odlicza czas do automatycznego wyjścia z programu w przypadku nie wykrywania znaczników */
 
 public:
+
     /**
-     * @brief Konstruuje obiekt FlightAutonomy inicjalizując pola domyślnymi wartościami.
+     * @brief Konstruuje obiekt FlightAutonomy ustawiając uchwyt rosa i domyślną ścieżkę tematu kamery.
      */
-    FlightAutonomy();
+    FlightAutonomy(ros::NodeHandle &_nh);
 
     /**
      * @brief Destuktor. W trybie debugowania niszczący okno OpenCV.
@@ -83,6 +85,14 @@ public:
      * @return false Pojawił się błąd działania lub warunek wyjścia.
      */
     bool ok();
+
+    /**
+     * @brief Kończy działanie algorytmu i wyłącza tryb offboard.
+     * 
+     * @return true Pomyślnie zakończono działanie.
+     * @return false Pojawił się błąd podczas próby zakończenia działania.
+     */
+    bool stop();
 
     /**
      * @brief Zwraca wartość kodu wyjścia.

@@ -1,5 +1,8 @@
 #pragma once
 
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
@@ -8,6 +11,8 @@
  */
 class ImageReceiver
 {
+    ros::NodeHandle &nh;     /**< Uchwyt do węzła ROS */
+    ros::Subscriber imgSub;  /**< Subskrybent do obrazu z kamery */
     cv::VideoCapture cap;    /**< Obiekt przechwytujący stream video */
     int deviceID = 0;        /**< Kamera 0 - domyślna */
     int apiID = cv::CAP_ANY; /**< Domyślnie autodetekcja */
@@ -20,9 +25,14 @@ public:
     ImageReceiver() = default;
 
     /**
+     * @brief Konstruuje obiekt ImageReceiver.
+     */
+    ImageReceiver(ros::NodeHandle &_nh, std::string topic);
+
+    /**
      * @brief Konstruuje obiekt ImageReceiver wpisując przekazane wartości do pól tworzonego obiektu.
      */
-    ImageReceiver(int deviceID, int apiID = 0);
+    ImageReceiver(int deviceID, ros::NodeHandle &_nh, int apiID = 0);
 
     /**
      * @brief Niszczy obiekt ImageReceiver.
@@ -56,4 +66,11 @@ public:
      * @return Ramka obrazu.
      */
     cv::Mat getImage();
+
+    /**
+     * @brief Wywołanie zwrotne po pojawieniu się nowej ramki obrazu.
+     * 
+     * @param img Wskaźnik na najnowszą ramkę
+     */
+    void imgSubCallback(const sensor_msgs::ImageConstPtr &img);
 };
