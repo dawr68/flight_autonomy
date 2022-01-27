@@ -13,6 +13,10 @@
 #include "defines.h"
 #include "TelemetryData.h"
 
+/**
+ * @brief Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink.
+ * Zapewnia odbiór kluczowych danych telemetrycznych i pozwala na sterowanie poprzez komendy offboard.
+ */
 class FlightControl
 {
     std::string connectionURL; ///< Adres połączenia protokołu MAVLink

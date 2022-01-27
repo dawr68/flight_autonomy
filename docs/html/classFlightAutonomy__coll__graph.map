@@ -1,7 +1,7 @@
 <map id="FlightAutonomy" name="FlightAutonomy">
 <area shape="rect" id="node1" title="Klasa odpowiedzialna za kompleksową obsługę autonomii lotu bazującej na analizie wizyjnej...." alt="" coords="175,725,316,1081"/>
 <area shape="rect" id="node2" href="$classImageReceiver.html" title="Klasa odbierająca stream wideo z podanego źródła." alt="" coords="5,358,144,567"/>
-<area shape="rect" id="node3" href="$classFlightControl.html" title=" " alt="" coords="169,263,322,663"/>
+<area shape="rect" id="node3" href="$classFlightControl.html" title="Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink. Zapewnia odbiór kluczowyc..." alt="" coords="169,263,322,663"/>
 <area shape="rect" id="node4" href="$structTelemetryData.html" title="Struktura przechowująca dane telemetryczne odebrane z pojazdu przez MavLink." alt="" coords="186,5,305,200"/>
 <area shape="rect" id="node5" href="$classObjectDetector.html" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco..." alt="" coords="346,351,494,575"/>
 </map>

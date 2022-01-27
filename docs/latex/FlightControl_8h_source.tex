@@ -17,53 +17,53 @@
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{defines_8h}{defines.h}}"{}}}
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{TelemetryData_8h}{TelemetryData.h}}"{}}}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classFlightControl}{FlightControl}}}
-\DoxyCodeLine{17 \{}
-\DoxyCodeLine{18     std::string \mbox{\hyperlink{classFlightControl_ad3b2f77ba73fa6047d2449aef114e036}{connectionURL}}; }
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     mavsdk::Mavsdk \mbox{\hyperlink{classFlightControl_a89f0d84af6022790058ca5b119729ba1}{mavsdk}};                        }
-\DoxyCodeLine{21     std::shared\_ptr<mavsdk::System> \mbox{\hyperlink{classFlightControl_a42e8a928279787d20a0f725367e207b1}{system}};       }
-\DoxyCodeLine{22     std::shared\_ptr<mavsdk::Info> \mbox{\hyperlink{classFlightControl_a6b650dcb5dd419477502651e4e374b91}{info}};           }
-\DoxyCodeLine{23     std::shared\_ptr<mavsdk::Telemetry> \mbox{\hyperlink{classFlightControl_a5f6e2ab4bd22b9f7ed665118fb8144af}{telemetry}}; }
-\DoxyCodeLine{24     std::shared\_ptr<mavsdk::Action> \mbox{\hyperlink{classFlightControl_aa58e5dfe210f59ec3202f36ee7a5d550}{action}};       }
-\DoxyCodeLine{25     std::shared\_ptr<mavsdk::Offboard> \mbox{\hyperlink{classFlightControl_ab3e7b5abfa648d4c291abdc3d3f6fb4b}{offboard}};   }
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \mbox{\hyperlink{structTelemetryData}{TelemetryData}} \mbox{\hyperlink{classFlightControl_a755617e8fe2eb80ee766f089997b99c3}{telemData}}; }
-\DoxyCodeLine{28 }
-\DoxyCodeLine{34     std::shared\_ptr<mavsdk::System> \mbox{\hyperlink{classFlightControl_af8b2e9565221188d15e606f50caa8fc0}{getSystem}}();}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_aec4227a4f2cc025de456e38accee1453}{subscribeTelem}}();}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42 \textcolor{keyword}{public}:}
-\DoxyCodeLine{46     \mbox{\hyperlink{classFlightControl_a5ac7910e8b4116feacde217d2f47e553}{FlightControl}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{51     \mbox{\hyperlink{classFlightControl_acd9f5dc068bc8d817c6d273e671ceaa9}{\string~FlightControl}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{59     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a9164aa3fca1ed70fd4fa44889cf90901}{connect}}();}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{67     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a998d4d676ffc4ed1a0eeaf2685a9abb0}{checkStatus}}();}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{74     mavsdk::Telemetry::EulerAngle \mbox{\hyperlink{classFlightControl_a07e6e757dfd1060113c75d49789c5347}{getEulerAngle}}();}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_aff4c1c3e065602fff23947d2cfb10448}{setConnectionURL}}(\textcolor{keyword}{const} std::string url);}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_a8853436a710b17dd28bf932cbb499a4f}{printTelem}}();}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{94     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a84f16d96bbbbfe450ec7dd6ef619e2ce}{observeInAir}}();}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{102     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_ae654f2e83d220da97dd0c9c1be509cdb}{startOffbard}}();}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{110     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a74dd9b48e4b837e02f8e3d3977bd22da}{stopOffboard}}();}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{118     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_abb1969a4e35e1625c950de054a71bed0}{setOffbardVelo}}(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{126     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a33a38bbf8c96f80964e996dde51937d7}{land}}();}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{133     \textcolor{keywordtype}{float} \mbox{\hyperlink{classFlightControl_ad8bc6ae62ce57ce4d481bbd98659188d}{getAltitude}}();}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{140     mavsdk::Telemetry::FlightMode \mbox{\hyperlink{classFlightControl_a0ea81d423f2c10f92e82da1e238f66c0}{getFlightMode}}();}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{149     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a05c19705125a001ca20c606fc226fcec}{checkVelo}}(mavsdk::Offboard::VelocityBodyYawspeed \&velocities);}
-\DoxyCodeLine{150 \};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classFlightControl}{FlightControl}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     std::string \mbox{\hyperlink{classFlightControl_ad3b2f77ba73fa6047d2449aef114e036}{connectionURL}}; }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     mavsdk::Mavsdk \mbox{\hyperlink{classFlightControl_a89f0d84af6022790058ca5b119729ba1}{mavsdk}};                        }
+\DoxyCodeLine{25     std::shared\_ptr<mavsdk::System> \mbox{\hyperlink{classFlightControl_a42e8a928279787d20a0f725367e207b1}{system}};       }
+\DoxyCodeLine{26     std::shared\_ptr<mavsdk::Info> \mbox{\hyperlink{classFlightControl_a6b650dcb5dd419477502651e4e374b91}{info}};           }
+\DoxyCodeLine{27     std::shared\_ptr<mavsdk::Telemetry> \mbox{\hyperlink{classFlightControl_a5f6e2ab4bd22b9f7ed665118fb8144af}{telemetry}}; }
+\DoxyCodeLine{28     std::shared\_ptr<mavsdk::Action> \mbox{\hyperlink{classFlightControl_aa58e5dfe210f59ec3202f36ee7a5d550}{action}};       }
+\DoxyCodeLine{29     std::shared\_ptr<mavsdk::Offboard> \mbox{\hyperlink{classFlightControl_ab3e7b5abfa648d4c291abdc3d3f6fb4b}{offboard}};   }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \mbox{\hyperlink{structTelemetryData}{TelemetryData}} \mbox{\hyperlink{classFlightControl_a755617e8fe2eb80ee766f089997b99c3}{telemData}}; }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38     std::shared\_ptr<mavsdk::System> \mbox{\hyperlink{classFlightControl_af8b2e9565221188d15e606f50caa8fc0}{getSystem}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_aec4227a4f2cc025de456e38accee1453}{subscribeTelem}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classFlightControl_a5ac7910e8b4116feacde217d2f47e553}{FlightControl}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classFlightControl_acd9f5dc068bc8d817c6d273e671ceaa9}{\string~FlightControl}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a9164aa3fca1ed70fd4fa44889cf90901}{connect}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a998d4d676ffc4ed1a0eeaf2685a9abb0}{checkStatus}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78     mavsdk::Telemetry::EulerAngle \mbox{\hyperlink{classFlightControl_a07e6e757dfd1060113c75d49789c5347}{getEulerAngle}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_aff4c1c3e065602fff23947d2cfb10448}{setConnectionURL}}(\textcolor{keyword}{const} std::string url);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightControl_a8853436a710b17dd28bf932cbb499a4f}{printTelem}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{98     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a84f16d96bbbbfe450ec7dd6ef619e2ce}{observeInAir}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_ae654f2e83d220da97dd0c9c1be509cdb}{startOffbard}}();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a74dd9b48e4b837e02f8e3d3977bd22da}{stopOffboard}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{122     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_abb1969a4e35e1625c950de054a71bed0}{setOffbardVelo}}(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{130     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a33a38bbf8c96f80964e996dde51937d7}{land}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{float} \mbox{\hyperlink{classFlightControl_ad8bc6ae62ce57ce4d481bbd98659188d}{getAltitude}}();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144     mavsdk::Telemetry::FlightMode \mbox{\hyperlink{classFlightControl_a0ea81d423f2c10f92e82da1e238f66c0}{getFlightMode}}();}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{153     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightControl_a05c19705125a001ca20c606fc226fcec}{checkVelo}}(mavsdk::Offboard::VelocityBodyYawspeed \&velocities);}
+\DoxyCodeLine{154 \};}
 
 \end{DoxyCode}

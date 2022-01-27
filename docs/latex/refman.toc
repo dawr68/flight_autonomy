@@ -35,34 +35,35 @@
 \contentsline {paragraph}{\numberline {3.1.4.7}objDetect}{10}{paragraph.3.1.4.7}%
 \contentsline {paragraph}{\numberline {3.1.4.8}timeoutCounter}{10}{paragraph.3.1.4.8}%
 \contentsline {subsection}{\numberline {3.2}Dokumentacja klasy Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control}{11}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Dokumentacja konstruktora i destruktora}{13}{subsubsection.3.2.1}%
-\contentsline {paragraph}{\numberline {3.2.1.1}FlightControl()}{13}{paragraph.3.2.1.1}%
-\contentsline {paragraph}{\numberline {3.2.1.2}$\sim $FlightControl()}{13}{paragraph.3.2.1.2}%
-\contentsline {subsubsection}{\numberline {3.2.2}Dokumentacja funkcji składowych}{13}{subsubsection.3.2.2}%
-\contentsline {paragraph}{\numberline {3.2.2.1}checkStatus()}{13}{paragraph.3.2.2.1}%
-\contentsline {paragraph}{\numberline {3.2.2.2}checkVelo()}{13}{paragraph.3.2.2.2}%
-\contentsline {paragraph}{\numberline {3.2.2.3}connect()}{14}{paragraph.3.2.2.3}%
-\contentsline {paragraph}{\numberline {3.2.2.4}getAltitude()}{14}{paragraph.3.2.2.4}%
-\contentsline {paragraph}{\numberline {3.2.2.5}getEulerAngle()}{14}{paragraph.3.2.2.5}%
-\contentsline {paragraph}{\numberline {3.2.2.6}getFlightMode()}{14}{paragraph.3.2.2.6}%
-\contentsline {paragraph}{\numberline {3.2.2.7}getSystem()}{15}{paragraph.3.2.2.7}%
-\contentsline {paragraph}{\numberline {3.2.2.8}land()}{15}{paragraph.3.2.2.8}%
-\contentsline {paragraph}{\numberline {3.2.2.9}observeInAir()}{15}{paragraph.3.2.2.9}%
-\contentsline {paragraph}{\numberline {3.2.2.10}printTelem()}{15}{paragraph.3.2.2.10}%
-\contentsline {paragraph}{\numberline {3.2.2.11}setConnectionURL()}{15}{paragraph.3.2.2.11}%
-\contentsline {paragraph}{\numberline {3.2.2.12}setOffbardVelo()}{16}{paragraph.3.2.2.12}%
-\contentsline {paragraph}{\numberline {3.2.2.13}startOffbard()}{16}{paragraph.3.2.2.13}%
-\contentsline {paragraph}{\numberline {3.2.2.14}stopOffboard()}{16}{paragraph.3.2.2.14}%
-\contentsline {paragraph}{\numberline {3.2.2.15}subscribeTelem()}{16}{paragraph.3.2.2.15}%
-\contentsline {subsubsection}{\numberline {3.2.3}Dokumentacja atrybutów składowych}{16}{subsubsection.3.2.3}%
-\contentsline {paragraph}{\numberline {3.2.3.1}action}{16}{paragraph.3.2.3.1}%
-\contentsline {paragraph}{\numberline {3.2.3.2}connectionURL}{17}{paragraph.3.2.3.2}%
-\contentsline {paragraph}{\numberline {3.2.3.3}info}{17}{paragraph.3.2.3.3}%
-\contentsline {paragraph}{\numberline {3.2.3.4}mavsdk}{17}{paragraph.3.2.3.4}%
-\contentsline {paragraph}{\numberline {3.2.3.5}offboard}{17}{paragraph.3.2.3.5}%
-\contentsline {paragraph}{\numberline {3.2.3.6}system}{17}{paragraph.3.2.3.6}%
-\contentsline {paragraph}{\numberline {3.2.3.7}telemData}{17}{paragraph.3.2.3.7}%
-\contentsline {paragraph}{\numberline {3.2.3.8}telemetry}{17}{paragraph.3.2.3.8}%
+\contentsline {subsubsection}{\numberline {3.2.1}Opis szczegółowy}{13}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Dokumentacja konstruktora i destruktora}{13}{subsubsection.3.2.2}%
+\contentsline {paragraph}{\numberline {3.2.2.1}FlightControl()}{13}{paragraph.3.2.2.1}%
+\contentsline {paragraph}{\numberline {3.2.2.2}$\sim $FlightControl()}{13}{paragraph.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Dokumentacja funkcji składowych}{13}{subsubsection.3.2.3}%
+\contentsline {paragraph}{\numberline {3.2.3.1}checkStatus()}{13}{paragraph.3.2.3.1}%
+\contentsline {paragraph}{\numberline {3.2.3.2}checkVelo()}{13}{paragraph.3.2.3.2}%
+\contentsline {paragraph}{\numberline {3.2.3.3}connect()}{14}{paragraph.3.2.3.3}%
+\contentsline {paragraph}{\numberline {3.2.3.4}getAltitude()}{14}{paragraph.3.2.3.4}%
+\contentsline {paragraph}{\numberline {3.2.3.5}getEulerAngle()}{14}{paragraph.3.2.3.5}%
+\contentsline {paragraph}{\numberline {3.2.3.6}getFlightMode()}{14}{paragraph.3.2.3.6}%
+\contentsline {paragraph}{\numberline {3.2.3.7}getSystem()}{15}{paragraph.3.2.3.7}%
+\contentsline {paragraph}{\numberline {3.2.3.8}land()}{15}{paragraph.3.2.3.8}%
+\contentsline {paragraph}{\numberline {3.2.3.9}observeInAir()}{15}{paragraph.3.2.3.9}%
+\contentsline {paragraph}{\numberline {3.2.3.10}printTelem()}{15}{paragraph.3.2.3.10}%
+\contentsline {paragraph}{\numberline {3.2.3.11}setConnectionURL()}{15}{paragraph.3.2.3.11}%
+\contentsline {paragraph}{\numberline {3.2.3.12}setOffbardVelo()}{16}{paragraph.3.2.3.12}%
+\contentsline {paragraph}{\numberline {3.2.3.13}startOffbard()}{16}{paragraph.3.2.3.13}%
+\contentsline {paragraph}{\numberline {3.2.3.14}stopOffboard()}{16}{paragraph.3.2.3.14}%
+\contentsline {paragraph}{\numberline {3.2.3.15}subscribeTelem()}{16}{paragraph.3.2.3.15}%
+\contentsline {subsubsection}{\numberline {3.2.4}Dokumentacja atrybutów składowych}{16}{subsubsection.3.2.4}%
+\contentsline {paragraph}{\numberline {3.2.4.1}action}{16}{paragraph.3.2.4.1}%
+\contentsline {paragraph}{\numberline {3.2.4.2}connectionURL}{17}{paragraph.3.2.4.2}%
+\contentsline {paragraph}{\numberline {3.2.4.3}info}{17}{paragraph.3.2.4.3}%
+\contentsline {paragraph}{\numberline {3.2.4.4}mavsdk}{17}{paragraph.3.2.4.4}%
+\contentsline {paragraph}{\numberline {3.2.4.5}offboard}{17}{paragraph.3.2.4.5}%
+\contentsline {paragraph}{\numberline {3.2.4.6}system}{17}{paragraph.3.2.4.6}%
+\contentsline {paragraph}{\numberline {3.2.4.7}telemData}{17}{paragraph.3.2.4.7}%
+\contentsline {paragraph}{\numberline {3.2.4.8}telemetry}{17}{paragraph.3.2.4.8}%
 \contentsline {subsection}{\numberline {3.3}Dokumentacja klasy Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Receiver}{18}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Opis szczegółowy}{19}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Dokumentacja konstruktora i destruktora}{19}{subsubsection.3.3.2}%

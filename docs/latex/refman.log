@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.4)  27 JAN 2022 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.4)  27 JAN 2022 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -795,7 +795,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/classFlightAutonomy__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<classFlightAutonomy__coll__graph.pdf, id=320, 448.67625pt x 890.32625pt>
+<classFlightAutonomy__coll__graph.pdf, id=323, 448.67625pt x 890.32625pt>
 File: classFlightAutonomy__coll__graph.pdf Graphic file (type pdf)
 <use classFlightAutonomy__coll__graph.pdf>
 Package pdftex.def Info: classFlightAutonomy__coll__graph.pdf  used on input line 19.
@@ -898,68 +898,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/classFlightControl__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<classFlightControl__coll__graph.pdf, id=486, 195.73125pt x 575.14874pt>
+<classFlightControl__coll__graph.pdf, id=491, 195.73125pt x 575.14874pt>
 File: classFlightControl__coll__graph.pdf Graphic file (type pdf)
 <use classFlightControl__coll__graph.pdf>
-Package pdftex.def Info: classFlightControl__coll__graph.pdf  used on input line 14.
+Package pdftex.def Info: classFlightControl__coll__graph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 187.1771pt x 550.0pt.
  [10] [11] [12]
-Underfull \hbox (badness 10000) detected at line 112
+Underfull \hbox (badness 10000) detected at line 120
 [][][]
  []
 
 [13]
-Underfull \hbox (badness 10000) detected at line 132
+Underfull \hbox (badness 10000) detected at line 140
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 147
+Underfull \hbox (badness 10000) detected at line 155
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 170
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 175
+Underfull \hbox (badness 10000) detected at line 183
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 188
+Underfull \hbox (badness 10000) detected at line 196
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 201
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 214
+Underfull \hbox (badness 10000) detected at line 209
 [][][]
  []
 
 [14]
-Underfull \hbox (badness 10000) detected at line 229
+Underfull \hbox (badness 10000) detected at line 222
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 237
 [][][]
  []
 
 [15]
-Underfull \hbox (badness 10000) detected at line 269
+Underfull \hbox (badness 10000) detected at line 277
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 284
+Underfull \hbox (badness 10000) detected at line 292
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 299
+Underfull \hbox (badness 10000) detected at line 307
 [][][]
  []
 
@@ -967,21 +967,21 @@ Underfull \hbox (badness 10000) detected at line 299
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/classImageReceiver__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<classImageReceiver__coll__graph.pdf, id=632, 184.69pt x 237.88875pt>
+<classImageReceiver__coll__graph.pdf, id=637, 184.69pt x 237.88875pt>
 File: classImageReceiver__coll__graph.pdf Graphic file (type pdf)
 <use classImageReceiver__coll__graph.pdf>
-Package pdftex.def Info: classImageReceiver__coll__graph.pdf  used on input line 19.
+Package pdftex.def Info: classImageReceiver__coll__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 184.0pt x 237.00246pt.
  [17] [18]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 60.
+(Font)              scaled to size 7.19995pt on input line 59.
 
-Underfull \hbox (badness 10000) detected at line 99
+Underfull \hbox (badness 10000) detected at line 98
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 112
+Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
@@ -989,33 +989,33 @@ Underfull \hbox (badness 10000) detected at line 112
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/classObjectDetector__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<classObjectDetector__coll__graph.pdf, id=718, 191.71625pt x 248.93pt>
+<classObjectDetector__coll__graph.pdf, id=723, 191.71625pt x 248.93pt>
 File: classObjectDetector__coll__graph.pdf Graphic file (type pdf)
 <use classObjectDetector__coll__graph.pdf>
-Package pdftex.def Info: classObjectDetector__coll__graph.pdf  used on input line 19.
+Package pdftex.def Info: classObjectDetector__coll__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 191.0pt x 248.01398pt.
  [21] [22] [23]
-Underfull \hbox (badness 10000) detected at line 116
+Underfull \hbox (badness 10000) detected at line 115
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 136
+Underfull \hbox (badness 10000) detected at line 135
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
  \T1/phv/b/n/10 3.4.3.3 de-tec-tA-ru-co-Gate()[] \T1/pcr/m/n/8 std[]::tuple$\OML/cmm/m/it/8 <$ \T1/pcr/m/n/8 cv[]::[]Point2f, float, float $\OML/cmm/m/it/8 >$ \T1/pcr/m/n/8 Object[]Detector[]::detect[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 156
+Underfull \hbox (badness 10000) detected at line 155
 [][][]
  []
 
 [24]
-Underfull \hbox (badness 10000) detected at line 176
+Underfull \hbox (badness 10000) detected at line 175
 [][][]
  []
 
@@ -1023,133 +1023,133 @@ Underfull \hbox (badness 10000) detected at line 176
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/structTelemetryData__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<structTelemetryData__coll__graph.pdf, id=803, 169.63374pt x 226.8475pt>
+<structTelemetryData__coll__graph.pdf, id=808, 169.63374pt x 226.8475pt>
 File: structTelemetryData__coll__graph.pdf Graphic file (type pdf)
 <use structTelemetryData__coll__graph.pdf>
-Package pdftex.def Info: structTelemetryData__coll__graph.pdf  used on input line 19.
+Package pdftex.def Info: structTelemetryData__coll__graph.pdf  used on input line 18.
 (pdftex.def)             Requested size: 169.0pt x 226.00928pt.
  [25] [26]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/algorithms_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/algorithms_8h__dep__incl.pdf>
-<algorithms_8h__dep__incl.pdf, id=864, 291.0875pt x 234.8775pt>
+<algorithms_8h__dep__incl.pdf, id=869, 291.0875pt x 234.8775pt>
 File: algorithms_8h__dep__incl.pdf Graphic file (type pdf)
 <use algorithms_8h__dep__incl.pdf>
-Package pdftex.def Info: algorithms_8h__dep__incl.pdf  used on input line 8.
+Package pdftex.def Info: algorithms_8h__dep__incl.pdf  used on input line 7.
 (pdftex.def)             Requested size: 290.0pt x 234.01677pt.
  [27] [28]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/algorithms_8h_source.tex) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/defines_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/defines_8h__dep__incl.pdf>
-<defines_8h__dep__incl.pdf, id=910, 460.72125pt x 302.12875pt>
+<defines_8h__dep__incl.pdf, id=915, 460.72125pt x 302.12875pt>
 File: defines_8h__dep__incl.pdf Graphic file (type pdf)
 <use defines_8h__dep__incl.pdf>
-Package pdftex.def Info: defines_8h__dep__incl.pdf  used on input line 8.
+Package pdftex.def Info: defines_8h__dep__incl.pdf  used on input line 7.
 (pdftex.def)             Requested size: 350.0pt x 229.5188pt.
  [29] [30]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/defines_8h_source.tex [31]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<FlightAutonomy_8h__incl.pdf, id=994, 1830.84pt x 302.12875pt>
+<FlightAutonomy_8h__incl.pdf, id=999, 1830.84pt x 302.12875pt>
 File: FlightAutonomy_8h__incl.pdf Graphic file (type pdf)
 <use FlightAutonomy_8h__incl.pdf>
-Package pdftex.def Info: FlightAutonomy_8h__incl.pdf  used on input line 15.
+Package pdftex.def Info: FlightAutonomy_8h__incl.pdf  used on input line 14.
 (pdftex.def)             Requested size: 350.0pt x 57.75542pt.
  </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h__dep__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<FlightAutonomy_8h__dep__incl.pdf, id=1009, 291.0875pt x 167.62625pt>
+<FlightAutonomy_8h__dep__incl.pdf, id=1015, 291.0875pt x 167.62625pt>
 File: FlightAutonomy_8h__dep__incl.pdf Graphic file (type pdf)
 <use FlightAutonomy_8h__dep__incl.pdf>
-Package pdftex.def Info: FlightAutonomy_8h__dep__incl.pdf  used on input line 23.
+Package pdftex.def Info: FlightAutonomy_8h__dep__incl.pdf  used on input line 21.
 (pdftex.def)             Requested size: 290.0pt x 167.01195pt.
  [32]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8h_source.tex [33]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8h__incl.pdf>
-<FlightControl_8h__incl.pdf, id=1071, 1054.94125pt x 245.91875pt>
+<FlightControl_8h__incl.pdf, id=1076, 1054.94125pt x 245.91875pt>
 File: FlightControl_8h__incl.pdf Graphic file (type pdf)
 <use FlightControl_8h__incl.pdf>
-Package pdftex.def Info: FlightControl_8h__incl.pdf  used on input line 19.
+Package pdftex.def Info: FlightControl_8h__incl.pdf  used on input line 18.
 (pdftex.def)             Requested size: 350.0pt x 81.58871pt.
  </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8h__dep__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<FlightControl_8h__dep__incl.pdf, id=1086, 382.42876pt x 234.8775pt>
+<FlightControl_8h__dep__incl.pdf, id=1091, 382.42876pt x 234.8775pt>
 File: FlightControl_8h__dep__incl.pdf Graphic file (type pdf)
 <use FlightControl_8h__dep__incl.pdf>
-Package pdftex.def Info: FlightControl_8h__dep__incl.pdf  used on input line 27.
+Package pdftex.def Info: FlightControl_8h__dep__incl.pdf  used on input line 25.
 (pdftex.def)             Requested size: 350.0pt x 214.97173pt.
  [34]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8h_source.tex [35]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8h__incl.pdf>
-<ImageReceiver_8h__incl.pdf, id=1141, 353.32pt x 167.62625pt>
+<ImageReceiver_8h__incl.pdf, id=1146, 353.32pt x 167.62625pt>
 File: ImageReceiver_8h__incl.pdf Graphic file (type pdf)
 <use ImageReceiver_8h__incl.pdf>
-Package pdftex.def Info: ImageReceiver_8h__incl.pdf  used on input line 10.
+Package pdftex.def Info: ImageReceiver_8h__incl.pdf  used on input line 9.
 (pdftex.def)             Requested size: 350.0pt x 166.0528pt.
  </Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8h__dep__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<ImageReceiver_8h__dep__incl.pdf, id=1149, 392.46625pt x 234.8775pt>
+<ImageReceiver_8h__dep__incl.pdf, id=1154, 392.46625pt x 234.8775pt>
 File: ImageReceiver_8h__dep__incl.pdf Graphic file (type pdf)
 <use ImageReceiver_8h__dep__incl.pdf>
-Package pdftex.def Info: ImageReceiver_8h__dep__incl.pdf  used on input line 18.
+Package pdftex.def Info: ImageReceiver_8h__dep__incl.pdf  used on input line 16.
 (pdftex.def)             Requested size: 350.0pt x 209.47755pt.
  [36]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8h_source.tex) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8h__incl.pdf>
-<ObjectDetector_8h__incl.pdf, id=1179, 644.4075pt x 167.62625pt>
+<ObjectDetector_8h__incl.pdf, id=1184, 644.4075pt x 167.62625pt>
 File: ObjectDetector_8h__incl.pdf Graphic file (type pdf)
 <use ObjectDetector_8h__incl.pdf>
-Package pdftex.def Info: ObjectDetector_8h__incl.pdf  used on input line 13.
+Package pdftex.def Info: ObjectDetector_8h__incl.pdf  used on input line 12.
 (pdftex.def)             Requested size: 350.0pt x 91.04626pt.
  [37] </Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8h__dep__incl.pdf>
-<ObjectDetector_8h__dep__incl.pdf, id=1202, 392.46625pt x 234.8775pt>
+<ObjectDetector_8h__dep__incl.pdf, id=1207, 392.46625pt x 234.8775pt>
 File: ObjectDetector_8h__dep__incl.pdf Graphic file (type pdf)
 <use ObjectDetector_8h__dep__incl.pdf>
-Package pdftex.def Info: ObjectDetector_8h__dep__incl.pdf  used on input line 21.
+Package pdftex.def Info: ObjectDetector_8h__dep__incl.pdf  used on input line 19.
 (pdftex.def)             Requested size: 350.0pt x 209.47755pt.
 ) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8h_source.tex [38]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/TelemetryData_8h.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/TelemetryData_8h__incl.pdf>
-<TelemetryData_8h__incl.pdf, id=1236, 208.78pt x 178.6675pt>
+<TelemetryData_8h__incl.pdf, id=1241, 208.78pt x 178.6675pt>
 File: TelemetryData_8h__incl.pdf Graphic file (type pdf)
 <use TelemetryData_8h__incl.pdf>
-Package pdftex.def Info: TelemetryData_8h__incl.pdf  used on input line 9.
+Package pdftex.def Info: TelemetryData_8h__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 208.0pt x 178.01003pt.
  </Users/dawr/PROgramming/flight_autonomy/docs/latex/TelemetryData_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/TelemetryData_8h__dep__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<TelemetryData_8h__dep__incl.pdf, id=1244, 382.42876pt x 302.12875pt>
+<TelemetryData_8h__dep__incl.pdf, id=1249, 382.42876pt x 302.12875pt>
 File: TelemetryData_8h__dep__incl.pdf Graphic file (type pdf)
 <use TelemetryData_8h__dep__incl.pdf>
-Package pdftex.def Info: TelemetryData_8h__dep__incl.pdf  used on input line 17.
+Package pdftex.def Info: TelemetryData_8h__dep__incl.pdf  used on input line 15.
 (pdftex.def)             Requested size: 350.0pt x 276.52347pt.
  [39]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/TelemetryData_8h_source.tex) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8cpp.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightAutonomy_8cpp__incl.pdf>
-<FlightAutonomy_8cpp__incl.pdf, id=1270, 1830.84pt x 347.2975pt>
+<FlightAutonomy_8cpp__incl.pdf, id=1275, 1830.84pt x 347.2975pt>
 File: FlightAutonomy_8cpp__incl.pdf Graphic file (type pdf)
 <use FlightAutonomy_8cpp__incl.pdf>
-Package pdftex.def Info: FlightAutonomy_8cpp__incl.pdf  used on input line 9.
+Package pdftex.def Info: FlightAutonomy_8cpp__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 350.0pt x 66.38995pt.
 ) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8cpp.tex [40] </Users/dawr/PROgramming/flight_autonomy/docs/latex/FlightControl_8cpp__incl.pdf>
-<FlightControl_8cpp__incl.pdf, id=1293, 1054.94125pt x 291.0875pt>
+<FlightControl_8cpp__incl.pdf, id=1298, 1054.94125pt x 291.0875pt>
 File: FlightControl_8cpp__incl.pdf Graphic file (type pdf)
 <use FlightControl_8cpp__incl.pdf>
-Package pdftex.def Info: FlightControl_8cpp__incl.pdf  used on input line 9.
+Package pdftex.def Info: FlightControl_8cpp__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 350.0pt x 96.57439pt.
 ) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8cpp.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8cpp__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/ImageReceiver_8cpp__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<ImageReceiver_8cpp__incl.pdf, id=1308, 353.32pt x 212.795pt>
+<ImageReceiver_8cpp__incl.pdf, id=1313, 353.32pt x 212.795pt>
 File: ImageReceiver_8cpp__incl.pdf Graphic file (type pdf)
 <use ImageReceiver_8cpp__incl.pdf>
-Package pdftex.def Info: ImageReceiver_8cpp__incl.pdf  used on input line 9.
+Package pdftex.def Info: ImageReceiver_8cpp__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 350.0pt x 210.79756pt.
 ) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/main_8cpp.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/main_8cpp__incl.pdf
 
 pdfTeX warning: pdflatex (file /Users/dawr/PROgramming/flight_autonomy/docs/latex/main_8cpp__incl.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<main_8cpp__incl.pdf, id=1316, 1830.84pt x 347.2975pt>
+<main_8cpp__incl.pdf, id=1321, 1830.84pt x 347.2975pt>
 File: main_8cpp__incl.pdf Graphic file (type pdf)
 <use main_8cpp__incl.pdf>
-Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 9.
+Package pdftex.def Info: main_8cpp__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 350.0pt x 66.38995pt.
  [41]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8cpp.tex </Users/dawr/PROgramming/flight_autonomy/docs/latex/ObjectDetector_8cpp__incl.pdf>
-<ObjectDetector_8cpp__incl.pdf, id=1343, 644.4075pt x 212.795pt>
+<ObjectDetector_8cpp__incl.pdf, id=1348, 644.4075pt x 212.795pt>
 File: ObjectDetector_8cpp__incl.pdf Graphic file (type pdf)
 <use ObjectDetector_8cpp__incl.pdf>
-Package pdftex.def Info: ObjectDetector_8cpp__incl.pdf  used on input line 9.
+Package pdftex.def Info: ObjectDetector_8cpp__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 350.0pt x 115.5797pt.
 ) [42] (/Users/dawr/PROgramming/flight_autonomy/docs/latex/refman.ind
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
@@ -1159,21 +1159,21 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 
 ] [44] [45]) (/Users/dawr/PROgramming/flight_autonomy/docs/latex/refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 0D14EF79D5BC930B600B3097406B0DF1;12574.
+(rerunfilecheck)             Checksum: 78B11731AA2168CCB024D6BDC55DEF06;12764.
  ) 
 Here is how much of TeX's memory you used:
- 18246 strings out of 478994
- 286681 string characters out of 5858185
- 655023 words of memory out of 5000000
- 34948 multiletter control sequences out of 15000+600000
+ 18248 strings out of 478994
+ 286721 string characters out of 5858185
+ 654230 words of memory out of 5000000
+ 34949 multiletter control sequences out of 15000+600000
  453827 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  112i,16n,117p,781b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on /Users/dawr/PROgramming/flight_autonomy/docs/latex/refman.pdf (47 pages, 480787 bytes).
+Output written on /Users/dawr/PROgramming/flight_autonomy/docs/latex/refman.pdf (47 pages, 481472 bytes).
 PDF statistics:
- 1730 PDF objects out of 2073 (max. 8388607)
- 1541 compressed objects within 16 object streams
- 380 named destinations out of 1000 (max. 500000)
- 527 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1735 PDF objects out of 2073 (max. 8388607)
+ 1546 compressed objects within 16 object streams
+ 381 named destinations out of 1000 (max. 500000)
+ 535 words of extra memory for PDF output out of 10000 (max. 10000000)
 

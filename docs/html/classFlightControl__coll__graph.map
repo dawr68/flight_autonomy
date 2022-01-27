@@ -1,4 +1,4 @@
 <map id="FlightControl" name="FlightControl">
-<area shape="rect" id="node1" title=" " alt="" coords="5,263,159,663"/>
+<area shape="rect" id="node1" title="Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink. Zapewnia odbiór kluczowyc..." alt="" coords="5,263,159,663"/>
 <area shape="rect" id="node2" href="$structTelemetryData.html" title="Struktura przechowująca dane telemetryczne odebrane z pojazdu przez MavLink." alt="" coords="23,5,141,200"/>
 </map>
