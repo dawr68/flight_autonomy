@@ -1,5 +1,4 @@
 #include "FlightAutonomy/ObjectDetector.h"
-#include <iostream>
 
 ObjectDetector::ObjectDetector() : params(cv::aruco::DetectorParameters::create()),
                                    dict(cv::aruco::getPredefinedDictionary(cv::aruco::DICT_4X4_1000))
@@ -32,10 +31,11 @@ cv::Point2f ObjectDetector::detectArucoSingle(const cv::Mat &img, int arucoID)
     return center;
 }
 
-std::tuple<cv::Point2f, int> ObjectDetector::detectArucoGate(const cv::Mat &img, int arucoIDs[4])
+std::tuple<cv::Point2f, float, float> ObjectDetector::detectArucoGate(const cv::Mat &img, int arucoIDs[4])
 {
     cv::Point2f center(-1., -1.);
-    int size = -1;
+    float size = -1;
+    float angle = 0;
 
     cv::aruco::detectMarkers(img, dict, markCor, markIds, params, rejected);
 
@@ -50,7 +50,15 @@ std::tuple<cv::Point2f, int> ObjectDetector::detectArucoGate(const cv::Mat &img,
         {
             if (markIds[i] == arucoIDs[gateVertices.size()])
             {
-                gateVertices.push_back(calcCenter(markCor[i]));
+                int newI = i;
+                for (int g = 0; g < markIds.size(); g++) // Check if there is any same marker closer than found one
+                {
+                    if (markIds[g] == arucoIDs[gateVertices.size()] && calcMarkerSize(markCor[g], img.rows) > calcMarkerSize(markCor[newI], img.rows))
+                    {
+                        newI = g;
+                    }
+                }
+                gateVertices.push_back(calcCenter(markCor[newI]));
             }
         }
     }
@@ -58,13 +66,19 @@ std::tuple<cv::Point2f, int> ObjectDetector::detectArucoGate(const cv::Mat &img,
     if (gateVertices.size() == 4)
     {
         center = calcCenter(gateVertices);
-        size = abs(gateVertices[0].x - gateVertices[1].x); 
+        size = abs(gateVertices[0].x - gateVertices[1].x) / img.cols;
+        angle = atan((gateVertices[1].y - gateVertices[0].y) / (gateVertices[1].x - gateVertices[0].x));
     }
 
-    return std::make_tuple(center, size);
+    return std::make_tuple(center, size, angle);
 }
 
 cv::Point2f ObjectDetector::calcCenter(std::vector<cv::Point2f> corners)
 {
     return cv::Point((corners[0] + corners[2]) / 2);
+}
+
+float ObjectDetector::calcMarkerSize(std::vector<cv::Point2f> corners, int imgHeight)
+{
+    return abs(corners[0].y - corners[2].y) / imgHeight;
 }

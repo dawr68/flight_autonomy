@@ -12,12 +12,12 @@
  */
 class ObjectDetector
 {
-    std::vector<int> markIds;                       /**< Wektor wszystkich wykrytych na obrazie znaczników. */
-    std::vector<std::vector<cv::Point2f>> markCor;  /**< Wektor wektorów koordynatów każdego wykrytecho znacznika. */
-    std::vector<std::vector<cv::Point2f>> rejected; /**< Wektor odrzuconych potencjalnych obiektów będących znacznikami. */
+    std::vector<int> markIds;                       ///< Wektor wszystkich wykrytych na obrazie znaczników.
+    std::vector<std::vector<cv::Point2f>> markCor;  ///< Wektor wektorów koordynatów każdego wykrytecho znacznika.
+    std::vector<std::vector<cv::Point2f>> rejected; ///< Wektor odrzuconych potencjalnych obiektów będących znacznikami.
 
-    cv::Ptr<cv::aruco::DetectorParameters> params; /**< Wskaźnik na parametry algorytmu wykrywającego znaczniki. */
-    cv::Ptr<cv::aruco::Dictionary> dict;           /**< Wskaźnik na słownik znaczników. */
+    cv::Ptr<cv::aruco::DetectorParameters> params; ///< Wskaźnik na parametry algorytmu wykrywającego znaczniki.
+    cv::Ptr<cv::aruco::Dictionary> dict;           ///< Wskaźnik na słownik znaczników.
 
 public:
     /**
@@ -52,9 +52,9 @@ public:
      *
      * @param img Ramka obrazu na której mają zostać wykryte znaczniki.
      * @param arucoIDs Tablica identyfikatorów kolejnych znaczników tworzących bramkę.
-     * @return std::tuple<cv::Point2f, int> Koordynaty środka bramki i jej rozmiar.
+     * @return std::tuple<cv::Point2f, float, float> Koordynaty środka bramki, jej rozmiar, i pochylenie.
      */
-    std::tuple<cv::Point2f, int> detectArucoGate(const cv::Mat &img, int arucoIDs[4]);
+    std::tuple<cv::Point2f, float, float> detectArucoGate(const cv::Mat &img, int arucoIDs[4]);
 
 private:
     /**
@@ -65,4 +65,12 @@ private:
      */
     cv::Point2f calcCenter(std::vector<cv::Point2f> corners);
 
+    /**
+     * @brief Oblicza względny rozmiar znacznika na ramce obrazu.
+     *
+     * @param corners Wektor zawierający koordynaty kolejnych wierzchołków znacznika.
+     * @param imgHeight Wysokość analizowanego obrazu.
+     * @return float Względny rozmiar znacznika dla osi X i Y.
+     */
+    float calcMarkerSize(std::vector<cv::Point2f> corners, int imgHeight);
 };
