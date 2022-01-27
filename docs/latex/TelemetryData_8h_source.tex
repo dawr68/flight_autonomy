@@ -1,0 +1,26 @@
+\hypertarget{TelemetryData_8h_source}{}\doxysubsection{Telemetry\+Data.\+h}
+\label{TelemetryData_8h_source}\index{include/FlightAutonomy/TelemetryData.h@{include/FlightAutonomy/TelemetryData.h}}
+\mbox{\hyperlink{TelemetryData_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <mavsdk/plugins/telemetry/telemetry.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{8 \textcolor{keyword}{struct }\mbox{\hyperlink{structTelemetryData}{TelemetryData}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     uint64\_t \mbox{\hyperlink{structTelemetryData_a02de21dc355cf5a4306f019f4342f5f2}{UUID}} = 0;                        }
+\DoxyCodeLine{11     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structTelemetryData_af3a6c86636a80c6b0bed4610a9d616b7}{health}} = \textcolor{keyword}{false};                      }
+\DoxyCodeLine{12     mavsdk::Telemetry::FlightMode \mbox{\hyperlink{structTelemetryData_a14f6475a76271ddceda82ed2c6425b99}{flightMode}}; }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structTelemetryData_a5861777ab32104d9a3493374a2025bf9}{isArmed}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structTelemetryData_a2a3da19b096eb2dd03631cc913e9b807}{inAir}} = \textcolor{keyword}{false};   }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordtype}{float} \mbox{\hyperlink{structTelemetryData_a193af42fc83454de8bbdb2ada7661ac5}{batteryPercent}} = -\/1; }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{float} \mbox{\hyperlink{structTelemetryData_a248f16b221f47034242f7d9831f60576}{altitude}} = 0; }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     mavsdk::Telemetry::EulerAngle \mbox{\hyperlink{structTelemetryData_ab437eaab8fe7e7563178181214b4bb0f}{eulerAngle}}; }
+\DoxyCodeLine{22     mavsdk::Telemetry::Odometry \mbox{\hyperlink{structTelemetryData_ac919c6b59853b1b734a0dad4e5db4aa1}{odom}};         }
+\DoxyCodeLine{23 \};}
+
+\end{DoxyCode}

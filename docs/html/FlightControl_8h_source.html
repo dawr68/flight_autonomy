@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Flight Autonomy: Plik źródłowy include/FlightAutonomy/FlightControl.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Flight Autonomy
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2ea800da776b1209610a77f4becdf1d2.html">FlightAutonomy</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FlightControl.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="FlightControl_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;future&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;mavsdk/mavsdk.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;mavsdk/plugins/info/info.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;mavsdk/plugins/action/action.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;mavsdk/plugins/telemetry/telemetry.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;mavsdk/plugins/offboard/offboard.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="defines_8h.html">defines.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="TelemetryData_8h.html">TelemetryData.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classFlightControl.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classFlightControl.html">FlightControl</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classFlightControl.html#ad3b2f77ba73fa6047d2449aef114e036">   18</a></span>    std::string <a class="code hl_variable" href="classFlightControl.html#ad3b2f77ba73fa6047d2449aef114e036">connectionURL</a>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classFlightControl.html#a89f0d84af6022790058ca5b119729ba1">   20</a></span>    mavsdk::Mavsdk <a class="code hl_variable" href="classFlightControl.html#a89f0d84af6022790058ca5b119729ba1">mavsdk</a>;                        </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classFlightControl.html#a42e8a928279787d20a0f725367e207b1">   21</a></span>    std::shared_ptr&lt;mavsdk::System&gt; <a class="code hl_variable" href="classFlightControl.html#a42e8a928279787d20a0f725367e207b1">system</a>;       </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classFlightControl.html#a6b650dcb5dd419477502651e4e374b91">   22</a></span>    std::shared_ptr&lt;mavsdk::Info&gt; <a class="code hl_variable" href="classFlightControl.html#a6b650dcb5dd419477502651e4e374b91">info</a>;           </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classFlightControl.html#a5f6e2ab4bd22b9f7ed665118fb8144af">   23</a></span>    std::shared_ptr&lt;mavsdk::Telemetry&gt; <a class="code hl_variable" href="classFlightControl.html#a5f6e2ab4bd22b9f7ed665118fb8144af">telemetry</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classFlightControl.html#aa58e5dfe210f59ec3202f36ee7a5d550">   24</a></span>    std::shared_ptr&lt;mavsdk::Action&gt; <a class="code hl_variable" href="classFlightControl.html#aa58e5dfe210f59ec3202f36ee7a5d550">action</a>;       </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classFlightControl.html#ab3e7b5abfa648d4c291abdc3d3f6fb4b">   25</a></span>    std::shared_ptr&lt;mavsdk::Offboard&gt; <a class="code hl_variable" href="classFlightControl.html#ab3e7b5abfa648d4c291abdc3d3f6fb4b">offboard</a>;   </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classFlightControl.html#a755617e8fe2eb80ee766f089997b99c3">   27</a></span>    <a class="code hl_struct" href="structTelemetryData.html">TelemetryData</a> <a class="code hl_variable" href="classFlightControl.html#a755617e8fe2eb80ee766f089997b99c3">telemData</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::shared_ptr&lt;mavsdk::System&gt; <a class="code hl_function" href="classFlightControl.html#af8b2e9565221188d15e606f50caa8fc0">getSystem</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFlightControl.html#aec4227a4f2cc025de456e38accee1453">subscribeTelem</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classFlightControl.html#a5ac7910e8b4116feacde217d2f47e553">   46</a></span>    <a class="code hl_function" href="classFlightControl.html#a5ac7910e8b4116feacde217d2f47e553">FlightControl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classFlightControl.html#acd9f5dc068bc8d817c6d273e671ceaa9">   51</a></span>    <a class="code hl_function" href="classFlightControl.html#acd9f5dc068bc8d817c6d273e671ceaa9">~FlightControl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a9164aa3fca1ed70fd4fa44889cf90901">connect</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a998d4d676ffc4ed1a0eeaf2685a9abb0">checkStatus</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    mavsdk::Telemetry::EulerAngle <a class="code hl_function" href="classFlightControl.html#a07e6e757dfd1060113c75d49789c5347">getEulerAngle</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFlightControl.html#aff4c1c3e065602fff23947d2cfb10448">setConnectionURL</a>(<span class="keyword">const</span> std::string url);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFlightControl.html#a8853436a710b17dd28bf932cbb499a4f">printTelem</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a84f16d96bbbbfe450ec7dd6ef619e2ce">observeInAir</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#ae654f2e83d220da97dd0c9c1be509cdb">startOffbard</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a74dd9b48e4b837e02f8e3d3977bd22da">stopOffboard</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#abb1969a4e35e1625c950de054a71bed0">setOffbardVelo</a>(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a33a38bbf8c96f80964e996dde51937d7">land</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classFlightControl.html#ad8bc6ae62ce57ce4d481bbd98659188d">getAltitude</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    mavsdk::Telemetry::FlightMode <a class="code hl_function" href="classFlightControl.html#a0ea81d423f2c10f92e82da1e238f66c0">getFlightMode</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFlightControl.html#a05c19705125a001ca20c606fc226fcec">checkVelo</a>(mavsdk::Offboard::VelocityBodyYawspeed &amp;velocities);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>};</div>
+<div class="ttc" id="aTelemetryData_8h_html"><div class="ttname"><a href="TelemetryData_8h.html">TelemetryData.h</a></div></div>
+<div class="ttc" id="aclassFlightControl_html"><div class="ttname"><a href="classFlightControl.html">FlightControl</a></div><div class="ttdef"><b>Definition:</b> FlightControl.h:17</div></div>
+<div class="ttc" id="aclassFlightControl_html_a05c19705125a001ca20c606fc226fcec"><div class="ttname"><a href="classFlightControl.html#a05c19705125a001ca20c606fc226fcec">FlightControl::checkVelo</a></div><div class="ttdeci">bool checkVelo(mavsdk::Offboard::VelocityBodyYawspeed &amp;velocities)</div><div class="ttdoc">Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się,...</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:178</div></div>
+<div class="ttc" id="aclassFlightControl_html_a07e6e757dfd1060113c75d49789c5347"><div class="ttname"><a href="classFlightControl.html#a07e6e757dfd1060113c75d49789c5347">FlightControl::getEulerAngle</a></div><div class="ttdeci">mavsdk::Telemetry::EulerAngle getEulerAngle()</div><div class="ttdoc">Zwraca aktualne kąty pochylenia maszyny.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:100</div></div>
+<div class="ttc" id="aclassFlightControl_html_a0ea81d423f2c10f92e82da1e238f66c0"><div class="ttname"><a href="classFlightControl.html#a0ea81d423f2c10f92e82da1e238f66c0">FlightControl::getFlightMode</a></div><div class="ttdeci">mavsdk::Telemetry::FlightMode getFlightMode()</div><div class="ttdoc">Zwraca aktualny tryb lotu.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:173</div></div>
+<div class="ttc" id="aclassFlightControl_html_a33a38bbf8c96f80964e996dde51937d7"><div class="ttname"><a href="classFlightControl.html#a33a38bbf8c96f80964e996dde51937d7">FlightControl::land</a></div><div class="ttdeci">bool land()</div><div class="ttdoc">Wyzwala tryb lądowania w obecnym punkcie.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:156</div></div>
+<div class="ttc" id="aclassFlightControl_html_a42e8a928279787d20a0f725367e207b1"><div class="ttname"><a href="classFlightControl.html#a42e8a928279787d20a0f725367e207b1">FlightControl::system</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::System &gt; system</div><div class="ttdoc">Obiekt reprezentujący system (autopilot)</div><div class="ttdef"><b>Definition:</b> FlightControl.h:21</div></div>
+<div class="ttc" id="aclassFlightControl_html_a5ac7910e8b4116feacde217d2f47e553"><div class="ttname"><a href="classFlightControl.html#a5ac7910e8b4116feacde217d2f47e553">FlightControl::FlightControl</a></div><div class="ttdeci">FlightControl()=default</div><div class="ttdoc">Tworzy nowy obiekt klasy FlightControl.</div></div>
+<div class="ttc" id="aclassFlightControl_html_a5f6e2ab4bd22b9f7ed665118fb8144af"><div class="ttname"><a href="classFlightControl.html#a5f6e2ab4bd22b9f7ed665118fb8144af">FlightControl::telemetry</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::Telemetry &gt; telemetry</div><div class="ttdoc">Pozwala na odbiór danych telemetrycznych.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:23</div></div>
+<div class="ttc" id="aclassFlightControl_html_a6b650dcb5dd419477502651e4e374b91"><div class="ttname"><a href="classFlightControl.html#a6b650dcb5dd419477502651e4e374b91">FlightControl::info</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::Info &gt; info</div><div class="ttdoc">Dostarcza informacji o systemie.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:22</div></div>
+<div class="ttc" id="aclassFlightControl_html_a74dd9b48e4b837e02f8e3d3977bd22da"><div class="ttname"><a href="classFlightControl.html#a74dd9b48e4b837e02f8e3d3977bd22da">FlightControl::stopOffboard</a></div><div class="ttdeci">bool stopOffboard()</div><div class="ttdoc">Zatrzymuje kontrolę w trybie offboard.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:131</div></div>
+<div class="ttc" id="aclassFlightControl_html_a755617e8fe2eb80ee766f089997b99c3"><div class="ttname"><a href="classFlightControl.html#a755617e8fe2eb80ee766f089997b99c3">FlightControl::telemData</a></div><div class="ttdeci">TelemetryData telemData</div><div class="ttdoc">Przechowuje dane telemetryczne odebrane przez MAVLink.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:27</div></div>
+<div class="ttc" id="aclassFlightControl_html_a84f16d96bbbbfe450ec7dd6ef619e2ce"><div class="ttname"><a href="classFlightControl.html#a84f16d96bbbbfe450ec7dd6ef619e2ce">FlightControl::observeInAir</a></div><div class="ttdeci">bool observeInAir()</div><div class="ttdoc">Sprawdzenie czy maszyna jest w trakcie lotu.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:74</div></div>
+<div class="ttc" id="aclassFlightControl_html_a8853436a710b17dd28bf932cbb499a4f"><div class="ttname"><a href="classFlightControl.html#a8853436a710b17dd28bf932cbb499a4f">FlightControl::printTelem</a></div><div class="ttdeci">void printTelem()</div><div class="ttdoc">Wyświetla w konsoli podstawowe dane telemetryczne.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:110</div></div>
+<div class="ttc" id="aclassFlightControl_html_a89f0d84af6022790058ca5b119729ba1"><div class="ttname"><a href="classFlightControl.html#a89f0d84af6022790058ca5b119729ba1">FlightControl::mavsdk</a></div><div class="ttdeci">mavsdk::Mavsdk mavsdk</div><div class="ttdoc">Pozwala na zarządzanie połączeniami.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:20</div></div>
+<div class="ttc" id="aclassFlightControl_html_a9164aa3fca1ed70fd4fa44889cf90901"><div class="ttname"><a href="classFlightControl.html#a9164aa3fca1ed70fd4fa44889cf90901">FlightControl::connect</a></div><div class="ttdeci">bool connect()</div><div class="ttdoc">Inicjalizuje połączenie z autopilotem.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:32</div></div>
+<div class="ttc" id="aclassFlightControl_html_a998d4d676ffc4ed1a0eeaf2685a9abb0"><div class="ttname"><a href="classFlightControl.html#a998d4d676ffc4ed1a0eeaf2685a9abb0">FlightControl::checkStatus</a></div><div class="ttdeci">bool checkStatus()</div><div class="ttdoc">Sprawdza stan maszyny pod kątem gotowości do działania systemu.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:69</div></div>
+<div class="ttc" id="aclassFlightControl_html_aa58e5dfe210f59ec3202f36ee7a5d550"><div class="ttname"><a href="classFlightControl.html#aa58e5dfe210f59ec3202f36ee7a5d550">FlightControl::action</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::Action &gt; action</div><div class="ttdoc">Pozwala na wykonywanie prostych akcji.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:24</div></div>
+<div class="ttc" id="aclassFlightControl_html_ab3e7b5abfa648d4c291abdc3d3f6fb4b"><div class="ttname"><a href="classFlightControl.html#ab3e7b5abfa648d4c291abdc3d3f6fb4b">FlightControl::offboard</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::Offboard &gt; offboard</div><div class="ttdoc">Pozwala na kontrolę w trybie offboard.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:25</div></div>
+<div class="ttc" id="aclassFlightControl_html_abb1969a4e35e1625c950de054a71bed0"><div class="ttname"><a href="classFlightControl.html#abb1969a4e35e1625c950de054a71bed0">FlightControl::setOffbardVelo</a></div><div class="ttdeci">bool setOffbardVelo(mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed)</div><div class="ttdoc">Ustawia prędkości liniowe dla ciała w trybie offboard.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:142</div></div>
+<div class="ttc" id="aclassFlightControl_html_acd9f5dc068bc8d817c6d273e671ceaa9"><div class="ttname"><a href="classFlightControl.html#acd9f5dc068bc8d817c6d273e671ceaa9">FlightControl::~FlightControl</a></div><div class="ttdeci">~FlightControl()=default</div><div class="ttdoc">Niszczy dany obiekt klasy FlightControl.</div></div>
+<div class="ttc" id="aclassFlightControl_html_ad3b2f77ba73fa6047d2449aef114e036"><div class="ttname"><a href="classFlightControl.html#ad3b2f77ba73fa6047d2449aef114e036">FlightControl::connectionURL</a></div><div class="ttdeci">std::string connectionURL</div><div class="ttdoc">Adres połączenia protokołu MAVLink.</div><div class="ttdef"><b>Definition:</b> FlightControl.h:18</div></div>
+<div class="ttc" id="aclassFlightControl_html_ad8bc6ae62ce57ce4d481bbd98659188d"><div class="ttname"><a href="classFlightControl.html#ad8bc6ae62ce57ce4d481bbd98659188d">FlightControl::getAltitude</a></div><div class="ttdeci">float getAltitude()</div><div class="ttdoc">Zwraca ostatnią wysokość relatywną maszyny nad ziemią.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:168</div></div>
+<div class="ttc" id="aclassFlightControl_html_ae654f2e83d220da97dd0c9c1be509cdb"><div class="ttname"><a href="classFlightControl.html#ae654f2e83d220da97dd0c9c1be509cdb">FlightControl::startOffbard</a></div><div class="ttdeci">bool startOffbard()</div><div class="ttdoc">Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:118</div></div>
+<div class="ttc" id="aclassFlightControl_html_aec4227a4f2cc025de456e38accee1453"><div class="ttname"><a href="classFlightControl.html#aec4227a4f2cc025de456e38accee1453">FlightControl::subscribeTelem</a></div><div class="ttdeci">void subscribeTelem()</div><div class="ttdoc">Subskrybuje wymagane tematy.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:3</div></div>
+<div class="ttc" id="aclassFlightControl_html_af8b2e9565221188d15e606f50caa8fc0"><div class="ttname"><a href="classFlightControl.html#af8b2e9565221188d15e606f50caa8fc0">FlightControl::getSystem</a></div><div class="ttdeci">std::shared_ptr&lt; mavsdk::System &gt; getSystem()</div><div class="ttdoc">Zwraca obecny system.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:79</div></div>
+<div class="ttc" id="aclassFlightControl_html_aff4c1c3e065602fff23947d2cfb10448"><div class="ttname"><a href="classFlightControl.html#aff4c1c3e065602fff23947d2cfb10448">FlightControl::setConnectionURL</a></div><div class="ttdeci">void setConnectionURL(const std::string url)</div><div class="ttdoc">Ustawia wartość pola connectionURL.</div><div class="ttdef"><b>Definition:</b> FlightControl.cpp:105</div></div>
+<div class="ttc" id="adefines_8h_html"><div class="ttname"><a href="defines_8h.html">defines.h</a></div></div>
+<div class="ttc" id="astructTelemetryData_html"><div class="ttname"><a href="structTelemetryData.html">TelemetryData</a></div><div class="ttdoc">Struktura przechowująca dane telemetryczne odebrane z pojazdu przez MavLink.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:9</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,7 +1,151 @@
-\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Class Documentation}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Flight\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Autonomy Class Reference}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Image\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Receiver Class Reference}{3}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{3}{subsection.2.2.1}
-\contentsline {chapter}{Index}{5}{section*.3}
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Indeks klas}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Lista klas}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Indeks plików}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lista plików}{1}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Dokumentacja klas}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Dokumentacja klasy Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Opis szczegółowy}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Dokumentacja konstruktora i destruktora}{5}{subsubsection.3.1.2}%
+\contentsline {paragraph}{\numberline {3.1.2.1}FlightAutonomy()}{5}{paragraph.3.1.2.1}%
+\contentsline {paragraph}{\numberline {3.1.2.2}$\sim $FlightAutonomy()}{5}{paragraph.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Dokumentacja funkcji składowych}{5}{subsubsection.3.1.3}%
+\contentsline {paragraph}{\numberline {3.1.3.1}avoidingCalcVelo()}{5}{paragraph.3.1.3.1}%
+\contentsline {paragraph}{\numberline {3.1.3.2}avoidingStep()}{6}{paragraph.3.1.3.2}%
+\contentsline {paragraph}{\numberline {3.1.3.3}checkTimeouts()}{7}{paragraph.3.1.3.3}%
+\contentsline {paragraph}{\numberline {3.1.3.4}connect()}{7}{paragraph.3.1.3.4}%
+\contentsline {paragraph}{\numberline {3.1.3.5}getExitCode()}{7}{paragraph.3.1.3.5}%
+\contentsline {paragraph}{\numberline {3.1.3.6}isReady()}{7}{paragraph.3.1.3.6}%
+\contentsline {paragraph}{\numberline {3.1.3.7}landingCalcVelo()}{7}{paragraph.3.1.3.7}%
+\contentsline {paragraph}{\numberline {3.1.3.8}landingStep()}{8}{paragraph.3.1.3.8}%
+\contentsline {paragraph}{\numberline {3.1.3.9}ok()}{8}{paragraph.3.1.3.9}%
+\contentsline {paragraph}{\numberline {3.1.3.10}performStep()}{8}{paragraph.3.1.3.10}%
+\contentsline {paragraph}{\numberline {3.1.3.11}printExitStatus()}{9}{paragraph.3.1.3.11}%
+\contentsline {paragraph}{\numberline {3.1.3.12}readArgs()}{9}{paragraph.3.1.3.12}%
+\contentsline {paragraph}{\numberline {3.1.3.13}spinOnce()}{9}{paragraph.3.1.3.13}%
+\contentsline {paragraph}{\numberline {3.1.3.14}stop()}{9}{paragraph.3.1.3.14}%
+\contentsline {subsubsection}{\numberline {3.1.4}Dokumentacja atrybutów składowych}{9}{subsubsection.3.1.4}%
+\contentsline {paragraph}{\numberline {3.1.4.1}currAlg}{10}{paragraph.3.1.4.1}%
+\contentsline {paragraph}{\numberline {3.1.4.2}exitCode}{10}{paragraph.3.1.4.2}%
+\contentsline {paragraph}{\numberline {3.1.4.3}flightCtrl}{10}{paragraph.3.1.4.3}%
+\contentsline {paragraph}{\numberline {3.1.4.4}gateArucos}{10}{paragraph.3.1.4.4}%
+\contentsline {paragraph}{\numberline {3.1.4.5}imgRec}{10}{paragraph.3.1.4.5}%
+\contentsline {paragraph}{\numberline {3.1.4.6}landingPadID}{10}{paragraph.3.1.4.6}%
+\contentsline {paragraph}{\numberline {3.1.4.7}objDetect}{10}{paragraph.3.1.4.7}%
+\contentsline {paragraph}{\numberline {3.1.4.8}timeoutCounter}{10}{paragraph.3.1.4.8}%
+\contentsline {subsection}{\numberline {3.2}Dokumentacja klasy Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control}{11}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Dokumentacja konstruktora i destruktora}{13}{subsubsection.3.2.1}%
+\contentsline {paragraph}{\numberline {3.2.1.1}FlightControl()}{13}{paragraph.3.2.1.1}%
+\contentsline {paragraph}{\numberline {3.2.1.2}$\sim $FlightControl()}{13}{paragraph.3.2.1.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Dokumentacja funkcji składowych}{13}{subsubsection.3.2.2}%
+\contentsline {paragraph}{\numberline {3.2.2.1}checkStatus()}{13}{paragraph.3.2.2.1}%
+\contentsline {paragraph}{\numberline {3.2.2.2}checkVelo()}{13}{paragraph.3.2.2.2}%
+\contentsline {paragraph}{\numberline {3.2.2.3}connect()}{14}{paragraph.3.2.2.3}%
+\contentsline {paragraph}{\numberline {3.2.2.4}getAltitude()}{14}{paragraph.3.2.2.4}%
+\contentsline {paragraph}{\numberline {3.2.2.5}getEulerAngle()}{14}{paragraph.3.2.2.5}%
+\contentsline {paragraph}{\numberline {3.2.2.6}getFlightMode()}{14}{paragraph.3.2.2.6}%
+\contentsline {paragraph}{\numberline {3.2.2.7}getSystem()}{15}{paragraph.3.2.2.7}%
+\contentsline {paragraph}{\numberline {3.2.2.8}land()}{15}{paragraph.3.2.2.8}%
+\contentsline {paragraph}{\numberline {3.2.2.9}observeInAir()}{15}{paragraph.3.2.2.9}%
+\contentsline {paragraph}{\numberline {3.2.2.10}printTelem()}{15}{paragraph.3.2.2.10}%
+\contentsline {paragraph}{\numberline {3.2.2.11}setConnectionURL()}{15}{paragraph.3.2.2.11}%
+\contentsline {paragraph}{\numberline {3.2.2.12}setOffbardVelo()}{16}{paragraph.3.2.2.12}%
+\contentsline {paragraph}{\numberline {3.2.2.13}startOffbard()}{16}{paragraph.3.2.2.13}%
+\contentsline {paragraph}{\numberline {3.2.2.14}stopOffboard()}{16}{paragraph.3.2.2.14}%
+\contentsline {paragraph}{\numberline {3.2.2.15}subscribeTelem()}{16}{paragraph.3.2.2.15}%
+\contentsline {subsubsection}{\numberline {3.2.3}Dokumentacja atrybutów składowych}{16}{subsubsection.3.2.3}%
+\contentsline {paragraph}{\numberline {3.2.3.1}action}{16}{paragraph.3.2.3.1}%
+\contentsline {paragraph}{\numberline {3.2.3.2}connectionURL}{17}{paragraph.3.2.3.2}%
+\contentsline {paragraph}{\numberline {3.2.3.3}info}{17}{paragraph.3.2.3.3}%
+\contentsline {paragraph}{\numberline {3.2.3.4}mavsdk}{17}{paragraph.3.2.3.4}%
+\contentsline {paragraph}{\numberline {3.2.3.5}offboard}{17}{paragraph.3.2.3.5}%
+\contentsline {paragraph}{\numberline {3.2.3.6}system}{17}{paragraph.3.2.3.6}%
+\contentsline {paragraph}{\numberline {3.2.3.7}telemData}{17}{paragraph.3.2.3.7}%
+\contentsline {paragraph}{\numberline {3.2.3.8}telemetry}{17}{paragraph.3.2.3.8}%
+\contentsline {subsection}{\numberline {3.3}Dokumentacja klasy Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Receiver}{18}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Opis szczegółowy}{19}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Dokumentacja konstruktora i destruktora}{19}{subsubsection.3.3.2}%
+\contentsline {paragraph}{\numberline {3.3.2.1}ImageReceiver()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{paragraph.3.3.2.1}%
+\contentsline {paragraph}{\numberline {3.3.2.2}ImageReceiver()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{paragraph.3.3.2.2}%
+\contentsline {paragraph}{\numberline {3.3.2.3}$\sim $ImageReceiver()}{19}{paragraph.3.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.3.3}Dokumentacja funkcji składowych}{19}{subsubsection.3.3.3}%
+\contentsline {paragraph}{\numberline {3.3.3.1}getImage()}{19}{paragraph.3.3.3.1}%
+\contentsline {paragraph}{\numberline {3.3.3.2}open()}{19}{paragraph.3.3.3.2}%
+\contentsline {paragraph}{\numberline {3.3.3.3}receiveImage()}{20}{paragraph.3.3.3.3}%
+\contentsline {paragraph}{\numberline {3.3.3.4}setDevice()}{20}{paragraph.3.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4}Dokumentacja atrybutów składowych}{21}{subsubsection.3.3.4}%
+\contentsline {paragraph}{\numberline {3.3.4.1}apiID}{21}{paragraph.3.3.4.1}%
+\contentsline {paragraph}{\numberline {3.3.4.2}camImage}{21}{paragraph.3.3.4.2}%
+\contentsline {paragraph}{\numberline {3.3.4.3}cap}{21}{paragraph.3.3.4.3}%
+\contentsline {paragraph}{\numberline {3.3.4.4}deviceID}{21}{paragraph.3.3.4.4}%
+\contentsline {subsection}{\numberline {3.4}Dokumentacja klasy Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector}{22}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Opis szczegółowy}{23}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Dokumentacja konstruktora i destruktora}{23}{subsubsection.3.4.2}%
+\contentsline {paragraph}{\numberline {3.4.2.1}ObjectDetector()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{23}{paragraph.3.4.2.1}%
+\contentsline {paragraph}{\numberline {3.4.2.2}ObjectDetector()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{23}{paragraph.3.4.2.2}%
+\contentsline {paragraph}{\numberline {3.4.2.3}$\sim $ObjectDetector()}{23}{paragraph.3.4.2.3}%
+\contentsline {subsubsection}{\numberline {3.4.3}Dokumentacja funkcji składowych}{23}{subsubsection.3.4.3}%
+\contentsline {paragraph}{\numberline {3.4.3.1}calcCenter()}{24}{paragraph.3.4.3.1}%
+\contentsline {paragraph}{\numberline {3.4.3.2}calcMarkerSize()}{24}{paragraph.3.4.3.2}%
+\contentsline {paragraph}{\numberline {3.4.3.3}detectArucoGate()}{24}{paragraph.3.4.3.3}%
+\contentsline {paragraph}{\numberline {3.4.3.4}detectArucoSingle()}{25}{paragraph.3.4.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.4}Dokumentacja atrybutów składowych}{25}{subsubsection.3.4.4}%
+\contentsline {paragraph}{\numberline {3.4.4.1}dict}{25}{paragraph.3.4.4.1}%
+\contentsline {paragraph}{\numberline {3.4.4.2}markCor}{25}{paragraph.3.4.4.2}%
+\contentsline {paragraph}{\numberline {3.4.4.3}markIds}{25}{paragraph.3.4.4.3}%
+\contentsline {paragraph}{\numberline {3.4.4.4}params}{25}{paragraph.3.4.4.4}%
+\contentsline {paragraph}{\numberline {3.4.4.5}rejected}{25}{paragraph.3.4.4.5}%
+\contentsline {subsection}{\numberline {3.5}Dokumentacja struktury Telemetry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data}{26}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Opis szczegółowy}{26}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Dokumentacja atrybutów składowych}{27}{subsubsection.3.5.2}%
+\contentsline {paragraph}{\numberline {3.5.2.1}altitude}{27}{paragraph.3.5.2.1}%
+\contentsline {paragraph}{\numberline {3.5.2.2}batteryPercent}{27}{paragraph.3.5.2.2}%
+\contentsline {paragraph}{\numberline {3.5.2.3}eulerAngle}{27}{paragraph.3.5.2.3}%
+\contentsline {paragraph}{\numberline {3.5.2.4}flightMode}{27}{paragraph.3.5.2.4}%
+\contentsline {paragraph}{\numberline {3.5.2.5}health}{27}{paragraph.3.5.2.5}%
+\contentsline {paragraph}{\numberline {3.5.2.6}inAir}{27}{paragraph.3.5.2.6}%
+\contentsline {paragraph}{\numberline {3.5.2.7}isArmed}{27}{paragraph.3.5.2.7}%
+\contentsline {paragraph}{\numberline {3.5.2.8}odom}{28}{paragraph.3.5.2.8}%
+\contentsline {paragraph}{\numberline {3.5.2.9}UUID}{28}{paragraph.3.5.2.9}%
+\contentsline {section}{\numberline {4}Dokumentacja plików}{28}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/algorithms.h}{28}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Dokumentacja typów wyliczanych}{28}{subsubsection.4.1.1}%
+\contentsline {paragraph}{\numberline {4.1.1.1}Algorithms}{28}{paragraph.4.1.1.1}%
+\contentsline {subsection}{\numberline {4.2}algorithms.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/defines.h}{29}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Dokumentacja definicji}{30}{subsubsection.4.3.1}%
+\contentsline {paragraph}{\numberline {4.3.1.1}FA\_DEBUG}{30}{paragraph.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Dokumentacja zmiennych}{30}{subsubsection.4.3.2}%
+\contentsline {paragraph}{\numberline {4.3.2.1}CAM\_HFOV}{30}{paragraph.4.3.2.1}%
+\contentsline {paragraph}{\numberline {4.3.2.2}CAM\_VFOV}{30}{paragraph.4.3.2.2}%
+\contentsline {paragraph}{\numberline {4.3.2.3}FORWARD\_FLIGHT\_TIMEOUT}{31}{paragraph.4.3.2.3}%
+\contentsline {paragraph}{\numberline {4.3.2.4}IS\_STRAIGHT\_ANGLE}{31}{paragraph.4.3.2.4}%
+\contentsline {paragraph}{\numberline {4.3.2.5}LAND\_ALT}{31}{paragraph.4.3.2.5}%
+\contentsline {paragraph}{\numberline {4.3.2.6}MAX\_FLIGHT\_ALT}{31}{paragraph.4.3.2.6}%
+\contentsline {paragraph}{\numberline {4.3.2.7}MAX\_VELO\_HORI\_MS}{31}{paragraph.4.3.2.7}%
+\contentsline {paragraph}{\numberline {4.3.2.8}MAX\_VELO\_VERT\_MS}{31}{paragraph.4.3.2.8}%
+\contentsline {paragraph}{\numberline {4.3.2.9}MAX\_YAWSPEED}{31}{paragraph.4.3.2.9}%
+\contentsline {paragraph}{\numberline {4.3.2.10}MID\_THRESHOLD}{31}{paragraph.4.3.2.10}%
+\contentsline {paragraph}{\numberline {4.3.2.11}NO\_DETECT\_TIMEOUT}{32}{paragraph.4.3.2.11}%
+\contentsline {paragraph}{\numberline {4.3.2.12}RACING\_ALT}{32}{paragraph.4.3.2.12}%
+\contentsline {subsection}{\numberline {4.4}defines.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{32}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy.h}{32}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{33}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.h}{34}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{35}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Receiver.h}{36}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Receiver.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{37}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector.h}{37}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{38}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Dokumentacja pliku include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Telemetry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.h}{39}{subsection.4.13}%
+\contentsline {subsection}{\numberline {4.14}Telemetry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{40}{subsection.4.14}%
+\contentsline {subsection}{\numberline {4.15}Dokumentacja pliku src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Autonomy.cpp}{41}{subsection.4.15}%
+\contentsline {subsection}{\numberline {4.16}Dokumentacja pliku src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.cpp}{41}{subsection.4.16}%
+\contentsline {subsection}{\numberline {4.17}Dokumentacja pliku src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Receiver.cpp}{41}{subsection.4.17}%
+\contentsline {subsection}{\numberline {4.18}Dokumentacja pliku src/main.cpp}{42}{subsection.4.18}%
+\contentsline {subsubsection}{\numberline {4.18.1}Dokumentacja funkcji}{42}{subsubsection.4.18.1}%
+\contentsline {paragraph}{\numberline {4.18.1.1}main()}{42}{paragraph.4.18.1.1}%
+\contentsline {paragraph}{\numberline {4.18.1.2}printHelp()}{42}{paragraph.4.18.1.2}%
+\contentsline {subsection}{\numberline {4.19}Dokumentacja pliku src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector.cpp}{42}{subsection.4.19}%
+\contentsline {section}{Indeks}{43}{section*.44}%

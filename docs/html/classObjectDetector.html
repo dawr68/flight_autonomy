@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Flight Autonomy: Dokumentacja klasy ObjectDetector</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Flight Autonomy
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="classObjectDetector-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy ObjectDetector</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco) znajdujących się na przekazanym obrazie.  
+ <a href="classObjectDetector.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ObjectDetector_8h_source.html">ObjectDetector.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla ObjectDetector:</div>
+<div class="dyncontent">
+<div class="center"><img src="classObjectDetector__coll__graph.png" border="0" usemap="#aObjectDetector_coll__map" alt="Collaboration graph"/></div>
+<map name="aObjectDetector_coll__map" id="aObjectDetector_coll__map">
+<area shape="rect" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco..." alt="" coords="5,5,153,229"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a604cad611c81493d4e376b3d1fe186f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a604cad611c81493d4e376b3d1fe186f3">ObjectDetector</a> ()</td></tr>
+<tr class="memdesc:a604cad611c81493d4e376b3d1fe186f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruuje obiekt klasy <a class="el" href="classObjectDetector.html" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco...">ObjectDetector</a> inicjalizując listę parametrów i słownik wartościami domyślnymi.  <a href="classObjectDetector.html#a604cad611c81493d4e376b3d1fe186f3">Więcej...</a><br /></td></tr>
+<tr class="separator:a604cad611c81493d4e376b3d1fe186f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1412c239656b14034bb0545d4c02a27a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a1412c239656b14034bb0545d4c02a27a">ObjectDetector</a> (cv::Ptr&lt; cv::aruco::DetectorParameters &gt; _params, cv::Ptr&lt; cv::aruco::Dictionary &gt; _dict)</td></tr>
+<tr class="memdesc:a1412c239656b14034bb0545d4c02a27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruuje obiekt klasy <a class="el" href="classObjectDetector.html" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco...">ObjectDetector</a> inicjalizując listę parametrów i słownik przekazanymi wartościami.  <a href="classObjectDetector.html#a1412c239656b14034bb0545d4c02a27a">Więcej...</a><br /></td></tr>
+<tr class="separator:a1412c239656b14034bb0545d4c02a27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e1099d1e64f69cb97b25d77f05eea15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a8e1099d1e64f69cb97b25d77f05eea15">~ObjectDetector</a> ()=default</td></tr>
+<tr class="memdesc:a8e1099d1e64f69cb97b25d77f05eea15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor domyślny.  <a href="classObjectDetector.html#a8e1099d1e64f69cb97b25d77f05eea15">Więcej...</a><br /></td></tr>
+<tr class="separator:a8e1099d1e64f69cb97b25d77f05eea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcd3f0af79bf85ea54928b67eb5f6e9"><td class="memItemLeft" align="right" valign="top">cv::Point2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#acdcd3f0af79bf85ea54928b67eb5f6e9">detectArucoSingle</a> (const cv::Mat &amp;img, int arucoID)</td></tr>
+<tr class="memdesc:acdcd3f0af79bf85ea54928b67eb5f6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykrywa znaczniki Aruco na przekazanej ramce obrazu i oblicza koordynaty środka znacznika. Zwraca (-1, -1) jeżeli nie wykryto znacznika.  <a href="classObjectDetector.html#acdcd3f0af79bf85ea54928b67eb5f6e9">Więcej...</a><br /></td></tr>
+<tr class="separator:acdcd3f0af79bf85ea54928b67eb5f6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b3d8e58f38c8a18b6c6b645c99bc2f"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; cv::Point2f, float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#ad1b3d8e58f38c8a18b6c6b645c99bc2f">detectArucoGate</a> (const cv::Mat &amp;img, int arucoIDs[4])</td></tr>
+<tr class="memdesc:ad1b3d8e58f38c8a18b6c6b645c99bc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-1, -1, -1) jeżeli nie wykryto bramki.  <a href="classObjectDetector.html#ad1b3d8e58f38c8a18b6c6b645c99bc2f">Więcej...</a><br /></td></tr>
+<tr class="separator:ad1b3d8e58f38c8a18b6c6b645c99bc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a28b3a6a97363e3e3a1732b44fc8258d9"><td class="memItemLeft" align="right" valign="top">cv::Point2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a28b3a6a97363e3e3a1732b44fc8258d9">calcCenter</a> (std::vector&lt; cv::Point2f &gt; corners)</td></tr>
+<tr class="memdesc:a28b3a6a97363e3e3a1732b44fc8258d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza środek znacznika aruco na podstawie przekazanego wektora koordynatów wierzchołków.  <a href="classObjectDetector.html#a28b3a6a97363e3e3a1732b44fc8258d9">Więcej...</a><br /></td></tr>
+<tr class="separator:a28b3a6a97363e3e3a1732b44fc8258d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c64bd94d1838414450fcecc8f6284b6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a9c64bd94d1838414450fcecc8f6284b6">calcMarkerSize</a> (std::vector&lt; cv::Point2f &gt; corners, int imgHeight)</td></tr>
+<tr class="memdesc:a9c64bd94d1838414450fcecc8f6284b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza względny rozmiar znacznika na ramce obrazu.  <a href="classObjectDetector.html#a9c64bd94d1838414450fcecc8f6284b6">Więcej...</a><br /></td></tr>
+<tr class="separator:a9c64bd94d1838414450fcecc8f6284b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:ababefd3ca74cc552f425a47dd8234bb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#ababefd3ca74cc552f425a47dd8234bb1">markIds</a></td></tr>
+<tr class="memdesc:ababefd3ca74cc552f425a47dd8234bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor wszystkich wykrytych na obrazie znaczników.  <a href="classObjectDetector.html#ababefd3ca74cc552f425a47dd8234bb1">Więcej...</a><br /></td></tr>
+<tr class="separator:ababefd3ca74cc552f425a47dd8234bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32389df648761553be27c04116826601"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; cv::Point2f &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a32389df648761553be27c04116826601">markCor</a></td></tr>
+<tr class="memdesc:a32389df648761553be27c04116826601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor wektorów koordynatów każdego wykrytecho znacznika.  <a href="classObjectDetector.html#a32389df648761553be27c04116826601">Więcej...</a><br /></td></tr>
+<tr class="separator:a32389df648761553be27c04116826601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfd1d28b723e56feca19ea45e0ade1b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; cv::Point2f &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#adcfd1d28b723e56feca19ea45e0ade1b">rejected</a></td></tr>
+<tr class="memdesc:adcfd1d28b723e56feca19ea45e0ade1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor odrzuconych potencjalnych obiektów będących znacznikami.  <a href="classObjectDetector.html#adcfd1d28b723e56feca19ea45e0ade1b">Więcej...</a><br /></td></tr>
+<tr class="separator:adcfd1d28b723e56feca19ea45e0ade1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ebdbd1c1c5882afc2bdeea776edb47"><td class="memItemLeft" align="right" valign="top">cv::Ptr&lt; cv::aruco::DetectorParameters &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#a63ebdbd1c1c5882afc2bdeea776edb47">params</a></td></tr>
+<tr class="memdesc:a63ebdbd1c1c5882afc2bdeea776edb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na parametry algorytmu wykrywającego znaczniki.  <a href="classObjectDetector.html#a63ebdbd1c1c5882afc2bdeea776edb47">Więcej...</a><br /></td></tr>
+<tr class="separator:a63ebdbd1c1c5882afc2bdeea776edb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c6102a02f97c41d677e03f501fd7cb"><td class="memItemLeft" align="right" valign="top">cv::Ptr&lt; cv::aruco::Dictionary &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectDetector.html#af2c6102a02f97c41d677e03f501fd7cb">dict</a></td></tr>
+<tr class="memdesc:af2c6102a02f97c41d677e03f501fd7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na słownik znaczników.  <a href="classObjectDetector.html#af2c6102a02f97c41d677e03f501fd7cb">Więcej...</a><br /></td></tr>
+<tr class="separator:af2c6102a02f97c41d677e03f501fd7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco) znajdujących się na przekazanym obrazie. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a604cad611c81493d4e376b3d1fe186f3" name="a604cad611c81493d4e376b3d1fe186f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604cad611c81493d4e376b3d1fe186f3">&#9670;&nbsp;</a></span>ObjectDetector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectDetector::ObjectDetector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruuje obiekt klasy <a class="el" href="classObjectDetector.html" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco...">ObjectDetector</a> inicjalizując listę parametrów i słownik wartościami domyślnymi. </p>
+
+</div>
+</div>
+<a id="a1412c239656b14034bb0545d4c02a27a" name="a1412c239656b14034bb0545d4c02a27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1412c239656b14034bb0545d4c02a27a">&#9670;&nbsp;</a></span>ObjectDetector() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectDetector::ObjectDetector </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::DetectorParameters &gt;&#160;</td>
+          <td class="paramname"><em>_params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt;&#160;</td>
+          <td class="paramname"><em>_dict</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruuje obiekt klasy <a class="el" href="classObjectDetector.html" title="Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco...">ObjectDetector</a> inicjalizując listę parametrów i słownik przekazanymi wartościami. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_params</td><td>Parametry algorytmu wykrywania znaczników. </td></tr>
+    <tr><td class="paramname">_dict</td><td>Słownik którym ma się posługiwać algorytm wykrywania znaczników. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e1099d1e64f69cb97b25d77f05eea15" name="a8e1099d1e64f69cb97b25d77f05eea15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1099d1e64f69cb97b25d77f05eea15">&#9670;&nbsp;</a></span>~ObjectDetector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectDetector::~ObjectDetector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor domyślny. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a28b3a6a97363e3e3a1732b44fc8258d9" name="a28b3a6a97363e3e3a1732b44fc8258d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b3a6a97363e3e3a1732b44fc8258d9">&#9670;&nbsp;</a></span>calcCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point2f ObjectDetector::calcCenter </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; cv::Point2f &gt;&#160;</td>
+          <td class="paramname"><em>corners</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oblicza środek znacznika aruco na podstawie przekazanego wektora koordynatów wierzchołków. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">corners</td><td>Wektor zawierający koordynaty kolejnych wierzchołków znacznika. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>cv::Point2f Obliczony środek znacznika. </dd></dl>
+
+</div>
+</div>
+<a id="a9c64bd94d1838414450fcecc8f6284b6" name="a9c64bd94d1838414450fcecc8f6284b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c64bd94d1838414450fcecc8f6284b6">&#9670;&nbsp;</a></span>calcMarkerSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ObjectDetector::calcMarkerSize </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; cv::Point2f &gt;&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>imgHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oblicza względny rozmiar znacznika na ramce obrazu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">corners</td><td>Wektor zawierający koordynaty kolejnych wierzchołków znacznika. </td></tr>
+    <tr><td class="paramname">imgHeight</td><td>Wysokość analizowanego obrazu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>float Względny rozmiar znacznika dla osi X i Y. </dd></dl>
+
+</div>
+</div>
+<a id="ad1b3d8e58f38c8a18b6c6b645c99bc2f" name="ad1b3d8e58f38c8a18b6c6b645c99bc2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b3d8e58f38c8a18b6c6b645c99bc2f">&#9670;&nbsp;</a></span>detectArucoGate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; cv::Point2f, float, float &gt; ObjectDetector::detectArucoGate </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arucoIDs</em>[4]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-1, -1, -1) jeżeli nie wykryto bramki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>Ramka obrazu na której mają zostać wykryte znaczniki. </td></tr>
+    <tr><td class="paramname">arucoIDs</td><td>Tablica identyfikatorów kolejnych znaczników tworzących bramkę. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>std::tuple&lt;cv::Point2f, float, float&gt; Koordynaty środka bramki, jej rozmiar, i pochylenie. </dd></dl>
+
+</div>
+</div>
+<a id="acdcd3f0af79bf85ea54928b67eb5f6e9" name="acdcd3f0af79bf85ea54928b67eb5f6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdcd3f0af79bf85ea54928b67eb5f6e9">&#9670;&nbsp;</a></span>detectArucoSingle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point2f ObjectDetector::detectArucoSingle </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arucoID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wykrywa znaczniki Aruco na przekazanej ramce obrazu i oblicza koordynaty środka znacznika. Zwraca (-1, -1) jeżeli nie wykryto znacznika. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>Ramka obrazu na której mają zostać wykryte znaczniki. </td></tr>
+    <tr><td class="paramname">arucoID</td><td>ID znacznika Aruco którego koordynaty mają zostać określone. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>cv::Point2f Koordynaty środka znacznika Aruco. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="af2c6102a02f97c41d677e03f501fd7cb" name="af2c6102a02f97c41d677e03f501fd7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c6102a02f97c41d677e03f501fd7cb">&#9670;&nbsp;</a></span>dict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Ptr&lt;cv::aruco::Dictionary&gt; ObjectDetector::dict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wskaźnik na słownik znaczników. </p>
+
+</div>
+</div>
+<a id="a32389df648761553be27c04116826601" name="a32389df648761553be27c04116826601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32389df648761553be27c04116826601">&#9670;&nbsp;</a></span>markCor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;cv::Point2f&gt; &gt; ObjectDetector::markCor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor wektorów koordynatów każdego wykrytecho znacznika. </p>
+
+</div>
+</div>
+<a id="ababefd3ca74cc552f425a47dd8234bb1" name="ababefd3ca74cc552f425a47dd8234bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababefd3ca74cc552f425a47dd8234bb1">&#9670;&nbsp;</a></span>markIds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; ObjectDetector::markIds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor wszystkich wykrytych na obrazie znaczników. </p>
+
+</div>
+</div>
+<a id="a63ebdbd1c1c5882afc2bdeea776edb47" name="a63ebdbd1c1c5882afc2bdeea776edb47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ebdbd1c1c5882afc2bdeea776edb47">&#9670;&nbsp;</a></span>params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Ptr&lt;cv::aruco::DetectorParameters&gt; ObjectDetector::params</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wskaźnik na parametry algorytmu wykrywającego znaczniki. </p>
+
+</div>
+</div>
+<a id="adcfd1d28b723e56feca19ea45e0ade1b" name="adcfd1d28b723e56feca19ea45e0ade1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfd1d28b723e56feca19ea45e0ade1b">&#9670;&nbsp;</a></span>rejected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;cv::Point2f&gt; &gt; ObjectDetector::rejected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor odrzuconych potencjalnych obiektów będących znacznikami. </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>include/FlightAutonomy/<a class="el" href="ObjectDetector_8h_source.html">ObjectDetector.h</a></li>
+<li>src/<a class="el" href="ObjectDetector_8cpp.html">ObjectDetector.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,237 @@
+\hypertarget{classObjectDetector}{}\doxysubsection{Dokumentacja klasy Object\+Detector}
+\label{classObjectDetector}\index{ObjectDetector@{ObjectDetector}}
+
+
+Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco) znajdujących się na przekazanym obrazie.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Detector.\+h$>$}
+
+
+
+Diagram współpracy dla Object\+Detector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classObjectDetector__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjectDetector_a604cad611c81493d4e376b3d1fe186f3}{Object\+Detector}} ()
+\begin{DoxyCompactList}\small\item\em Konstruuje obiekt klasy \mbox{\hyperlink{classObjectDetector}{Object\+Detector}} inicjalizując listę parametrów i słownik wartościami domyślnymi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectDetector_a1412c239656b14034bb0545d4c02a27a}{Object\+Detector}} (cv\+::\+Ptr$<$ cv\+::aruco\+::\+Detector\+Parameters $>$ \+\_\+params, cv\+::\+Ptr$<$ cv\+::aruco\+::\+Dictionary $>$ \+\_\+dict)
+\begin{DoxyCompactList}\small\item\em Konstruuje obiekt klasy \mbox{\hyperlink{classObjectDetector}{Object\+Detector}} inicjalizując listę parametrów i słownik przekazanymi wartościami. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectDetector_a8e1099d1e64f69cb97b25d77f05eea15}{$\sim$\+Object\+Detector}} ()=default
+\begin{DoxyCompactList}\small\item\em Destruktor domyślny. \end{DoxyCompactList}\item 
+cv\+::\+Point2f \mbox{\hyperlink{classObjectDetector_acdcd3f0af79bf85ea54928b67eb5f6e9}{detect\+Aruco\+Single}} (const cv\+::\+Mat \&img, int aruco\+ID)
+\begin{DoxyCompactList}\small\item\em Wykrywa znaczniki Aruco na przekazanej ramce obrazu i oblicza koordynaty środka znacznika. Zwraca (-\/1, -\/1) jeżeli nie wykryto znacznika. \end{DoxyCompactList}\item 
+std\+::tuple$<$ cv\+::\+Point2f, float, float $>$ \mbox{\hyperlink{classObjectDetector_ad1b3d8e58f38c8a18b6c6b645c99bc2f}{detect\+Aruco\+Gate}} (const cv\+::\+Mat \&img, int aruco\+IDs\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-\/1, -\/1, -\/1) jeżeli nie wykryto bramki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Point2f \mbox{\hyperlink{classObjectDetector_a28b3a6a97363e3e3a1732b44fc8258d9}{calc\+Center}} (std\+::vector$<$ cv\+::\+Point2f $>$ corners)
+\begin{DoxyCompactList}\small\item\em Oblicza środek znacznika aruco na podstawie przekazanego wektora koordynatów wierzchołków. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classObjectDetector_a9c64bd94d1838414450fcecc8f6284b6}{calc\+Marker\+Size}} (std\+::vector$<$ cv\+::\+Point2f $>$ corners, int img\+Height)
+\begin{DoxyCompactList}\small\item\em Oblicza względny rozmiar znacznika na ramce obrazu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classObjectDetector_ababefd3ca74cc552f425a47dd8234bb1}{mark\+Ids}}
+\begin{DoxyCompactList}\small\item\em Wektor wszystkich wykrytych na obrazie znaczników. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Point2f $>$ $>$ \mbox{\hyperlink{classObjectDetector_a32389df648761553be27c04116826601}{mark\+Cor}}
+\begin{DoxyCompactList}\small\item\em Wektor wektorów koordynatów każdego wykrytecho znacznika. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Point2f $>$ $>$ \mbox{\hyperlink{classObjectDetector_adcfd1d28b723e56feca19ea45e0ade1b}{rejected}}
+\begin{DoxyCompactList}\small\item\em Wektor odrzuconych potencjalnych obiektów będących znacznikami. \end{DoxyCompactList}\item 
+cv\+::\+Ptr$<$ cv\+::aruco\+::\+Detector\+Parameters $>$ \mbox{\hyperlink{classObjectDetector_a63ebdbd1c1c5882afc2bdeea776edb47}{params}}
+\begin{DoxyCompactList}\small\item\em Wskaźnik na parametry algorytmu wykrywającego znaczniki. \end{DoxyCompactList}\item 
+cv\+::\+Ptr$<$ cv\+::aruco\+::\+Dictionary $>$ \mbox{\hyperlink{classObjectDetector_af2c6102a02f97c41d677e03f501fd7cb}{dict}}
+\begin{DoxyCompactList}\small\item\em Wskaźnik na słownik znaczników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Opis szczegółowy}
+Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco) znajdujących się na przekazanym obrazie. 
+
+\doxysubsubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classObjectDetector_a604cad611c81493d4e376b3d1fe186f3}\label{classObjectDetector_a604cad611c81493d4e376b3d1fe186f3}} 
+\index{ObjectDetector@{ObjectDetector}!ObjectDetector@{ObjectDetector}}
+\index{ObjectDetector@{ObjectDetector}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{ObjectDetector()}{ObjectDetector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Object\+Detector\+::\+Object\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruuje obiekt klasy \mbox{\hyperlink{classObjectDetector}{Object\+Detector}} inicjalizując listę parametrów i słownik wartościami domyślnymi. 
+
+\mbox{\Hypertarget{classObjectDetector_a1412c239656b14034bb0545d4c02a27a}\label{classObjectDetector_a1412c239656b14034bb0545d4c02a27a}} 
+\index{ObjectDetector@{ObjectDetector}!ObjectDetector@{ObjectDetector}}
+\index{ObjectDetector@{ObjectDetector}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{ObjectDetector()}{ObjectDetector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Object\+Detector\+::\+Object\+Detector (\begin{DoxyParamCaption}\item[{cv\+::\+Ptr$<$ cv\+::aruco\+::\+Detector\+Parameters $>$}]{\+\_\+params,  }\item[{cv\+::\+Ptr$<$ cv\+::aruco\+::\+Dictionary $>$}]{\+\_\+dict }\end{DoxyParamCaption})}
+
+
+
+Konstruuje obiekt klasy \mbox{\hyperlink{classObjectDetector}{Object\+Detector}} inicjalizując listę parametrów i słownik przekazanymi wartościami. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em \+\_\+params} & Parametry algorytmu wykrywania znaczników. \\
+\hline
+{\em \+\_\+dict} & Słownik którym ma się posługiwać algorytm wykrywania znaczników. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObjectDetector_a8e1099d1e64f69cb97b25d77f05eea15}\label{classObjectDetector_a8e1099d1e64f69cb97b25d77f05eea15}} 
+\index{ObjectDetector@{ObjectDetector}!````~ObjectDetector@{$\sim$ObjectDetector}}
+\index{````~ObjectDetector@{$\sim$ObjectDetector}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{$\sim$ObjectDetector()}{~ObjectDetector()}}
+{\footnotesize\ttfamily Object\+Detector\+::$\sim$\+Object\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destruktor domyślny. 
+
+
+
+\doxysubsubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classObjectDetector_a28b3a6a97363e3e3a1732b44fc8258d9}\label{classObjectDetector_a28b3a6a97363e3e3a1732b44fc8258d9}} 
+\index{ObjectDetector@{ObjectDetector}!calcCenter@{calcCenter}}
+\index{calcCenter@{calcCenter}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{calcCenter()}{calcCenter()}}
+{\footnotesize\ttfamily cv\+::\+Point2f Object\+Detector\+::calc\+Center (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Oblicza środek znacznika aruco na podstawie przekazanego wektora koordynatów wierzchołków. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em corners} & Wektor zawierający koordynaty kolejnych wierzchołków znacznika. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+cv\+::\+Point2f Obliczony środek znacznika. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classObjectDetector_a9c64bd94d1838414450fcecc8f6284b6}\label{classObjectDetector_a9c64bd94d1838414450fcecc8f6284b6}} 
+\index{ObjectDetector@{ObjectDetector}!calcMarkerSize@{calcMarkerSize}}
+\index{calcMarkerSize@{calcMarkerSize}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{calcMarkerSize()}{calcMarkerSize()}}
+{\footnotesize\ttfamily float Object\+Detector\+::calc\+Marker\+Size (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners,  }\item[{int}]{img\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Oblicza względny rozmiar znacznika na ramce obrazu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em corners} & Wektor zawierający koordynaty kolejnych wierzchołków znacznika. \\
+\hline
+{\em img\+Height} & Wysokość analizowanego obrazu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+float Względny rozmiar znacznika dla osi X i Y. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classObjectDetector_ad1b3d8e58f38c8a18b6c6b645c99bc2f}\label{classObjectDetector_ad1b3d8e58f38c8a18b6c6b645c99bc2f}} 
+\index{ObjectDetector@{ObjectDetector}!detectArucoGate@{detectArucoGate}}
+\index{detectArucoGate@{detectArucoGate}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{detectArucoGate()}{detectArucoGate()}}
+{\footnotesize\ttfamily std\+::tuple$<$ cv\+::\+Point2f, float, float $>$ Object\+Detector\+::detect\+Aruco\+Gate (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{int}]{aruco\+IDs\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-\/1, -\/1, -\/1) jeżeli nie wykryto bramki. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em img} & Ramka obrazu na której mają zostać wykryte znaczniki. \\
+\hline
+{\em aruco\+IDs} & Tablica identyfikatorów kolejnych znaczników tworzących bramkę. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+std\+::tuple$<$cv\+::\+Point2f, float, float$>$ Koordynaty środka bramki, jej rozmiar, i pochylenie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classObjectDetector_acdcd3f0af79bf85ea54928b67eb5f6e9}\label{classObjectDetector_acdcd3f0af79bf85ea54928b67eb5f6e9}} 
+\index{ObjectDetector@{ObjectDetector}!detectArucoSingle@{detectArucoSingle}}
+\index{detectArucoSingle@{detectArucoSingle}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{detectArucoSingle()}{detectArucoSingle()}}
+{\footnotesize\ttfamily cv\+::\+Point2f Object\+Detector\+::detect\+Aruco\+Single (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{int}]{aruco\+ID }\end{DoxyParamCaption})}
+
+
+
+Wykrywa znaczniki Aruco na przekazanej ramce obrazu i oblicza koordynaty środka znacznika. Zwraca (-\/1, -\/1) jeżeli nie wykryto znacznika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em img} & Ramka obrazu na której mają zostać wykryte znaczniki. \\
+\hline
+{\em aruco\+ID} & ID znacznika Aruco którego koordynaty mają zostać określone. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+cv\+::\+Point2f Koordynaty środka znacznika Aruco. 
+\end{DoxyReturn}
+
+
+\doxysubsubsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classObjectDetector_af2c6102a02f97c41d677e03f501fd7cb}\label{classObjectDetector_af2c6102a02f97c41d677e03f501fd7cb}} 
+\index{ObjectDetector@{ObjectDetector}!dict@{dict}}
+\index{dict@{dict}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{dict}{dict}}
+{\footnotesize\ttfamily cv\+::\+Ptr$<$cv\+::aruco\+::\+Dictionary$>$ Object\+Detector\+::dict\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wskaźnik na słownik znaczników. 
+
+\mbox{\Hypertarget{classObjectDetector_a32389df648761553be27c04116826601}\label{classObjectDetector_a32389df648761553be27c04116826601}} 
+\index{ObjectDetector@{ObjectDetector}!markCor@{markCor}}
+\index{markCor@{markCor}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{markCor}{markCor}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$cv\+::\+Point2f$>$ $>$ Object\+Detector\+::mark\+Cor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wektor wektorów koordynatów każdego wykrytecho znacznika. 
+
+\mbox{\Hypertarget{classObjectDetector_ababefd3ca74cc552f425a47dd8234bb1}\label{classObjectDetector_ababefd3ca74cc552f425a47dd8234bb1}} 
+\index{ObjectDetector@{ObjectDetector}!markIds@{markIds}}
+\index{markIds@{markIds}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{markIds}{markIds}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Object\+Detector\+::mark\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wektor wszystkich wykrytych na obrazie znaczników. 
+
+\mbox{\Hypertarget{classObjectDetector_a63ebdbd1c1c5882afc2bdeea776edb47}\label{classObjectDetector_a63ebdbd1c1c5882afc2bdeea776edb47}} 
+\index{ObjectDetector@{ObjectDetector}!params@{params}}
+\index{params@{params}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily cv\+::\+Ptr$<$cv\+::aruco\+::\+Detector\+Parameters$>$ Object\+Detector\+::params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wskaźnik na parametry algorytmu wykrywającego znaczniki. 
+
+\mbox{\Hypertarget{classObjectDetector_adcfd1d28b723e56feca19ea45e0ade1b}\label{classObjectDetector_adcfd1d28b723e56feca19ea45e0ade1b}} 
+\index{ObjectDetector@{ObjectDetector}!rejected@{rejected}}
+\index{rejected@{rejected}!ObjectDetector@{ObjectDetector}}
+\doxyparagraph{\texorpdfstring{rejected}{rejected}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$cv\+::\+Point2f$>$ $>$ Object\+Detector\+::rejected\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wektor odrzuconych potencjalnych obiektów będących znacznikami. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Flight\+Autonomy/\mbox{\hyperlink{ObjectDetector_8h}{Object\+Detector.\+h}}\item 
+src/\mbox{\hyperlink{ObjectDetector_8cpp}{Object\+Detector.\+cpp}}\end{DoxyCompactItemize}

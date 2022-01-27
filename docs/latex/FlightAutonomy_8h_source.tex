@@ -1,0 +1,70 @@
+\hypertarget{FlightAutonomy_8h_source}{}\doxysubsection{Flight\+Autonomy.\+h}
+\label{FlightAutonomy_8h_source}\index{include/FlightAutonomy/FlightAutonomy.h@{include/FlightAutonomy/FlightAutonomy.h}}
+\mbox{\hyperlink{FlightAutonomy_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{defines_8h}{FlightAutonomy/defines.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <opencv2/opencv.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef FA\_DEBUG}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ImageReceiver_8h}{FlightAutonomy/ImageReceiver.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{FlightControl_8h}{FlightAutonomy/FlightControl.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ObjectDetector_8h}{FlightAutonomy/ObjectDetector.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{algorithms_8h}{FlightAutonomy/algorithms.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classFlightAutonomy}{FlightAutonomy}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifdef FA\_DEBUG}}
+\DoxyCodeLine{24     \textcolor{keyword}{const} std::string OPENCV\_WINDOW = \textcolor{stringliteral}{"{}Cam View"{}};}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{classImageReceiver}{ImageReceiver}} \mbox{\hyperlink{classFlightAutonomy_ac77d9e7161595e6add998d41c6af2865}{imgRec}};                                 }
+\DoxyCodeLine{28     \mbox{\hyperlink{classFlightControl}{FlightControl}} \mbox{\hyperlink{classFlightAutonomy_adb7277ac2f2610d32a742eac6e2547af}{flightCtrl}};                             }
+\DoxyCodeLine{29     \mbox{\hyperlink{classObjectDetector}{ObjectDetector}} \mbox{\hyperlink{classFlightAutonomy_a009d1c5234a6092c5265ebdcecdd48d7}{objDetect}};                             }
+\DoxyCodeLine{30     \mbox{\hyperlink{algorithms_8h_a269b54498ecf7693a990d2002e0e9ca0}{Algorithms}} \mbox{\hyperlink{classFlightAutonomy_a48e558c247c415586cb0b178a0eb362f}{currAlg}};                                   }
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{classFlightAutonomy_a8c699b95deba4b7a78758d6e8d3f7acc}{landingPadID}} = 68;                                }
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} \mbox{\hyperlink{classFlightAutonomy_a584c7377b13189eea602a4e607ca2a41}{gateArucos}}[4] = \{10, 11, 12, 13\};                 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{classFlightAutonomy_a739dbb496b8c2fbd23a6d3e736a78586}{exitCode}};                                         }
+\DoxyCodeLine{34     std::chrono::steady\_clock::time\_point \mbox{\hyperlink{classFlightAutonomy_a4f1a1408f0d491c6a2e9acecab30711e}{timeoutCounter}}; }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{classFlightAutonomy_a8040acc62f429cb0d8d1d97b7343baf6}{FlightAutonomy}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classFlightAutonomy_a28cfb113ef95851ad015666c4a64cb11}{\string~FlightAutonomy}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_ad349e89e1057ff74edb31cf802ec0fa8}{connect}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a0f3696b3824356b430a8e984bff183bb}{isReady}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a3021f6ccd2017c1ddf9cf5610817fe00}{readArgs}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a619dfe9c6378206dd8bc2c7cd2a8736f}{spinOnce}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a809a057eb8ad54e566783487c91c5aed}{ok}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a46c04fee7163ea940587c977358df0a5}{stop}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} \mbox{\hyperlink{classFlightAutonomy_a0730076c08f380927ab55ef2db930370}{getExitCode}}();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightAutonomy_aeb94cacda630ffcc60a89d17f46f9965}{printExitStatus}}();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{private}:}
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} \mbox{\hyperlink{classFlightAutonomy_adebcdd60f50853bb8f8de0a13ba5792c}{performStep}}(cv::Mat \&img);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{126     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a52d5d6ae4ad61e11abf7d851578747fc}{landingStep}}(cv::Mat \&img);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{135     mavsdk::Offboard::VelocityBodyYawspeed \mbox{\hyperlink{classFlightAutonomy_ab440b55d8bce5238dea41278e1a4dd8b}{landingCalcVelo}}(cv::Mat \&img, cv::Point2f arucoPosition);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{145     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classFlightAutonomy_a8d5d37d1c1fd723b4dffcc00d442cb2e}{avoidingStep}}(cv::Mat \&img);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{155     mavsdk::Offboard::VelocityBodyYawspeed \mbox{\hyperlink{classFlightAutonomy_abd83d4b9055c8519149539af79eb932a}{avoidingCalcVelo}}(cv::Mat \&img, cv::Point2f gatePosition, \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{classFlightAutonomy_af65554f658cc6baaee03386973516623}{checkTimeouts}}();}
+\DoxyCodeLine{161 \};}
+
+\end{DoxyCode}

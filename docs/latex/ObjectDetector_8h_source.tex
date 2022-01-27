@@ -1,0 +1,39 @@
+\hypertarget{ObjectDetector_8h_source}{}\doxysubsection{Object\+Detector.\+h}
+\label{ObjectDetector_8h_source}\index{include/FlightAutonomy/ObjectDetector.h@{include/FlightAutonomy/ObjectDetector.h}}
+\mbox{\hyperlink{ObjectDetector_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{defines_8h}{FlightAutonomy/defines.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <opencv2/core/mat.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <opencv2/imgproc.hpp>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <opencv2/aruco.hpp>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classObjectDetector}{ObjectDetector}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     std::vector<int> \mbox{\hyperlink{classObjectDetector_ababefd3ca74cc552f425a47dd8234bb1}{markIds}};                       }
+\DoxyCodeLine{16     std::vector<std::vector<cv::Point2f>> \mbox{\hyperlink{classObjectDetector_a32389df648761553be27c04116826601}{markCor}};  }
+\DoxyCodeLine{17     std::vector<std::vector<cv::Point2f>> \mbox{\hyperlink{classObjectDetector_adcfd1d28b723e56feca19ea45e0ade1b}{rejected}}; }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     cv::Ptr<cv::aruco::DetectorParameters> \mbox{\hyperlink{classObjectDetector_a63ebdbd1c1c5882afc2bdeea776edb47}{params}}; }
+\DoxyCodeLine{20     cv::Ptr<cv::aruco::Dictionary> \mbox{\hyperlink{classObjectDetector_af2c6102a02f97c41d677e03f501fd7cb}{dict}};           }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{classObjectDetector_a604cad611c81493d4e376b3d1fe186f3}{ObjectDetector}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{34     \mbox{\hyperlink{classObjectDetector_a604cad611c81493d4e376b3d1fe186f3}{ObjectDetector}}(cv::Ptr<cv::aruco::DetectorParameters> \_params, cv::Ptr<cv::aruco::Dictionary> \_dict);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39     \mbox{\hyperlink{classObjectDetector_a8e1099d1e64f69cb97b25d77f05eea15}{\string~ObjectDetector}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{48     cv::Point2f \mbox{\hyperlink{classObjectDetector_acdcd3f0af79bf85ea54928b67eb5f6e9}{detectArucoSingle}}(\textcolor{keyword}{const} cv::Mat \&img, \textcolor{keywordtype}{int} arucoID);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{57     std::tuple<cv::Point2f, float, float> \mbox{\hyperlink{classObjectDetector_ad1b3d8e58f38c8a18b6c6b645c99bc2f}{detectArucoGate}}(\textcolor{keyword}{const} cv::Mat \&img, \textcolor{keywordtype}{int} arucoIDs[4]);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{66     cv::Point2f \mbox{\hyperlink{classObjectDetector_a28b3a6a97363e3e3a1732b44fc8258d9}{calcCenter}}(std::vector<cv::Point2f> corners);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{float} \mbox{\hyperlink{classObjectDetector_a9c64bd94d1838414450fcecc8f6284b6}{calcMarkerSize}}(std::vector<cv::Point2f> corners, \textcolor{keywordtype}{int} imgHeight);}
+\DoxyCodeLine{76 \};}
+
+\end{DoxyCode}

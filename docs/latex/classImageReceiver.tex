@@ -1,26 +1,192 @@
-\hypertarget{classImageReceiver}{}\section{Image\+Receiver Class Reference}
-\label{classImageReceiver}\index{Image\+Receiver@{Image\+Receiver}}
+\hypertarget{classImageReceiver}{}\doxysubsection{Dokumentacja klasy Image\+Receiver}
+\label{classImageReceiver}\index{ImageReceiver@{ImageReceiver}}
 
 
-Image receiving class that supports diferrent types of imput video streams.  
+Klasa odbierająca stream wideo z podanego źródła.  
 
 
 
 
 {\ttfamily \#include $<$Image\+Receiver.\+h$>$}
 
-\subsection*{Public Member Functions}
+
+
+Diagram współpracy dla Image\+Receiver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classImageReceiver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classImageReceiver_ae1356643b5d08041070aee58e2294a59}\label{classImageReceiver_ae1356643b5d08041070aee58e2294a59}} 
-{\bfseries Image\+Receiver} (ros\+::\+Node\+Handle \&\+\_\+nh, std\+::string topic)
-\end{DoxyCompactItemize}
-
-
-\subsection{Detailed Description}
-Image receiving class that supports diferrent types of imput video streams. 
-
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\mbox{\hyperlink{classImageReceiver_a90b66c1ee039d9527011845ba1f97a96}{Image\+Receiver}} ()=default
+\begin{DoxyCompactList}\small\item\em Konstruuje obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classImageReceiver_a0e824bf2f66b6430e37ff10845bd72ba}{Image\+Receiver}} (int \mbox{\hyperlink{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}{device\+ID}}, int \mbox{\hyperlink{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}{api\+ID}}=0)
+\begin{DoxyCompactList}\small\item\em Konstruuje obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}} wpisując przekazane wartości do pól tworzonego obiektu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classImageReceiver_a75f6a7efd74ca796b6f996df68c9cb75}{$\sim$\+Image\+Receiver}} ()=default
+\begin{DoxyCompactList}\small\item\em Niszczy obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classImageReceiver_a884a177f27698a4707bbf0b2b4bfb423}{open}} ()
+\begin{DoxyCompactList}\small\item\em Otwiera wejście kamery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classImageReceiver_ad8b951076bc523336614e552eb0547e3}{receive\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera ramkę z wejścia kamery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classImageReceiver_ae93265aba9fcdda37ad729e46ed4b99c}{set\+Device}} (int \+\_\+device\+ID, int \+\_\+api\+ID=0)
+\begin{DoxyCompactList}\small\item\em Set the Device object. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classImageReceiver_af9617a7daf4ec746f7407af673c85406}{get\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca najnowszą odebraną ramkę obrazu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
 \item 
-include/Image\+Receiver.\+h\item 
-src/Image\+Receiver.\+cpp\end{DoxyCompactItemize}
+cv\+::\+Video\+Capture \mbox{\hyperlink{classImageReceiver_aaaac535e6c8fdbe3347718f5100bf0ba}{cap}}
+\begin{DoxyCompactList}\small\item\em Obiekt przechwytujący stream video. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}{device\+ID}} = 0
+\begin{DoxyCompactList}\small\item\em Kamera 0 -\/ domyślna. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}{api\+ID}} = cv\+::\+CAP\+\_\+\+ANY
+\begin{DoxyCompactList}\small\item\em Domyślnie autodetekcja. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classImageReceiver_a32a36e1646407c7740ff6fb9a1ae8a36}{cam\+Image}}
+\begin{DoxyCompactList}\small\item\em Najnowsza ramka odebrana z kamer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Opis szczegółowy}
+Klasa odbierająca stream wideo z podanego źródła. 
+
+\doxysubsubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classImageReceiver_a90b66c1ee039d9527011845ba1f97a96}\label{classImageReceiver_a90b66c1ee039d9527011845ba1f97a96}} 
+\index{ImageReceiver@{ImageReceiver}!ImageReceiver@{ImageReceiver}}
+\index{ImageReceiver@{ImageReceiver}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{ImageReceiver()}{ImageReceiver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Image\+Receiver\+::\+Image\+Receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Konstruuje obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}}. 
+
+\mbox{\Hypertarget{classImageReceiver_a0e824bf2f66b6430e37ff10845bd72ba}\label{classImageReceiver_a0e824bf2f66b6430e37ff10845bd72ba}} 
+\index{ImageReceiver@{ImageReceiver}!ImageReceiver@{ImageReceiver}}
+\index{ImageReceiver@{ImageReceiver}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{ImageReceiver()}{ImageReceiver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Image\+Receiver\+::\+Image\+Receiver (\begin{DoxyParamCaption}\item[{int}]{device\+ID,  }\item[{int}]{api\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Konstruuje obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}} wpisując przekazane wartości do pól tworzonego obiektu. 
+
+\mbox{\Hypertarget{classImageReceiver_a75f6a7efd74ca796b6f996df68c9cb75}\label{classImageReceiver_a75f6a7efd74ca796b6f996df68c9cb75}} 
+\index{ImageReceiver@{ImageReceiver}!````~ImageReceiver@{$\sim$ImageReceiver}}
+\index{````~ImageReceiver@{$\sim$ImageReceiver}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{$\sim$ImageReceiver()}{~ImageReceiver()}}
+{\footnotesize\ttfamily Image\+Receiver\+::$\sim$\+Image\+Receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Niszczy obiekt \mbox{\hyperlink{classImageReceiver}{Image\+Receiver}}. 
+
+
+
+\doxysubsubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classImageReceiver_af9617a7daf4ec746f7407af673c85406}\label{classImageReceiver_af9617a7daf4ec746f7407af673c85406}} 
+\index{ImageReceiver@{ImageReceiver}!getImage@{getImage}}
+\index{getImage@{getImage}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Image\+Receiver\+::get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca najnowszą odebraną ramkę obrazu. 
+
+\begin{DoxyReturn}{Zwraca}
+Ramka obrazu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageReceiver_a884a177f27698a4707bbf0b2b4bfb423}\label{classImageReceiver_a884a177f27698a4707bbf0b2b4bfb423}} 
+\index{ImageReceiver@{ImageReceiver}!open@{open}}
+\index{open@{open}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool Image\+Receiver\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Otwiera wejście kamery. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie otwarto wejście kamery. 
+
+false Wystąpił błąd podczas otwierania wejścia kamery. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageReceiver_ad8b951076bc523336614e552eb0547e3}\label{classImageReceiver_ad8b951076bc523336614e552eb0547e3}} 
+\index{ImageReceiver@{ImageReceiver}!receiveImage@{receiveImage}}
+\index{receiveImage@{receiveImage}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{receiveImage()}{receiveImage()}}
+{\footnotesize\ttfamily void Image\+Receiver\+::receive\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pobiera ramkę z wejścia kamery. 
+
+\mbox{\Hypertarget{classImageReceiver_ae93265aba9fcdda37ad729e46ed4b99c}\label{classImageReceiver_ae93265aba9fcdda37ad729e46ed4b99c}} 
+\index{ImageReceiver@{ImageReceiver}!setDevice@{setDevice}}
+\index{setDevice@{setDevice}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{setDevice()}{setDevice()}}
+{\footnotesize\ttfamily void Image\+Receiver\+::set\+Device (\begin{DoxyParamCaption}\item[{int}]{\+\_\+device\+ID,  }\item[{int}]{\+\_\+api\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Set the Device object. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em \+\_\+device\+ID} & \\
+\hline
+{\em \+\_\+api\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}\label{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}} 
+\index{ImageReceiver@{ImageReceiver}!apiID@{apiID}}
+\index{apiID@{apiID}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{apiID}{apiID}}
+{\footnotesize\ttfamily int Image\+Receiver\+::api\+ID = cv\+::\+CAP\+\_\+\+ANY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Domyślnie autodetekcja. 
+
+\mbox{\Hypertarget{classImageReceiver_a32a36e1646407c7740ff6fb9a1ae8a36}\label{classImageReceiver_a32a36e1646407c7740ff6fb9a1ae8a36}} 
+\index{ImageReceiver@{ImageReceiver}!camImage@{camImage}}
+\index{camImage@{camImage}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{camImage}{camImage}}
+{\footnotesize\ttfamily cv\+::\+Mat Image\+Receiver\+::cam\+Image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Najnowsza ramka odebrana z kamer. 
+
+\mbox{\Hypertarget{classImageReceiver_aaaac535e6c8fdbe3347718f5100bf0ba}\label{classImageReceiver_aaaac535e6c8fdbe3347718f5100bf0ba}} 
+\index{ImageReceiver@{ImageReceiver}!cap@{cap}}
+\index{cap@{cap}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture Image\+Receiver\+::cap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obiekt przechwytujący stream video. 
+
+\mbox{\Hypertarget{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}\label{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}} 
+\index{ImageReceiver@{ImageReceiver}!deviceID@{deviceID}}
+\index{deviceID@{deviceID}!ImageReceiver@{ImageReceiver}}
+\doxyparagraph{\texorpdfstring{deviceID}{deviceID}}
+{\footnotesize\ttfamily int Image\+Receiver\+::device\+ID = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kamera 0 -\/ domyślna. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Flight\+Autonomy/\mbox{\hyperlink{ImageReceiver_8h}{Image\+Receiver.\+h}}\item 
+src/\mbox{\hyperlink{ImageReceiver_8cpp}{Image\+Receiver.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Flight Autonomy: Dokumentacja klasy FlightControl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Flight Autonomy
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="classFlightControl-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy FlightControl</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="FlightControl_8h_source.html">FlightControl.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla FlightControl:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFlightControl__coll__graph.png" border="0" usemap="#aFlightControl_coll__map" alt="Collaboration graph"/></div>
+<map name="aFlightControl_coll__map" id="aFlightControl_coll__map">
+<area shape="rect" title=" " alt="" coords="5,263,159,663"/>
+<area shape="rect" href="structTelemetryData.html" title="Struktura przechowująca dane telemetryczne odebrane z pojazdu przez MavLink." alt="" coords="23,5,141,200"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a5ac7910e8b4116feacde217d2f47e553"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a5ac7910e8b4116feacde217d2f47e553">FlightControl</a> ()=default</td></tr>
+<tr class="memdesc:a5ac7910e8b4116feacde217d2f47e553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy nowy obiekt klasy <a class="el" href="classFlightControl.html">FlightControl</a>.  <a href="classFlightControl.html#a5ac7910e8b4116feacde217d2f47e553">Więcej...</a><br /></td></tr>
+<tr class="separator:a5ac7910e8b4116feacde217d2f47e553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9f5dc068bc8d817c6d273e671ceaa9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#acd9f5dc068bc8d817c6d273e671ceaa9">~FlightControl</a> ()=default</td></tr>
+<tr class="memdesc:acd9f5dc068bc8d817c6d273e671ceaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Niszczy dany obiekt klasy <a class="el" href="classFlightControl.html">FlightControl</a>.  <a href="classFlightControl.html#acd9f5dc068bc8d817c6d273e671ceaa9">Więcej...</a><br /></td></tr>
+<tr class="separator:acd9f5dc068bc8d817c6d273e671ceaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9164aa3fca1ed70fd4fa44889cf90901"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a9164aa3fca1ed70fd4fa44889cf90901">connect</a> ()</td></tr>
+<tr class="memdesc:a9164aa3fca1ed70fd4fa44889cf90901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje połączenie z autopilotem.  <a href="classFlightControl.html#a9164aa3fca1ed70fd4fa44889cf90901">Więcej...</a><br /></td></tr>
+<tr class="separator:a9164aa3fca1ed70fd4fa44889cf90901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998d4d676ffc4ed1a0eeaf2685a9abb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a998d4d676ffc4ed1a0eeaf2685a9abb0">checkStatus</a> ()</td></tr>
+<tr class="memdesc:a998d4d676ffc4ed1a0eeaf2685a9abb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza stan maszyny pod kątem gotowości do działania systemu.  <a href="classFlightControl.html#a998d4d676ffc4ed1a0eeaf2685a9abb0">Więcej...</a><br /></td></tr>
+<tr class="separator:a998d4d676ffc4ed1a0eeaf2685a9abb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e6e757dfd1060113c75d49789c5347"><td class="memItemLeft" align="right" valign="top">mavsdk::Telemetry::EulerAngle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a07e6e757dfd1060113c75d49789c5347">getEulerAngle</a> ()</td></tr>
+<tr class="memdesc:a07e6e757dfd1060113c75d49789c5347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualne kąty pochylenia maszyny.  <a href="classFlightControl.html#a07e6e757dfd1060113c75d49789c5347">Więcej...</a><br /></td></tr>
+<tr class="separator:a07e6e757dfd1060113c75d49789c5347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4c1c3e065602fff23947d2cfb10448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#aff4c1c3e065602fff23947d2cfb10448">setConnectionURL</a> (const std::string url)</td></tr>
+<tr class="memdesc:aff4c1c3e065602fff23947d2cfb10448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia wartość pola connectionURL.  <a href="classFlightControl.html#aff4c1c3e065602fff23947d2cfb10448">Więcej...</a><br /></td></tr>
+<tr class="separator:aff4c1c3e065602fff23947d2cfb10448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8853436a710b17dd28bf932cbb499a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a8853436a710b17dd28bf932cbb499a4f">printTelem</a> ()</td></tr>
+<tr class="memdesc:a8853436a710b17dd28bf932cbb499a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla w konsoli podstawowe dane telemetryczne.  <a href="classFlightControl.html#a8853436a710b17dd28bf932cbb499a4f">Więcej...</a><br /></td></tr>
+<tr class="separator:a8853436a710b17dd28bf932cbb499a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f16d96bbbbfe450ec7dd6ef619e2ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a84f16d96bbbbfe450ec7dd6ef619e2ce">observeInAir</a> ()</td></tr>
+<tr class="memdesc:a84f16d96bbbbfe450ec7dd6ef619e2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdzenie czy maszyna jest w trakcie lotu.  <a href="classFlightControl.html#a84f16d96bbbbfe450ec7dd6ef619e2ce">Więcej...</a><br /></td></tr>
+<tr class="separator:a84f16d96bbbbfe450ec7dd6ef619e2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae654f2e83d220da97dd0c9c1be509cdb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#ae654f2e83d220da97dd0c9c1be509cdb">startOffbard</a> ()</td></tr>
+<tr class="memdesc:ae654f2e83d220da97dd0c9c1be509cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0.  <a href="classFlightControl.html#ae654f2e83d220da97dd0c9c1be509cdb">Więcej...</a><br /></td></tr>
+<tr class="separator:ae654f2e83d220da97dd0c9c1be509cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74dd9b48e4b837e02f8e3d3977bd22da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a74dd9b48e4b837e02f8e3d3977bd22da">stopOffboard</a> ()</td></tr>
+<tr class="memdesc:a74dd9b48e4b837e02f8e3d3977bd22da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zatrzymuje kontrolę w trybie offboard.  <a href="classFlightControl.html#a74dd9b48e4b837e02f8e3d3977bd22da">Więcej...</a><br /></td></tr>
+<tr class="separator:a74dd9b48e4b837e02f8e3d3977bd22da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1969a4e35e1625c950de054a71bed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#abb1969a4e35e1625c950de054a71bed0">setOffbardVelo</a> (mavsdk::Offboard::VelocityBodyYawspeed veloBodyYawspeed)</td></tr>
+<tr class="memdesc:abb1969a4e35e1625c950de054a71bed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia prędkości liniowe dla ciała w trybie offboard.  <a href="classFlightControl.html#abb1969a4e35e1625c950de054a71bed0">Więcej...</a><br /></td></tr>
+<tr class="separator:abb1969a4e35e1625c950de054a71bed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a38bbf8c96f80964e996dde51937d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a33a38bbf8c96f80964e996dde51937d7">land</a> ()</td></tr>
+<tr class="memdesc:a33a38bbf8c96f80964e996dde51937d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyzwala tryb lądowania w obecnym punkcie.  <a href="classFlightControl.html#a33a38bbf8c96f80964e996dde51937d7">Więcej...</a><br /></td></tr>
+<tr class="separator:a33a38bbf8c96f80964e996dde51937d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bc6ae62ce57ce4d481bbd98659188d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#ad8bc6ae62ce57ce4d481bbd98659188d">getAltitude</a> ()</td></tr>
+<tr class="memdesc:ad8bc6ae62ce57ce4d481bbd98659188d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca ostatnią wysokość relatywną maszyny nad ziemią.  <a href="classFlightControl.html#ad8bc6ae62ce57ce4d481bbd98659188d">Więcej...</a><br /></td></tr>
+<tr class="separator:ad8bc6ae62ce57ce4d481bbd98659188d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea81d423f2c10f92e82da1e238f66c0"><td class="memItemLeft" align="right" valign="top">mavsdk::Telemetry::FlightMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a0ea81d423f2c10f92e82da1e238f66c0">getFlightMode</a> ()</td></tr>
+<tr class="memdesc:a0ea81d423f2c10f92e82da1e238f66c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualny tryb lotu.  <a href="classFlightControl.html#a0ea81d423f2c10f92e82da1e238f66c0">Więcej...</a><br /></td></tr>
+<tr class="separator:a0ea81d423f2c10f92e82da1e238f66c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c19705125a001ca20c606fc226fcec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a05c19705125a001ca20c606fc226fcec">checkVelo</a> (mavsdk::Offboard::VelocityBodyYawspeed &amp;velocities)</td></tr>
+<tr class="memdesc:a05c19705125a001ca20c606fc226fcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się, wprowadza korektę.  <a href="classFlightControl.html#a05c19705125a001ca20c606fc226fcec">Więcej...</a><br /></td></tr>
+<tr class="separator:a05c19705125a001ca20c606fc226fcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:af8b2e9565221188d15e606f50caa8fc0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::System &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#af8b2e9565221188d15e606f50caa8fc0">getSystem</a> ()</td></tr>
+<tr class="memdesc:af8b2e9565221188d15e606f50caa8fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca obecny system.  <a href="classFlightControl.html#af8b2e9565221188d15e606f50caa8fc0">Więcej...</a><br /></td></tr>
+<tr class="separator:af8b2e9565221188d15e606f50caa8fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4227a4f2cc025de456e38accee1453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#aec4227a4f2cc025de456e38accee1453">subscribeTelem</a> ()</td></tr>
+<tr class="memdesc:aec4227a4f2cc025de456e38accee1453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subskrybuje wymagane tematy.  <a href="classFlightControl.html#aec4227a4f2cc025de456e38accee1453">Więcej...</a><br /></td></tr>
+<tr class="separator:aec4227a4f2cc025de456e38accee1453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:ad3b2f77ba73fa6047d2449aef114e036"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#ad3b2f77ba73fa6047d2449aef114e036">connectionURL</a></td></tr>
+<tr class="memdesc:ad3b2f77ba73fa6047d2449aef114e036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adres połączenia protokołu MAVLink.  <a href="classFlightControl.html#ad3b2f77ba73fa6047d2449aef114e036">Więcej...</a><br /></td></tr>
+<tr class="separator:ad3b2f77ba73fa6047d2449aef114e036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f0d84af6022790058ca5b119729ba1"><td class="memItemLeft" align="right" valign="top">mavsdk::Mavsdk&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a89f0d84af6022790058ca5b119729ba1">mavsdk</a></td></tr>
+<tr class="memdesc:a89f0d84af6022790058ca5b119729ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozwala na zarządzanie połączeniami.  <a href="classFlightControl.html#a89f0d84af6022790058ca5b119729ba1">Więcej...</a><br /></td></tr>
+<tr class="separator:a89f0d84af6022790058ca5b119729ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e8a928279787d20a0f725367e207b1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::System &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a42e8a928279787d20a0f725367e207b1">system</a></td></tr>
+<tr class="memdesc:a42e8a928279787d20a0f725367e207b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obiekt reprezentujący system (autopilot)  <a href="classFlightControl.html#a42e8a928279787d20a0f725367e207b1">Więcej...</a><br /></td></tr>
+<tr class="separator:a42e8a928279787d20a0f725367e207b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b650dcb5dd419477502651e4e374b91"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::Info &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a6b650dcb5dd419477502651e4e374b91">info</a></td></tr>
+<tr class="memdesc:a6b650dcb5dd419477502651e4e374b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dostarcza informacji o systemie.  <a href="classFlightControl.html#a6b650dcb5dd419477502651e4e374b91">Więcej...</a><br /></td></tr>
+<tr class="separator:a6b650dcb5dd419477502651e4e374b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6e2ab4bd22b9f7ed665118fb8144af"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::Telemetry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a5f6e2ab4bd22b9f7ed665118fb8144af">telemetry</a></td></tr>
+<tr class="memdesc:a5f6e2ab4bd22b9f7ed665118fb8144af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozwala na odbiór danych telemetrycznych.  <a href="classFlightControl.html#a5f6e2ab4bd22b9f7ed665118fb8144af">Więcej...</a><br /></td></tr>
+<tr class="separator:a5f6e2ab4bd22b9f7ed665118fb8144af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58e5dfe210f59ec3202f36ee7a5d550"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::Action &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#aa58e5dfe210f59ec3202f36ee7a5d550">action</a></td></tr>
+<tr class="memdesc:aa58e5dfe210f59ec3202f36ee7a5d550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozwala na wykonywanie prostych akcji.  <a href="classFlightControl.html#aa58e5dfe210f59ec3202f36ee7a5d550">Więcej...</a><br /></td></tr>
+<tr class="separator:aa58e5dfe210f59ec3202f36ee7a5d550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e7b5abfa648d4c291abdc3d3f6fb4b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mavsdk::Offboard &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#ab3e7b5abfa648d4c291abdc3d3f6fb4b">offboard</a></td></tr>
+<tr class="memdesc:ab3e7b5abfa648d4c291abdc3d3f6fb4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozwala na kontrolę w trybie offboard.  <a href="classFlightControl.html#ab3e7b5abfa648d4c291abdc3d3f6fb4b">Więcej...</a><br /></td></tr>
+<tr class="separator:ab3e7b5abfa648d4c291abdc3d3f6fb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755617e8fe2eb80ee766f089997b99c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTelemetryData.html">TelemetryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightControl.html#a755617e8fe2eb80ee766f089997b99c3">telemData</a></td></tr>
+<tr class="memdesc:a755617e8fe2eb80ee766f089997b99c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje dane telemetryczne odebrane przez MAVLink.  <a href="classFlightControl.html#a755617e8fe2eb80ee766f089997b99c3">Więcej...</a><br /></td></tr>
+<tr class="separator:a755617e8fe2eb80ee766f089997b99c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a5ac7910e8b4116feacde217d2f47e553" name="a5ac7910e8b4116feacde217d2f47e553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac7910e8b4116feacde217d2f47e553">&#9670;&nbsp;</a></span>FlightControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlightControl::FlightControl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tworzy nowy obiekt klasy <a class="el" href="classFlightControl.html">FlightControl</a>. </p>
+
+</div>
+</div>
+<a id="acd9f5dc068bc8d817c6d273e671ceaa9" name="acd9f5dc068bc8d817c6d273e671ceaa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9f5dc068bc8d817c6d273e671ceaa9">&#9670;&nbsp;</a></span>~FlightControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlightControl::~FlightControl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Niszczy dany obiekt klasy <a class="el" href="classFlightControl.html">FlightControl</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a998d4d676ffc4ed1a0eeaf2685a9abb0" name="a998d4d676ffc4ed1a0eeaf2685a9abb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998d4d676ffc4ed1a0eeaf2685a9abb0">&#9670;&nbsp;</a></span>checkStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::checkStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza stan maszyny pod kątem gotowości do działania systemu. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Maszyna jest gotowa do wykonywania algorytmu. </dd>
+<dd>
+false Maszyna nie jest gotowa do wykonywania algorytmu. </dd></dl>
+
+</div>
+</div>
+<a id="a05c19705125a001ca20c606fc226fcec" name="a05c19705125a001ca20c606fc226fcec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c19705125a001ca20c606fc226fcec">&#9670;&nbsp;</a></span>checkVelo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::checkVelo </td>
+          <td>(</td>
+          <td class="paramtype">mavsdk::Offboard::VelocityBodyYawspeed &amp;&#160;</td>
+          <td class="paramname"><em>velocities</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się, wprowadza korektę. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">velocities</td><td>Prędkości podlegające sprawdzeniu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>true Wartości prędkości mieszczą się w zadanym przedziale. </dd>
+<dd>
+false Wartości prędkości nie mieszczą się w zadanym przedziale, wprowadzona zastała korekta. </dd></dl>
+
+</div>
+</div>
+<a id="a9164aa3fca1ed70fd4fa44889cf90901" name="a9164aa3fca1ed70fd4fa44889cf90901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9164aa3fca1ed70fd4fa44889cf90901">&#9670;&nbsp;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::connect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicjalizuje połączenie z autopilotem. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Pomyślnie nawiązano połącznie. </dd>
+<dd>
+false Wystąpił błąd podczan nawiązywania połączenia. </dd></dl>
+
+</div>
+</div>
+<a id="ad8bc6ae62ce57ce4d481bbd98659188d" name="ad8bc6ae62ce57ce4d481bbd98659188d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bc6ae62ce57ce4d481bbd98659188d">&#9670;&nbsp;</a></span>getAltitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FlightControl::getAltitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca ostatnią wysokość relatywną maszyny nad ziemią. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>float Wysokość AGL maszyny. </dd></dl>
+
+</div>
+</div>
+<a id="a07e6e757dfd1060113c75d49789c5347" name="a07e6e757dfd1060113c75d49789c5347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e6e757dfd1060113c75d49789c5347">&#9670;&nbsp;</a></span>getEulerAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mavsdk::Telemetry::EulerAngle FlightControl::getEulerAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualne kąty pochylenia maszyny. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>mavsdk::Telemetry::EulerAngle Kąty Eulera </dd></dl>
+
+</div>
+</div>
+<a id="a0ea81d423f2c10f92e82da1e238f66c0" name="a0ea81d423f2c10f92e82da1e238f66c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea81d423f2c10f92e82da1e238f66c0">&#9670;&nbsp;</a></span>getFlightMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mavsdk::Telemetry::FlightMode FlightControl::getFlightMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualny tryb lotu. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Aktualny tryb lotu. </dd></dl>
+
+</div>
+</div>
+<a id="af8b2e9565221188d15e606f50caa8fc0" name="af8b2e9565221188d15e606f50caa8fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b2e9565221188d15e606f50caa8fc0">&#9670;&nbsp;</a></span>getSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; mavsdk::System &gt; FlightControl::getSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca obecny system. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>std::shared_ptr&lt;mavsdk::System&gt; Obecny system </dd></dl>
+
+</div>
+</div>
+<a id="a33a38bbf8c96f80964e996dde51937d7" name="a33a38bbf8c96f80964e996dde51937d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a38bbf8c96f80964e996dde51937d7">&#9670;&nbsp;</a></span>land()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::land </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyzwala tryb lądowania w obecnym punkcie. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Pomyślnie aktywowano tryb lądowanie. </dd>
+<dd>
+false Wystąpił błąd podczas aktywowania trybu lądowania. </dd></dl>
+
+</div>
+</div>
+<a id="a84f16d96bbbbfe450ec7dd6ef619e2ce" name="a84f16d96bbbbfe450ec7dd6ef619e2ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f16d96bbbbfe450ec7dd6ef619e2ce">&#9670;&nbsp;</a></span>observeInAir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::observeInAir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdzenie czy maszyna jest w trakcie lotu. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Maszyna jest w trakcie lotu. </dd>
+<dd>
+false Maszyna nie jest w trakcie lotu. </dd></dl>
+
+</div>
+</div>
+<a id="a8853436a710b17dd28bf932cbb499a4f" name="a8853436a710b17dd28bf932cbb499a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8853436a710b17dd28bf932cbb499a4f">&#9670;&nbsp;</a></span>printTelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FlightControl::printTelem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyświetla w konsoli podstawowe dane telemetryczne. </p>
+
+</div>
+</div>
+<a id="aff4c1c3e065602fff23947d2cfb10448" name="aff4c1c3e065602fff23947d2cfb10448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4c1c3e065602fff23947d2cfb10448">&#9670;&nbsp;</a></span>setConnectionURL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FlightControl::setConnectionURL </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia wartość pola connectionURL. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>Nowy url do ustawienia. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abb1969a4e35e1625c950de054a71bed0" name="abb1969a4e35e1625c950de054a71bed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1969a4e35e1625c950de054a71bed0">&#9670;&nbsp;</a></span>setOffbardVelo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::setOffbardVelo </td>
+          <td>(</td>
+          <td class="paramtype">mavsdk::Offboard::VelocityBodyYawspeed&#160;</td>
+          <td class="paramname"><em>veloBodyYawspeed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia prędkości liniowe dla ciała w trybie offboard. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Pomyślnie ustawiono prędkość. </dd>
+<dd>
+false Wystąpił błąd podczas ustawiania prędkości. </dd></dl>
+
+</div>
+</div>
+<a id="ae654f2e83d220da97dd0c9c1be509cdb" name="ae654f2e83d220da97dd0c9c1be509cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae654f2e83d220da97dd0c9c1be509cdb">&#9670;&nbsp;</a></span>startOffbard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::startOffbard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Pomyślnie aktywowano kontrolę offboard. </dd>
+<dd>
+false Wystąpił błąd podczas aktywowania kontroli offboard. </dd></dl>
+
+</div>
+</div>
+<a id="a74dd9b48e4b837e02f8e3d3977bd22da" name="a74dd9b48e4b837e02f8e3d3977bd22da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74dd9b48e4b837e02f8e3d3977bd22da">&#9670;&nbsp;</a></span>stopOffboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlightControl::stopOffboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zatrzymuje kontrolę w trybie offboard. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true Pomyślnie zatrzymano kontrolę offboard. </dd>
+<dd>
+false Wystąpił błąd podczas zatrzymywania kontroli offboard. </dd></dl>
+
+</div>
+</div>
+<a id="aec4227a4f2cc025de456e38accee1453" name="aec4227a4f2cc025de456e38accee1453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4227a4f2cc025de456e38accee1453">&#9670;&nbsp;</a></span>subscribeTelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FlightControl::subscribeTelem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subskrybuje wymagane tematy. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="aa58e5dfe210f59ec3202f36ee7a5d550" name="aa58e5dfe210f59ec3202f36ee7a5d550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58e5dfe210f59ec3202f36ee7a5d550">&#9670;&nbsp;</a></span>action</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mavsdk::Action&gt; FlightControl::action</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pozwala na wykonywanie prostych akcji. </p>
+
+</div>
+</div>
+<a id="ad3b2f77ba73fa6047d2449aef114e036" name="ad3b2f77ba73fa6047d2449aef114e036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b2f77ba73fa6047d2449aef114e036">&#9670;&nbsp;</a></span>connectionURL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string FlightControl::connectionURL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adres połączenia protokołu MAVLink. </p>
+
+</div>
+</div>
+<a id="a6b650dcb5dd419477502651e4e374b91" name="a6b650dcb5dd419477502651e4e374b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b650dcb5dd419477502651e4e374b91">&#9670;&nbsp;</a></span>info</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mavsdk::Info&gt; FlightControl::info</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dostarcza informacji o systemie. </p>
+
+</div>
+</div>
+<a id="a89f0d84af6022790058ca5b119729ba1" name="a89f0d84af6022790058ca5b119729ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f0d84af6022790058ca5b119729ba1">&#9670;&nbsp;</a></span>mavsdk</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mavsdk::Mavsdk FlightControl::mavsdk</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pozwala na zarządzanie połączeniami. </p>
+
+</div>
+</div>
+<a id="ab3e7b5abfa648d4c291abdc3d3f6fb4b" name="ab3e7b5abfa648d4c291abdc3d3f6fb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e7b5abfa648d4c291abdc3d3f6fb4b">&#9670;&nbsp;</a></span>offboard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mavsdk::Offboard&gt; FlightControl::offboard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pozwala na kontrolę w trybie offboard. </p>
+
+</div>
+</div>
+<a id="a42e8a928279787d20a0f725367e207b1" name="a42e8a928279787d20a0f725367e207b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e8a928279787d20a0f725367e207b1">&#9670;&nbsp;</a></span>system</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mavsdk::System&gt; FlightControl::system</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obiekt reprezentujący system (autopilot) </p>
+
+</div>
+</div>
+<a id="a755617e8fe2eb80ee766f089997b99c3" name="a755617e8fe2eb80ee766f089997b99c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a755617e8fe2eb80ee766f089997b99c3">&#9670;&nbsp;</a></span>telemData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTelemetryData.html">TelemetryData</a> FlightControl::telemData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przechowuje dane telemetryczne odebrane przez MAVLink. </p>
+
+</div>
+</div>
+<a id="a5f6e2ab4bd22b9f7ed665118fb8144af" name="a5f6e2ab4bd22b9f7ed665118fb8144af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f6e2ab4bd22b9f7ed665118fb8144af">&#9670;&nbsp;</a></span>telemetry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mavsdk::Telemetry&gt; FlightControl::telemetry</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pozwala na odbiór danych telemetrycznych. </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>include/FlightAutonomy/<a class="el" href="FlightControl_8h_source.html">FlightControl.h</a></li>
+<li>src/<a class="el" href="FlightControl_8cpp.html">FlightControl.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,33 @@
+\hypertarget{ImageReceiver_8h_source}{}\doxysubsection{Image\+Receiver.\+h}
+\label{ImageReceiver_8h_source}\index{include/FlightAutonomy/ImageReceiver.h@{include/FlightAutonomy/ImageReceiver.h}}
+\mbox{\hyperlink{ImageReceiver_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <opencv2/videoio.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classImageReceiver}{ImageReceiver}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     cv::VideoCapture \mbox{\hyperlink{classImageReceiver_aaaac535e6c8fdbe3347718f5100bf0ba}{cap}};    }
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} \mbox{\hyperlink{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}{deviceID}} = 0;        }
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} \mbox{\hyperlink{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}{apiID}} = cv::CAP\_ANY; }
+\DoxyCodeLine{14     cv::Mat \mbox{\hyperlink{classImageReceiver_a32a36e1646407c7740ff6fb9a1ae8a36}{camImage}};        }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{classImageReceiver_a90b66c1ee039d9527011845ba1f97a96}{ImageReceiver}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classImageReceiver_a90b66c1ee039d9527011845ba1f97a96}{ImageReceiver}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{classImageReceiver_a77d0f4789d1a22a8e20966b77328099c}{deviceID}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classImageReceiver_ace50649b6014ab0a8e56e11a4c3286b0}{apiID}} = 0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30     \mbox{\hyperlink{classImageReceiver_a75f6a7efd74ca796b6f996df68c9cb75}{\string~ImageReceiver}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classImageReceiver_a884a177f27698a4707bbf0b2b4bfb423}{open}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classImageReceiver_ad8b951076bc523336614e552eb0547e3}{receiveImage}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classImageReceiver_ae93265aba9fcdda37ad729e46ed4b99c}{setDevice}}(\textcolor{keywordtype}{int} \_deviceID, \textcolor{keywordtype}{int} \_apiID = 0);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58     cv::Mat \mbox{\hyperlink{classImageReceiver_af9617a7daf4ec746f7407af673c85406}{getImage}}();}
+\DoxyCodeLine{59 \};}
+
+\end{DoxyCode}
