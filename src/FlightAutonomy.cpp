@@ -334,12 +334,10 @@ bool FlightAutonomy::spinOnce()
     }
 
 #ifdef FA_DEBUG
-    cv::resize(img, img, cv::Size(320, 240));
-    cv::imshow(OPENCV_WINDOW, imgRec.getImage());
+    cv::resize(img, img, cv::Size(640, 480));
+    cv::imshow(OPENCV_WINDOW, img);
     cv::waitKey(1);
 #endif
-
-    // flightCtrl.printTelem();
 
     return returnCode;
 }

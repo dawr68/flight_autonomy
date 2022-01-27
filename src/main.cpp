@@ -6,7 +6,7 @@ void printHelp(std::string progName)
     std::cout << "Usage:" << std::endl;
     std::cout << progName + " algorithm drone_connection_URL [cameraID]" << std::endl;
     std::cout << "For example" << std::endl;
-    std::cout << progName + "landing udp://:14445 0" << std::endl;
+    std::cout << progName + " landing udp://:14445 0" << std::endl;
 }
 
 int main(int argc, char **argv)
