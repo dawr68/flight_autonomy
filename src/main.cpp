@@ -3,9 +3,11 @@
 void printHelp(std::string progName)
 {
     std::cout << "Usage:" << std::endl;
-    std::cout << progName + "algorithm drone_connection_URL [cameraID]" << std::endl;
-    std::cout << "For example" << std::endl;
-    std::cout << progName + "landing udp://:14445 0" << std::endl;
+    std::cout << "  " << progName + " algorithm drone_connection_URL [cameraID]" << std::endl;
+    std::cout << "For example " << std::endl;
+    std::cout << "  " << progName + " landing udp://:14445 0" << std::endl;
+    std::cout << "Available algorithms:" << std::endl;
+    std::cout << "   landing / racing" << std::endl;
 }
 
 int main(int argc, char **argv)
@@ -34,6 +36,7 @@ int main(int argc, char **argv)
         fa.spinOnce();
     }
 
+    fa.stop();
     fa.printExitStatus();
 
     std::cout << "Exitted successfully." << std::endl;

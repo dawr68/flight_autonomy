@@ -1,0 +1,177 @@
+\hypertarget{defines_8h}{}\doxysubsection{Dokumentacja pliku include/\+Flight\+Autonomy/defines.h}
+\label{defines_8h}\index{include/FlightAutonomy/defines.h@{include/FlightAutonomy/defines.h}}
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{defines_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{defines_8h_a7b96f8486c2ebf253a2546679c43900b}{FA\+\_\+\+DEBUG}}
+\begin{DoxyCompactList}\small\item\em Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{defines_8h_a64a872cf4964f7e0c4b2a0afd1e27d36}{MAX\+\_\+\+VELO\+\_\+\+HORI\+\_\+\+MS}} = 1
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość prędkości w poziomie (osie X i Y) w m/. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_af09d6d4a6ef8bc1841ae524162bd67b2}{MAX\+\_\+\+VELO\+\_\+\+VERT\+\_\+\+MS}} = 0.\+75
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość prędkości w pionie (oś Z) w m/s. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_abadf32d94c51665e93e3abc94098455b}{MAX\+\_\+\+YAWSPEED}} = 30
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość prędkości kątowej wokół osi Z (yaw) w stopniach na sekundę \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_a06630eaf6d177192508df765117adc27}{MAX\+\_\+\+FLIGHT\+\_\+\+ALT}} = 10
+\begin{DoxyCompactList}\small\item\em Maksymalna wysokość do której system może zostać uruchomiony. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_acd6546589d2015e025c55793b145eecd}{MID\+\_\+\+THRESHOLD}} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Próg do którego przyjmowana jest odległość jako bliska środka obrazu. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_a38e49cc8fade56ae90e5608431f79f36}{LAND\+\_\+\+ALT}} = 1
+\begin{DoxyCompactList}\small\item\em Wysokość AGL w metrach poniżej której następuje przyziemienie w danym miejscu. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_aa325fe6f2f8060f276faea1c082560e7}{RACING\+\_\+\+ALT}} = 15
+\begin{DoxyCompactList}\small\item\em Wysokość AGL w metrach na której musi się znajdować maszyna podczas pokonywania bramki. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_a3e1d1dfde089b807089e15061c8e4068}{IS\+\_\+\+STRAIGHT\+\_\+\+ANGLE}} = 1.\+25
+\begin{DoxyCompactList}\small\item\em Kąt poniżej którego przyjmuje się że maszyna jest na wprost bramki. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_a5261ceeaeb36fdf35f0ad715c4206213}{CAM\+\_\+\+HFOV}} = 60
+\begin{DoxyCompactList}\small\item\em Horyzontalny kąt widzenia kamery w stopniach. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{defines_8h_a58544852c458cbb2fab3465d18384c0b}{CAM\+\_\+\+VFOV}} = 45
+\begin{DoxyCompactList}\small\item\em Wertykalny kąt widzenia kamery w stopniach. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{defines_8h_a0539b2b283e6ca2e9aefab118e08865b}{NO\+\_\+\+DETECT\+\_\+\+TIMEOUT}} = 10
+\begin{DoxyCompactList}\small\item\em Czas po którym nastąpi przerwanie działania w przypadku nie wykrywania znaczników. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{defines_8h_a2cf98c68f2f2ed00831f50bc87d09c9f}{FORWARD\+\_\+\+FLIGHT\+\_\+\+TIMEOUT}} = 7
+\begin{DoxyCompactList}\small\item\em Czas przez który maszyna leci do przodu aby pokonać przeszkodę \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Dokumentacja definicji}
+\mbox{\Hypertarget{defines_8h_a7b96f8486c2ebf253a2546679c43900b}\label{defines_8h_a7b96f8486c2ebf253a2546679c43900b}} 
+\index{defines.h@{defines.h}!FA\_DEBUG@{FA\_DEBUG}}
+\index{FA\_DEBUG@{FA\_DEBUG}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{FA\_DEBUG}{FA\_DEBUG}}
+{\footnotesize\ttfamily \#define FA\+\_\+\+DEBUG}
+
+
+
+Tryb debugowania wyświetlający oknie z obrazem odbieranym z kamery. 
+
+
+
+\doxysubsubsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{defines_8h_a5261ceeaeb36fdf35f0ad715c4206213}\label{defines_8h_a5261ceeaeb36fdf35f0ad715c4206213}} 
+\index{defines.h@{defines.h}!CAM\_HFOV@{CAM\_HFOV}}
+\index{CAM\_HFOV@{CAM\_HFOV}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{CAM\_HFOV}{CAM\_HFOV}}
+{\footnotesize\ttfamily const float CAM\+\_\+\+HFOV = 60}
+
+
+
+Horyzontalny kąt widzenia kamery w stopniach. 
+
+\mbox{\Hypertarget{defines_8h_a58544852c458cbb2fab3465d18384c0b}\label{defines_8h_a58544852c458cbb2fab3465d18384c0b}} 
+\index{defines.h@{defines.h}!CAM\_VFOV@{CAM\_VFOV}}
+\index{CAM\_VFOV@{CAM\_VFOV}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{CAM\_VFOV}{CAM\_VFOV}}
+{\footnotesize\ttfamily const float CAM\+\_\+\+VFOV = 45}
+
+
+
+Wertykalny kąt widzenia kamery w stopniach. 
+
+\mbox{\Hypertarget{defines_8h_a2cf98c68f2f2ed00831f50bc87d09c9f}\label{defines_8h_a2cf98c68f2f2ed00831f50bc87d09c9f}} 
+\index{defines.h@{defines.h}!FORWARD\_FLIGHT\_TIMEOUT@{FORWARD\_FLIGHT\_TIMEOUT}}
+\index{FORWARD\_FLIGHT\_TIMEOUT@{FORWARD\_FLIGHT\_TIMEOUT}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{FORWARD\_FLIGHT\_TIMEOUT}{FORWARD\_FLIGHT\_TIMEOUT}}
+{\footnotesize\ttfamily const int FORWARD\+\_\+\+FLIGHT\+\_\+\+TIMEOUT = 7}
+
+
+
+Czas przez który maszyna leci do przodu aby pokonać przeszkodę 
+
+\mbox{\Hypertarget{defines_8h_a3e1d1dfde089b807089e15061c8e4068}\label{defines_8h_a3e1d1dfde089b807089e15061c8e4068}} 
+\index{defines.h@{defines.h}!IS\_STRAIGHT\_ANGLE@{IS\_STRAIGHT\_ANGLE}}
+\index{IS\_STRAIGHT\_ANGLE@{IS\_STRAIGHT\_ANGLE}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{IS\_STRAIGHT\_ANGLE}{IS\_STRAIGHT\_ANGLE}}
+{\footnotesize\ttfamily const float IS\+\_\+\+STRAIGHT\+\_\+\+ANGLE = 1.\+25}
+
+
+
+Kąt poniżej którego przyjmuje się że maszyna jest na wprost bramki. 
+
+\mbox{\Hypertarget{defines_8h_a38e49cc8fade56ae90e5608431f79f36}\label{defines_8h_a38e49cc8fade56ae90e5608431f79f36}} 
+\index{defines.h@{defines.h}!LAND\_ALT@{LAND\_ALT}}
+\index{LAND\_ALT@{LAND\_ALT}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{LAND\_ALT}{LAND\_ALT}}
+{\footnotesize\ttfamily const float LAND\+\_\+\+ALT = 1}
+
+
+
+Wysokość AGL w metrach poniżej której następuje przyziemienie w danym miejscu. 
+
+\mbox{\Hypertarget{defines_8h_a06630eaf6d177192508df765117adc27}\label{defines_8h_a06630eaf6d177192508df765117adc27}} 
+\index{defines.h@{defines.h}!MAX\_FLIGHT\_ALT@{MAX\_FLIGHT\_ALT}}
+\index{MAX\_FLIGHT\_ALT@{MAX\_FLIGHT\_ALT}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{MAX\_FLIGHT\_ALT}{MAX\_FLIGHT\_ALT}}
+{\footnotesize\ttfamily const float MAX\+\_\+\+FLIGHT\+\_\+\+ALT = 10}
+
+
+
+Maksymalna wysokość do której system może zostać uruchomiony. 
+
+\mbox{\Hypertarget{defines_8h_a64a872cf4964f7e0c4b2a0afd1e27d36}\label{defines_8h_a64a872cf4964f7e0c4b2a0afd1e27d36}} 
+\index{defines.h@{defines.h}!MAX\_VELO\_HORI\_MS@{MAX\_VELO\_HORI\_MS}}
+\index{MAX\_VELO\_HORI\_MS@{MAX\_VELO\_HORI\_MS}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{MAX\_VELO\_HORI\_MS}{MAX\_VELO\_HORI\_MS}}
+{\footnotesize\ttfamily const float MAX\+\_\+\+VELO\+\_\+\+HORI\+\_\+\+MS = 1}
+
+
+
+Maksymalna wartość prędkości w poziomie (osie X i Y) w m/. 
+
+\mbox{\Hypertarget{defines_8h_af09d6d4a6ef8bc1841ae524162bd67b2}\label{defines_8h_af09d6d4a6ef8bc1841ae524162bd67b2}} 
+\index{defines.h@{defines.h}!MAX\_VELO\_VERT\_MS@{MAX\_VELO\_VERT\_MS}}
+\index{MAX\_VELO\_VERT\_MS@{MAX\_VELO\_VERT\_MS}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{MAX\_VELO\_VERT\_MS}{MAX\_VELO\_VERT\_MS}}
+{\footnotesize\ttfamily const float MAX\+\_\+\+VELO\+\_\+\+VERT\+\_\+\+MS = 0.\+75}
+
+
+
+Maksymalna wartość prędkości w pionie (oś Z) w m/s. 
+
+\mbox{\Hypertarget{defines_8h_abadf32d94c51665e93e3abc94098455b}\label{defines_8h_abadf32d94c51665e93e3abc94098455b}} 
+\index{defines.h@{defines.h}!MAX\_YAWSPEED@{MAX\_YAWSPEED}}
+\index{MAX\_YAWSPEED@{MAX\_YAWSPEED}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{MAX\_YAWSPEED}{MAX\_YAWSPEED}}
+{\footnotesize\ttfamily const float MAX\+\_\+\+YAWSPEED = 30}
+
+
+
+Maksymalna wartość prędkości kątowej wokół osi Z (yaw) w stopniach na sekundę 
+
+\mbox{\Hypertarget{defines_8h_acd6546589d2015e025c55793b145eecd}\label{defines_8h_acd6546589d2015e025c55793b145eecd}} 
+\index{defines.h@{defines.h}!MID\_THRESHOLD@{MID\_THRESHOLD}}
+\index{MID\_THRESHOLD@{MID\_THRESHOLD}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{MID\_THRESHOLD}{MID\_THRESHOLD}}
+{\footnotesize\ttfamily const float MID\+\_\+\+THRESHOLD = 0.\+4}
+
+
+
+Próg do którego przyjmowana jest odległość jako bliska środka obrazu. 
+
+\mbox{\Hypertarget{defines_8h_a0539b2b283e6ca2e9aefab118e08865b}\label{defines_8h_a0539b2b283e6ca2e9aefab118e08865b}} 
+\index{defines.h@{defines.h}!NO\_DETECT\_TIMEOUT@{NO\_DETECT\_TIMEOUT}}
+\index{NO\_DETECT\_TIMEOUT@{NO\_DETECT\_TIMEOUT}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{NO\_DETECT\_TIMEOUT}{NO\_DETECT\_TIMEOUT}}
+{\footnotesize\ttfamily const int NO\+\_\+\+DETECT\+\_\+\+TIMEOUT = 10}
+
+
+
+Czas po którym nastąpi przerwanie działania w przypadku nie wykrywania znaczników. 
+
+\mbox{\Hypertarget{defines_8h_aa325fe6f2f8060f276faea1c082560e7}\label{defines_8h_aa325fe6f2f8060f276faea1c082560e7}} 
+\index{defines.h@{defines.h}!RACING\_ALT@{RACING\_ALT}}
+\index{RACING\_ALT@{RACING\_ALT}!defines.h@{defines.h}}
+\doxyparagraph{\texorpdfstring{RACING\_ALT}{RACING\_ALT}}
+{\footnotesize\ttfamily const float RACING\+\_\+\+ALT = 15}
+
+
+
+Wysokość AGL w metrach na której musi się znajdować maszyna podczas pokonywania bramki. 
+

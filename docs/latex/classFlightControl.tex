@@ -1,0 +1,410 @@
+\hypertarget{classFlightControl}{}\doxysubsection{Dokumentacja klasy Flight\+Control}
+\label{classFlightControl}\index{FlightControl@{FlightControl}}
+
+
+Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink. Zapewnia odbiór kluczowych danych telemetrycznych i pozwala na sterowanie poprzez komendy offboard.  
+
+
+
+
+{\ttfamily \#include $<$Flight\+Control.\+h$>$}
+
+
+
+Diagram współpracy dla Flight\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classFlightControl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFlightControl_a5ac7910e8b4116feacde217d2f47e553}{Flight\+Control}} ()=default
+\begin{DoxyCompactList}\small\item\em Tworzy nowy obiekt klasy \mbox{\hyperlink{classFlightControl}{Flight\+Control}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlightControl_acd9f5dc068bc8d817c6d273e671ceaa9}{$\sim$\+Flight\+Control}} ()=default
+\begin{DoxyCompactList}\small\item\em Niszczy dany obiekt klasy \mbox{\hyperlink{classFlightControl}{Flight\+Control}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a9164aa3fca1ed70fd4fa44889cf90901}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Inicjalizuje połączenie z autopilotem. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a998d4d676ffc4ed1a0eeaf2685a9abb0}{check\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Sprawdza stan maszyny pod kątem gotowości do działania systemu. \end{DoxyCompactList}\item 
+mavsdk\+::\+Telemetry\+::\+Euler\+Angle \mbox{\hyperlink{classFlightControl_a07e6e757dfd1060113c75d49789c5347}{get\+Euler\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca aktualne kąty pochylenia maszyny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlightControl_aff4c1c3e065602fff23947d2cfb10448}{set\+Connection\+URL}} (const std\+::string url)
+\begin{DoxyCompactList}\small\item\em Ustawia wartość pola connection\+URL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlightControl_a8853436a710b17dd28bf932cbb499a4f}{print\+Telem}} ()
+\begin{DoxyCompactList}\small\item\em Wyświetla w konsoli podstawowe dane telemetryczne. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a84f16d96bbbbfe450ec7dd6ef619e2ce}{observe\+In\+Air}} ()
+\begin{DoxyCompactList}\small\item\em Sprawdzenie czy maszyna jest w trakcie lotu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_ae654f2e83d220da97dd0c9c1be509cdb}{start\+Offbard}} ()
+\begin{DoxyCompactList}\small\item\em Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a74dd9b48e4b837e02f8e3d3977bd22da}{stop\+Offboard}} ()
+\begin{DoxyCompactList}\small\item\em Zatrzymuje kontrolę w trybie offboard. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_abb1969a4e35e1625c950de054a71bed0}{set\+Offbard\+Velo}} (mavsdk\+::\+Offboard\+::\+Velocity\+Body\+Yawspeed velo\+Body\+Yawspeed)
+\begin{DoxyCompactList}\small\item\em Ustawia prędkości liniowe dla ciała w trybie offboard. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a33a38bbf8c96f80964e996dde51937d7}{land}} ()
+\begin{DoxyCompactList}\small\item\em Wyzwala tryb lądowania w obecnym punkcie. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classFlightControl_ad8bc6ae62ce57ce4d481bbd98659188d}{get\+Altitude}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca ostatnią wysokość relatywną maszyny nad ziemią. \end{DoxyCompactList}\item 
+mavsdk\+::\+Telemetry\+::\+Flight\+Mode \mbox{\hyperlink{classFlightControl_a0ea81d423f2c10f92e82da1e238f66c0}{get\+Flight\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca aktualny tryb lotu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlightControl_a05c19705125a001ca20c606fc226fcec}{check\+Velo}} (mavsdk\+::\+Offboard\+::\+Velocity\+Body\+Yawspeed \&velocities)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się, wprowadza korektę. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+System $>$ \mbox{\hyperlink{classFlightControl_af8b2e9565221188d15e606f50caa8fc0}{get\+System}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca obecny system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlightControl_aec4227a4f2cc025de456e38accee1453}{subscribe\+Telem}} ()
+\begin{DoxyCompactList}\small\item\em Subskrybuje wymagane tematy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classFlightControl_ad3b2f77ba73fa6047d2449aef114e036}{connection\+URL}}
+\begin{DoxyCompactList}\small\item\em Adres połączenia protokołu MAVLink. \end{DoxyCompactList}\item 
+mavsdk\+::\+Mavsdk \mbox{\hyperlink{classFlightControl_a89f0d84af6022790058ca5b119729ba1}{mavsdk}}
+\begin{DoxyCompactList}\small\item\em Pozwala na zarządzanie połączeniami. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+System $>$ \mbox{\hyperlink{classFlightControl_a42e8a928279787d20a0f725367e207b1}{system}}
+\begin{DoxyCompactList}\small\item\em Obiekt reprezentujący system (autopilot) \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+Info $>$ \mbox{\hyperlink{classFlightControl_a6b650dcb5dd419477502651e4e374b91}{info}}
+\begin{DoxyCompactList}\small\item\em Dostarcza informacji o systemie. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+Telemetry $>$ \mbox{\hyperlink{classFlightControl_a5f6e2ab4bd22b9f7ed665118fb8144af}{telemetry}}
+\begin{DoxyCompactList}\small\item\em Pozwala na odbiór danych telemetrycznych. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+Action $>$ \mbox{\hyperlink{classFlightControl_aa58e5dfe210f59ec3202f36ee7a5d550}{action}}
+\begin{DoxyCompactList}\small\item\em Pozwala na wykonywanie prostych akcji. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ mavsdk\+::\+Offboard $>$ \mbox{\hyperlink{classFlightControl_ab3e7b5abfa648d4c291abdc3d3f6fb4b}{offboard}}
+\begin{DoxyCompactList}\small\item\em Pozwala na kontrolę w trybie offboard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTelemetryData}{Telemetry\+Data}} \mbox{\hyperlink{classFlightControl_a755617e8fe2eb80ee766f089997b99c3}{telem\+Data}}
+\begin{DoxyCompactList}\small\item\em Przechowuje dane telemetryczne odebrane przez MAVLink. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Opis szczegółowy}
+Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink. Zapewnia odbiór kluczowych danych telemetrycznych i pozwala na sterowanie poprzez komendy offboard. 
+
+\doxysubsubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classFlightControl_a5ac7910e8b4116feacde217d2f47e553}\label{classFlightControl_a5ac7910e8b4116feacde217d2f47e553}} 
+\index{FlightControl@{FlightControl}!FlightControl@{FlightControl}}
+\index{FlightControl@{FlightControl}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{FlightControl()}{FlightControl()}}
+{\footnotesize\ttfamily Flight\+Control\+::\+Flight\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Tworzy nowy obiekt klasy \mbox{\hyperlink{classFlightControl}{Flight\+Control}}. 
+
+\mbox{\Hypertarget{classFlightControl_acd9f5dc068bc8d817c6d273e671ceaa9}\label{classFlightControl_acd9f5dc068bc8d817c6d273e671ceaa9}} 
+\index{FlightControl@{FlightControl}!````~FlightControl@{$\sim$FlightControl}}
+\index{````~FlightControl@{$\sim$FlightControl}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{$\sim$FlightControl()}{~FlightControl()}}
+{\footnotesize\ttfamily Flight\+Control\+::$\sim$\+Flight\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Niszczy dany obiekt klasy \mbox{\hyperlink{classFlightControl}{Flight\+Control}}. 
+
+
+
+\doxysubsubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classFlightControl_a998d4d676ffc4ed1a0eeaf2685a9abb0}\label{classFlightControl_a998d4d676ffc4ed1a0eeaf2685a9abb0}} 
+\index{FlightControl@{FlightControl}!checkStatus@{checkStatus}}
+\index{checkStatus@{checkStatus}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{checkStatus()}{checkStatus()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::check\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sprawdza stan maszyny pod kątem gotowości do działania systemu. 
+
+\begin{DoxyReturn}{Zwraca}
+true Maszyna jest gotowa do wykonywania algorytmu. 
+
+false Maszyna nie jest gotowa do wykonywania algorytmu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a05c19705125a001ca20c606fc226fcec}\label{classFlightControl_a05c19705125a001ca20c606fc226fcec}} 
+\index{FlightControl@{FlightControl}!checkVelo@{checkVelo}}
+\index{checkVelo@{checkVelo}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{checkVelo()}{checkVelo()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::check\+Velo (\begin{DoxyParamCaption}\item[{mavsdk\+::\+Offboard\+::\+Velocity\+Body\+Yawspeed \&}]{velocities }\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się, wprowadza korektę. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em velocities} & Prędkości podlegające sprawdzeniu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+true Wartości prędkości mieszczą się w zadanym przedziale. 
+
+false Wartości prędkości nie mieszczą się w zadanym przedziale, wprowadzona zastała korekta. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a9164aa3fca1ed70fd4fa44889cf90901}\label{classFlightControl_a9164aa3fca1ed70fd4fa44889cf90901}} 
+\index{FlightControl@{FlightControl}!connect@{connect}}
+\index{connect@{connect}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicjalizuje połączenie z autopilotem. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie nawiązano połącznie. 
+
+false Wystąpił błąd podczan nawiązywania połączenia. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_ad8bc6ae62ce57ce4d481bbd98659188d}\label{classFlightControl_ad8bc6ae62ce57ce4d481bbd98659188d}} 
+\index{FlightControl@{FlightControl}!getAltitude@{getAltitude}}
+\index{getAltitude@{getAltitude}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{getAltitude()}{getAltitude()}}
+{\footnotesize\ttfamily float Flight\+Control\+::get\+Altitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca ostatnią wysokość relatywną maszyny nad ziemią. 
+
+\begin{DoxyReturn}{Zwraca}
+float Wysokość AGL maszyny. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a07e6e757dfd1060113c75d49789c5347}\label{classFlightControl_a07e6e757dfd1060113c75d49789c5347}} 
+\index{FlightControl@{FlightControl}!getEulerAngle@{getEulerAngle}}
+\index{getEulerAngle@{getEulerAngle}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{getEulerAngle()}{getEulerAngle()}}
+{\footnotesize\ttfamily mavsdk\+::\+Telemetry\+::\+Euler\+Angle Flight\+Control\+::get\+Euler\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca aktualne kąty pochylenia maszyny. 
+
+\begin{DoxyReturn}{Zwraca}
+mavsdk\+::\+Telemetry\+::\+Euler\+Angle Kąty Eulera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a0ea81d423f2c10f92e82da1e238f66c0}\label{classFlightControl_a0ea81d423f2c10f92e82da1e238f66c0}} 
+\index{FlightControl@{FlightControl}!getFlightMode@{getFlightMode}}
+\index{getFlightMode@{getFlightMode}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{getFlightMode()}{getFlightMode()}}
+{\footnotesize\ttfamily mavsdk\+::\+Telemetry\+::\+Flight\+Mode Flight\+Control\+::get\+Flight\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca aktualny tryb lotu. 
+
+\begin{DoxyReturn}{Zwraca}
+Aktualny tryb lotu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_af8b2e9565221188d15e606f50caa8fc0}\label{classFlightControl_af8b2e9565221188d15e606f50caa8fc0}} 
+\index{FlightControl@{FlightControl}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{getSystem()}{getSystem()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ mavsdk\+::\+System $>$ Flight\+Control\+::get\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zwraca obecny system. 
+
+\begin{DoxyReturn}{Zwraca}
+std\+::shared\+\_\+ptr$<$mavsdk\+::\+System$>$ Obecny system 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a33a38bbf8c96f80964e996dde51937d7}\label{classFlightControl_a33a38bbf8c96f80964e996dde51937d7}} 
+\index{FlightControl@{FlightControl}!land@{land}}
+\index{land@{land}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{land()}{land()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::land (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wyzwala tryb lądowania w obecnym punkcie. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie aktywowano tryb lądowanie. 
+
+false Wystąpił błąd podczas aktywowania trybu lądowania. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a84f16d96bbbbfe450ec7dd6ef619e2ce}\label{classFlightControl_a84f16d96bbbbfe450ec7dd6ef619e2ce}} 
+\index{FlightControl@{FlightControl}!observeInAir@{observeInAir}}
+\index{observeInAir@{observeInAir}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{observeInAir()}{observeInAir()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::observe\+In\+Air (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sprawdzenie czy maszyna jest w trakcie lotu. 
+
+\begin{DoxyReturn}{Zwraca}
+true Maszyna jest w trakcie lotu. 
+
+false Maszyna nie jest w trakcie lotu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a8853436a710b17dd28bf932cbb499a4f}\label{classFlightControl_a8853436a710b17dd28bf932cbb499a4f}} 
+\index{FlightControl@{FlightControl}!printTelem@{printTelem}}
+\index{printTelem@{printTelem}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{printTelem()}{printTelem()}}
+{\footnotesize\ttfamily void Flight\+Control\+::print\+Telem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wyświetla w konsoli podstawowe dane telemetryczne. 
+
+\mbox{\Hypertarget{classFlightControl_aff4c1c3e065602fff23947d2cfb10448}\label{classFlightControl_aff4c1c3e065602fff23947d2cfb10448}} 
+\index{FlightControl@{FlightControl}!setConnectionURL@{setConnectionURL}}
+\index{setConnectionURL@{setConnectionURL}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{setConnectionURL()}{setConnectionURL()}}
+{\footnotesize\ttfamily void Flight\+Control\+::set\+Connection\+URL (\begin{DoxyParamCaption}\item[{const std\+::string}]{url }\end{DoxyParamCaption})}
+
+
+
+Ustawia wartość pola connection\+URL. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em url} & Nowy url do ustawienia. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlightControl_abb1969a4e35e1625c950de054a71bed0}\label{classFlightControl_abb1969a4e35e1625c950de054a71bed0}} 
+\index{FlightControl@{FlightControl}!setOffbardVelo@{setOffbardVelo}}
+\index{setOffbardVelo@{setOffbardVelo}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{setOffbardVelo()}{setOffbardVelo()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::set\+Offbard\+Velo (\begin{DoxyParamCaption}\item[{mavsdk\+::\+Offboard\+::\+Velocity\+Body\+Yawspeed}]{velo\+Body\+Yawspeed }\end{DoxyParamCaption})}
+
+
+
+Ustawia prędkości liniowe dla ciała w trybie offboard. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie ustawiono prędkość. 
+
+false Wystąpił błąd podczas ustawiania prędkości. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_ae654f2e83d220da97dd0c9c1be509cdb}\label{classFlightControl_ae654f2e83d220da97dd0c9c1be509cdb}} 
+\index{FlightControl@{FlightControl}!startOffbard@{startOffbard}}
+\index{startOffbard@{startOffbard}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{startOffbard()}{startOffbard()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::start\+Offbard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aktywuje kontrolę w trybie offboard i ustawia prędkości ciała na 0. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie aktywowano kontrolę offboard. 
+
+false Wystąpił błąd podczas aktywowania kontroli offboard. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_a74dd9b48e4b837e02f8e3d3977bd22da}\label{classFlightControl_a74dd9b48e4b837e02f8e3d3977bd22da}} 
+\index{FlightControl@{FlightControl}!stopOffboard@{stopOffboard}}
+\index{stopOffboard@{stopOffboard}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{stopOffboard()}{stopOffboard()}}
+{\footnotesize\ttfamily bool Flight\+Control\+::stop\+Offboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zatrzymuje kontrolę w trybie offboard. 
+
+\begin{DoxyReturn}{Zwraca}
+true Pomyślnie zatrzymano kontrolę offboard. 
+
+false Wystąpił błąd podczas zatrzymywania kontroli offboard. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlightControl_aec4227a4f2cc025de456e38accee1453}\label{classFlightControl_aec4227a4f2cc025de456e38accee1453}} 
+\index{FlightControl@{FlightControl}!subscribeTelem@{subscribeTelem}}
+\index{subscribeTelem@{subscribeTelem}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{subscribeTelem()}{subscribeTelem()}}
+{\footnotesize\ttfamily void Flight\+Control\+::subscribe\+Telem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subskrybuje wymagane tematy. 
+
+
+
+\doxysubsubsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classFlightControl_aa58e5dfe210f59ec3202f36ee7a5d550}\label{classFlightControl_aa58e5dfe210f59ec3202f36ee7a5d550}} 
+\index{FlightControl@{FlightControl}!action@{action}}
+\index{action@{action}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$mavsdk\+::\+Action$>$ Flight\+Control\+::action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pozwala na wykonywanie prostych akcji. 
+
+\mbox{\Hypertarget{classFlightControl_ad3b2f77ba73fa6047d2449aef114e036}\label{classFlightControl_ad3b2f77ba73fa6047d2449aef114e036}} 
+\index{FlightControl@{FlightControl}!connectionURL@{connectionURL}}
+\index{connectionURL@{connectionURL}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{connectionURL}{connectionURL}}
+{\footnotesize\ttfamily std\+::string Flight\+Control\+::connection\+URL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adres połączenia protokołu MAVLink. 
+
+\mbox{\Hypertarget{classFlightControl_a6b650dcb5dd419477502651e4e374b91}\label{classFlightControl_a6b650dcb5dd419477502651e4e374b91}} 
+\index{FlightControl@{FlightControl}!info@{info}}
+\index{info@{info}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$mavsdk\+::\+Info$>$ Flight\+Control\+::info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dostarcza informacji o systemie. 
+
+\mbox{\Hypertarget{classFlightControl_a89f0d84af6022790058ca5b119729ba1}\label{classFlightControl_a89f0d84af6022790058ca5b119729ba1}} 
+\index{FlightControl@{FlightControl}!mavsdk@{mavsdk}}
+\index{mavsdk@{mavsdk}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{mavsdk}{mavsdk}}
+{\footnotesize\ttfamily mavsdk\+::\+Mavsdk Flight\+Control\+::mavsdk\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pozwala na zarządzanie połączeniami. 
+
+\mbox{\Hypertarget{classFlightControl_ab3e7b5abfa648d4c291abdc3d3f6fb4b}\label{classFlightControl_ab3e7b5abfa648d4c291abdc3d3f6fb4b}} 
+\index{FlightControl@{FlightControl}!offboard@{offboard}}
+\index{offboard@{offboard}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{offboard}{offboard}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$mavsdk\+::\+Offboard$>$ Flight\+Control\+::offboard\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pozwala na kontrolę w trybie offboard. 
+
+\mbox{\Hypertarget{classFlightControl_a42e8a928279787d20a0f725367e207b1}\label{classFlightControl_a42e8a928279787d20a0f725367e207b1}} 
+\index{FlightControl@{FlightControl}!system@{system}}
+\index{system@{system}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{system}{system}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$mavsdk\+::\+System$>$ Flight\+Control\+::system\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obiekt reprezentujący system (autopilot) 
+
+\mbox{\Hypertarget{classFlightControl_a755617e8fe2eb80ee766f089997b99c3}\label{classFlightControl_a755617e8fe2eb80ee766f089997b99c3}} 
+\index{FlightControl@{FlightControl}!telemData@{telemData}}
+\index{telemData@{telemData}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{telemData}{telemData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTelemetryData}{Telemetry\+Data}} Flight\+Control\+::telem\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przechowuje dane telemetryczne odebrane przez MAVLink. 
+
+\mbox{\Hypertarget{classFlightControl_a5f6e2ab4bd22b9f7ed665118fb8144af}\label{classFlightControl_a5f6e2ab4bd22b9f7ed665118fb8144af}} 
+\index{FlightControl@{FlightControl}!telemetry@{telemetry}}
+\index{telemetry@{telemetry}!FlightControl@{FlightControl}}
+\doxyparagraph{\texorpdfstring{telemetry}{telemetry}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$mavsdk\+::\+Telemetry$>$ Flight\+Control\+::telemetry\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pozwala na odbiór danych telemetrycznych. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Flight\+Autonomy/\mbox{\hyperlink{FlightControl_8h}{Flight\+Control.\+h}}\item 
+src/\mbox{\hyperlink{FlightControl_8cpp}{Flight\+Control.\+cpp}}\end{DoxyCompactItemize}

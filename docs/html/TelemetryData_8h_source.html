@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Flight Autonomy: Plik źródłowy include/FlightAutonomy/TelemetryData.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Flight Autonomy
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2ea800da776b1209610a77f4becdf1d2.html">FlightAutonomy</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">TelemetryData.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="TelemetryData_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;mavsdk/plugins/telemetry/telemetry.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structTelemetryData.html">    8</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTelemetryData.html">TelemetryData</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a02de21dc355cf5a4306f019f4342f5f2">   10</a></span>    uint64_t <a class="code hl_variable" href="structTelemetryData.html#a02de21dc355cf5a4306f019f4342f5f2">UUID</a> = 0;                        </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structTelemetryData.html#af3a6c86636a80c6b0bed4610a9d616b7">   11</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structTelemetryData.html#af3a6c86636a80c6b0bed4610a9d616b7">health</a> = <span class="keyword">false</span>;                      </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a14f6475a76271ddceda82ed2c6425b99">   12</a></span>    mavsdk::Telemetry::FlightMode <a class="code hl_variable" href="structTelemetryData.html#a14f6475a76271ddceda82ed2c6425b99">flightMode</a>; </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a5861777ab32104d9a3493374a2025bf9">   14</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structTelemetryData.html#a5861777ab32104d9a3493374a2025bf9">isArmed</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a2a3da19b096eb2dd03631cc913e9b807">   15</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structTelemetryData.html#a2a3da19b096eb2dd03631cc913e9b807">inAir</a> = <span class="keyword">false</span>;   </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a193af42fc83454de8bbdb2ada7661ac5">   17</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structTelemetryData.html#a193af42fc83454de8bbdb2ada7661ac5">batteryPercent</a> = -1; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structTelemetryData.html#a248f16b221f47034242f7d9831f60576">   19</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structTelemetryData.html#a248f16b221f47034242f7d9831f60576">altitude</a> = 0; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structTelemetryData.html#ab437eaab8fe7e7563178181214b4bb0f">   21</a></span>    mavsdk::Telemetry::EulerAngle <a class="code hl_variable" href="structTelemetryData.html#ab437eaab8fe7e7563178181214b4bb0f">eulerAngle</a>; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structTelemetryData.html#ac919c6b59853b1b734a0dad4e5db4aa1">   22</a></span>    mavsdk::Telemetry::Odometry <a class="code hl_variable" href="structTelemetryData.html#ac919c6b59853b1b734a0dad4e5db4aa1">odom</a>;         </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="ttc" id="astructTelemetryData_html"><div class="ttname"><a href="structTelemetryData.html">TelemetryData</a></div><div class="ttdoc">Struktura przechowująca dane telemetryczne odebrane z pojazdu przez MavLink.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:9</div></div>
+<div class="ttc" id="astructTelemetryData_html_a02de21dc355cf5a4306f019f4342f5f2"><div class="ttname"><a href="structTelemetryData.html#a02de21dc355cf5a4306f019f4342f5f2">TelemetryData::UUID</a></div><div class="ttdeci">uint64_t UUID</div><div class="ttdoc">Identyfikator systemu.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:10</div></div>
+<div class="ttc" id="astructTelemetryData_html_a14f6475a76271ddceda82ed2c6425b99"><div class="ttname"><a href="structTelemetryData.html#a14f6475a76271ddceda82ed2c6425b99">TelemetryData::flightMode</a></div><div class="ttdeci">mavsdk::Telemetry::FlightMode flightMode</div><div class="ttdoc">Tryb lotu.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:12</div></div>
+<div class="ttc" id="astructTelemetryData_html_a193af42fc83454de8bbdb2ada7661ac5"><div class="ttname"><a href="structTelemetryData.html#a193af42fc83454de8bbdb2ada7661ac5">TelemetryData::batteryPercent</a></div><div class="ttdeci">float batteryPercent</div><div class="ttdoc">Stan naładowania akumulatorów.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:17</div></div>
+<div class="ttc" id="astructTelemetryData_html_a248f16b221f47034242f7d9831f60576"><div class="ttname"><a href="structTelemetryData.html#a248f16b221f47034242f7d9831f60576">TelemetryData::altitude</a></div><div class="ttdeci">float altitude</div><div class="ttdoc">Wysokość relatywna względem miejsca startu.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:19</div></div>
+<div class="ttc" id="astructTelemetryData_html_a2a3da19b096eb2dd03631cc913e9b807"><div class="ttname"><a href="structTelemetryData.html#a2a3da19b096eb2dd03631cc913e9b807">TelemetryData::inAir</a></div><div class="ttdeci">bool inAir</div><div class="ttdoc">Czy pojazd jest w powietrzu.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:15</div></div>
+<div class="ttc" id="astructTelemetryData_html_a5861777ab32104d9a3493374a2025bf9"><div class="ttname"><a href="structTelemetryData.html#a5861777ab32104d9a3493374a2025bf9">TelemetryData::isArmed</a></div><div class="ttdeci">bool isArmed</div><div class="ttdoc">Stan uzbrojenia. Domyślnie rozbrojony.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:14</div></div>
+<div class="ttc" id="astructTelemetryData_html_ab437eaab8fe7e7563178181214b4bb0f"><div class="ttname"><a href="structTelemetryData.html#ab437eaab8fe7e7563178181214b4bb0f">TelemetryData::eulerAngle</a></div><div class="ttdeci">mavsdk::Telemetry::EulerAngle eulerAngle</div><div class="ttdoc">Aktualne kąty pochylenia autopilota.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:21</div></div>
+<div class="ttc" id="astructTelemetryData_html_ac919c6b59853b1b734a0dad4e5db4aa1"><div class="ttname"><a href="structTelemetryData.html#ac919c6b59853b1b734a0dad4e5db4aa1">TelemetryData::odom</a></div><div class="ttdeci">mavsdk::Telemetry::Odometry odom</div><div class="ttdoc">Aktualne dane otometryczne.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:22</div></div>
+<div class="ttc" id="astructTelemetryData_html_af3a6c86636a80c6b0bed4610a9d616b7"><div class="ttname"><a href="structTelemetryData.html#af3a6c86636a80c6b0bed4610a9d616b7">TelemetryData::health</a></div><div class="ttdeci">bool health</div><div class="ttdoc">Stan pojazdu. Domyślnie niegotowy do lotu.</div><div class="ttdef"><b>Definition:</b> TelemetryData.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -24,13 +24,14 @@ class FlightAutonomy
     const std::string OPENCV_WINDOW = "Cam View";
 #endif
 
-    ImageReceiver imgRec;     /**< Odbiornik obrazu z kamery */
-    FlightControl flightCtrl; /**< Kontrola lotu maszyny */
-    ObjectDetector objDetect; /**< Wykrywacz obiektów na obrazie z kamery */
-    Algorithms currAlg;       /**< Obecnie wykonywany algorytm */
-    int landingPadID = 68;    /**< ID znacznika Aruco lądowiska */
-    int exitCode;             /**< Kod wyjścia z systemu: 0 - kontynuuj pracę, 1 - wyjście normalne, 2 - niepoprawna wysokość, 3 - nie wykryto znaczników przez zadany czas */
-    std::chrono::steady_clock::time_point timeoutCounter;       /**< Odlicza czas do automatycznego wyjścia z programu w przypadku nie wykrywania znaczników */
+    ImageReceiver imgRec;                                 ///< Odbiornik obrazu z kamery
+    FlightControl flightCtrl;                             ///< Kontrola lotu maszyny
+    ObjectDetector objDetect;                             ///< Wykrywacz obiektów na obrazie z kamery
+    Algorithms currAlg;                                   ///< Obecnie wykonywany algorytm
+    int landingPadID = 68;                                ///< ID znacznika Aruco lądowiska
+    int gateArucos[4] = {10, 11, 12, 13};                 ///< ID znaczników umieszczonych na bramce zgodnie z ruchem wskazówek zegara
+    int exitCode;                                         ///< Kod wyjścia z systemu: 0 - kontynuuj pracę, 1 - wyjście normalne, 2 - niepoprawna wysokość, 3 - nie wykryto znaczników przez zadany czas
+    std::chrono::steady_clock::time_point timeoutCounter; ///< Odlicza czas do automatycznego wyjścia z programu w przypadku nie wykrywania znaczników
 
 public:
     /**
@@ -85,6 +86,14 @@ public:
     bool ok();
 
     /**
+     * @brief Kończy działanie algorytmu i wyłącza tryb offboard.
+     *
+     * @return true Pomyślnie zakończono działanie.
+     * @return false Pojawił się błąd podczas próby zakończenia działania.
+     */
+    bool stop();
+
+    /**
      * @brief Zwraca wartość kodu wyjścia.
      *
      * @return int Wartość kodu wyjścia.
@@ -93,11 +102,19 @@ public:
 
     /**
      * @brief Wyświetla status wyjścia według kodu w zmiennej exitCode.
-     *
      */
     void printExitStatus();
 
 private:
+    /**
+     * @brief Wykonuje pojedyncza iterację dla wybranego algorytmu.
+     *
+     * @param img Najnowsza odebrana ramka obrazu.
+     *
+     * @return int Kod zwrócony przez algorytm.
+     */
+    int performStep(cv::Mat &img);
+
     /**
      * @brief Wykonuje jeden krok algorytmu lądowania.
      *
@@ -109,6 +126,15 @@ private:
     bool landingStep(cv::Mat &img);
 
     /**
+     * @brief Oblicza prędkości danej iteracji algorytmu lądowania.
+     *
+     * @param img Przetwarzana ramka obrazu.
+     * @param arucoPosition Pozycja znacznika lądowiska na obrazie.
+     * @return mavsdk::Offboard::VelocityBodyYawspeed
+     */
+    mavsdk::Offboard::VelocityBodyYawspeed landingCalcVelo(cv::Mat &img, cv::Point2f arucoPosition);
+
+    /**
      * @brief Wykonuje jeden krok algorytmu lądowania.
      *
      * @param img Najnowsza ramka obrazu.
@@ -117,4 +143,19 @@ private:
      * @return false Błąd podczas wykonywania kroku algorytmu.
      */
     bool avoidingStep(cv::Mat &img);
+
+    /**
+     * @brief Oblicza prędkości danej iteracji algorytmu przelotu przez bramkę, potrzebne do przelotu przez bramkę.
+     *
+     * @param img Przetwarzana ramka obrazu.
+     * @param gatePosition Pozycja bramki na obrazie.
+     * @param angle Kąt pochylenia bramki.
+     * @return mavsdk::Offboard::VelocityBodyYawspeed
+     */
+    mavsdk::Offboard::VelocityBodyYawspeed avoidingCalcVelo(cv::Mat &img, cv::Point2f gatePosition, float angle);
+
+    /**
+     * @brief Sprawdza czy nastąpiło przekroczenie zdefiniowanych czasów maksymalnych.
+     */
+    void checkTimeouts();
 };

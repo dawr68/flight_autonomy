@@ -1,0 +1,142 @@
+\hypertarget{structTelemetryData}{}\doxysubsection{Dokumentacja struktury Telemetry\+Data}
+\label{structTelemetryData}\index{TelemetryData@{TelemetryData}}
+
+
+Struktura przechowująca dane telemetryczne odebrane z pojazdu przez Mav\+Link.  
+
+
+
+
+{\ttfamily \#include $<$Telemetry\+Data.\+h$>$}
+
+
+
+Diagram współpracy dla Telemetry\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{structTelemetryData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structTelemetryData_a02de21dc355cf5a4306f019f4342f5f2}{UUID}} = 0
+\begin{DoxyCompactList}\small\item\em Identyfikator systemu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structTelemetryData_af3a6c86636a80c6b0bed4610a9d616b7}{health}} = false
+\begin{DoxyCompactList}\small\item\em Stan pojazdu. Domyślnie niegotowy do lotu. \end{DoxyCompactList}\item 
+mavsdk\+::\+Telemetry\+::\+Flight\+Mode \mbox{\hyperlink{structTelemetryData_a14f6475a76271ddceda82ed2c6425b99}{flight\+Mode}}
+\begin{DoxyCompactList}\small\item\em Tryb lotu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structTelemetryData_a5861777ab32104d9a3493374a2025bf9}{is\+Armed}} = false
+\begin{DoxyCompactList}\small\item\em Stan uzbrojenia. Domyślnie rozbrojony. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structTelemetryData_a2a3da19b096eb2dd03631cc913e9b807}{in\+Air}} = false
+\begin{DoxyCompactList}\small\item\em Czy pojazd jest w powietrzu. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structTelemetryData_a193af42fc83454de8bbdb2ada7661ac5}{battery\+Percent}} = -\/1
+\begin{DoxyCompactList}\small\item\em Stan naładowania akumulatorów. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structTelemetryData_a248f16b221f47034242f7d9831f60576}{altitude}} = 0
+\begin{DoxyCompactList}\small\item\em Wysokość relatywna względem miejsca startu. \end{DoxyCompactList}\item 
+mavsdk\+::\+Telemetry\+::\+Euler\+Angle \mbox{\hyperlink{structTelemetryData_ab437eaab8fe7e7563178181214b4bb0f}{euler\+Angle}}
+\begin{DoxyCompactList}\small\item\em Aktualne kąty pochylenia autopilota. \end{DoxyCompactList}\item 
+mavsdk\+::\+Telemetry\+::\+Odometry \mbox{\hyperlink{structTelemetryData_ac919c6b59853b1b734a0dad4e5db4aa1}{odom}}
+\begin{DoxyCompactList}\small\item\em Aktualne dane otometryczne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Opis szczegółowy}
+Struktura przechowująca dane telemetryczne odebrane z pojazdu przez Mav\+Link. 
+
+\doxysubsubsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{structTelemetryData_a248f16b221f47034242f7d9831f60576}\label{structTelemetryData_a248f16b221f47034242f7d9831f60576}} 
+\index{TelemetryData@{TelemetryData}!altitude@{altitude}}
+\index{altitude@{altitude}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{altitude}{altitude}}
+{\footnotesize\ttfamily float Telemetry\+Data\+::altitude = 0}
+
+
+
+Wysokość relatywna względem miejsca startu. 
+
+\mbox{\Hypertarget{structTelemetryData_a193af42fc83454de8bbdb2ada7661ac5}\label{structTelemetryData_a193af42fc83454de8bbdb2ada7661ac5}} 
+\index{TelemetryData@{TelemetryData}!batteryPercent@{batteryPercent}}
+\index{batteryPercent@{batteryPercent}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{batteryPercent}{batteryPercent}}
+{\footnotesize\ttfamily float Telemetry\+Data\+::battery\+Percent = -\/1}
+
+
+
+Stan naładowania akumulatorów. 
+
+\mbox{\Hypertarget{structTelemetryData_ab437eaab8fe7e7563178181214b4bb0f}\label{structTelemetryData_ab437eaab8fe7e7563178181214b4bb0f}} 
+\index{TelemetryData@{TelemetryData}!eulerAngle@{eulerAngle}}
+\index{eulerAngle@{eulerAngle}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{eulerAngle}{eulerAngle}}
+{\footnotesize\ttfamily mavsdk\+::\+Telemetry\+::\+Euler\+Angle Telemetry\+Data\+::euler\+Angle}
+
+
+
+Aktualne kąty pochylenia autopilota. 
+
+\mbox{\Hypertarget{structTelemetryData_a14f6475a76271ddceda82ed2c6425b99}\label{structTelemetryData_a14f6475a76271ddceda82ed2c6425b99}} 
+\index{TelemetryData@{TelemetryData}!flightMode@{flightMode}}
+\index{flightMode@{flightMode}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{flightMode}{flightMode}}
+{\footnotesize\ttfamily mavsdk\+::\+Telemetry\+::\+Flight\+Mode Telemetry\+Data\+::flight\+Mode}
+
+
+
+Tryb lotu. 
+
+\mbox{\Hypertarget{structTelemetryData_af3a6c86636a80c6b0bed4610a9d616b7}\label{structTelemetryData_af3a6c86636a80c6b0bed4610a9d616b7}} 
+\index{TelemetryData@{TelemetryData}!health@{health}}
+\index{health@{health}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily bool Telemetry\+Data\+::health = false}
+
+
+
+Stan pojazdu. Domyślnie niegotowy do lotu. 
+
+\mbox{\Hypertarget{structTelemetryData_a2a3da19b096eb2dd03631cc913e9b807}\label{structTelemetryData_a2a3da19b096eb2dd03631cc913e9b807}} 
+\index{TelemetryData@{TelemetryData}!inAir@{inAir}}
+\index{inAir@{inAir}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{inAir}{inAir}}
+{\footnotesize\ttfamily bool Telemetry\+Data\+::in\+Air = false}
+
+
+
+Czy pojazd jest w powietrzu. 
+
+\mbox{\Hypertarget{structTelemetryData_a5861777ab32104d9a3493374a2025bf9}\label{structTelemetryData_a5861777ab32104d9a3493374a2025bf9}} 
+\index{TelemetryData@{TelemetryData}!isArmed@{isArmed}}
+\index{isArmed@{isArmed}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{isArmed}{isArmed}}
+{\footnotesize\ttfamily bool Telemetry\+Data\+::is\+Armed = false}
+
+
+
+Stan uzbrojenia. Domyślnie rozbrojony. 
+
+\mbox{\Hypertarget{structTelemetryData_ac919c6b59853b1b734a0dad4e5db4aa1}\label{structTelemetryData_ac919c6b59853b1b734a0dad4e5db4aa1}} 
+\index{TelemetryData@{TelemetryData}!odom@{odom}}
+\index{odom@{odom}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{odom}{odom}}
+{\footnotesize\ttfamily mavsdk\+::\+Telemetry\+::\+Odometry Telemetry\+Data\+::odom}
+
+
+
+Aktualne dane otometryczne. 
+
+\mbox{\Hypertarget{structTelemetryData_a02de21dc355cf5a4306f019f4342f5f2}\label{structTelemetryData_a02de21dc355cf5a4306f019f4342f5f2}} 
+\index{TelemetryData@{TelemetryData}!UUID@{UUID}}
+\index{UUID@{UUID}!TelemetryData@{TelemetryData}}
+\doxyparagraph{\texorpdfstring{UUID}{UUID}}
+{\footnotesize\ttfamily uint64\+\_\+t Telemetry\+Data\+::\+UUID = 0}
+
+
+
+Identyfikator systemu. 
+
+
+
+Dokumentacja dla tej struktury została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Flight\+Autonomy/\mbox{\hyperlink{TelemetryData_8h}{Telemetry\+Data.\+h}}\end{DoxyCompactItemize}

@@ -1,9 +1,367 @@
 \begin{theindex}
 
-  \item {Flight\+Autonomy}, \hyperpage{3}
+  \item {$\sim$FlightAutonomy}
+    \subitem {FlightAutonomy}, \hyperpage{5}
+  \item {$\sim$FlightControl}
+    \subitem {FlightControl}, \hyperpage{13}
+  \item {$\sim$ImageReceiver}
+    \subitem {ImageReceiver}, \hyperpage{19}
+  \item {$\sim$ObjectDetector}
+    \subitem {ObjectDetector}, \hyperpage{23}
 
   \indexspace
 
-  \item {Image\+Receiver}, \hyperpage{3}
+  \item {action}
+    \subitem {FlightControl}, \hyperpage{16}
+  \item {Algorithms}
+    \subitem {algorithms.h}, \hyperpage{28}
+  \item {algorithms.h}
+    \subitem {Algorithms}, \hyperpage{28}
+    \subitem {arucoLanding}, \hyperpage{29}
+    \subitem {forwardFlight}, \hyperpage{29}
+    \subitem {gateRacing}, \hyperpage{29}
+    \subitem {normalLanding}, \hyperpage{29}
+  \item {altitude}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {apiID}
+    \subitem {ImageReceiver}, \hyperpage{21}
+  \item {arucoLanding}
+    \subitem {algorithms.h}, \hyperpage{29}
+  \item {avoidingCalcVelo}
+    \subitem {FlightAutonomy}, \hyperpage{5}
+  \item {avoidingStep}
+    \subitem {FlightAutonomy}, \hyperpage{5}
+
+  \indexspace
+
+  \item {batteryPercent}
+    \subitem {TelemetryData}, \hyperpage{27}
+
+  \indexspace
+
+  \item {calcCenter}
+    \subitem {ObjectDetector}, \hyperpage{23}
+  \item {calcMarkerSize}
+    \subitem {ObjectDetector}, \hyperpage{24}
+  \item {CAM\_HFOV}
+    \subitem {defines.h}, \hyperpage{30}
+  \item {CAM\_VFOV}
+    \subitem {defines.h}, \hyperpage{30}
+  \item {camImage}
+    \subitem {ImageReceiver}, \hyperpage{21}
+  \item {cap}
+    \subitem {ImageReceiver}, \hyperpage{21}
+  \item {checkStatus}
+    \subitem {FlightControl}, \hyperpage{13}
+  \item {checkTimeouts}
+    \subitem {FlightAutonomy}, \hyperpage{7}
+  \item {checkVelo}
+    \subitem {FlightControl}, \hyperpage{13}
+  \item {connect}
+    \subitem {FlightAutonomy}, \hyperpage{7}
+    \subitem {FlightControl}, \hyperpage{14}
+  \item {connectionURL}
+    \subitem {FlightControl}, \hyperpage{16}
+  \item {currAlg}
+    \subitem {FlightAutonomy}, \hyperpage{9}
+
+  \indexspace
+
+  \item {defines.h}
+    \subitem {CAM\_HFOV}, \hyperpage{30}
+    \subitem {CAM\_VFOV}, \hyperpage{30}
+    \subitem {FA\_DEBUG}, \hyperpage{30}
+    \subitem {FORWARD\_FLIGHT\_TIMEOUT}, \hyperpage{30}
+    \subitem {IS\_STRAIGHT\_ANGLE}, \hyperpage{31}
+    \subitem {LAND\_ALT}, \hyperpage{31}
+    \subitem {MAX\_FLIGHT\_ALT}, \hyperpage{31}
+    \subitem {MAX\_VELO\_HORI\_MS}, \hyperpage{31}
+    \subitem {MAX\_VELO\_VERT\_MS}, \hyperpage{31}
+    \subitem {MAX\_YAWSPEED}, \hyperpage{31}
+    \subitem {MID\_THRESHOLD}, \hyperpage{31}
+    \subitem {NO\_DETECT\_TIMEOUT}, \hyperpage{31}
+    \subitem {RACING\_ALT}, \hyperpage{32}
+  \item {detectArucoGate}
+    \subitem {ObjectDetector}, \hyperpage{24}
+  \item {detectArucoSingle}
+    \subitem {ObjectDetector}, \hyperpage{24}
+  \item {deviceID}
+    \subitem {ImageReceiver}, \hyperpage{21}
+  \item {dict}
+    \subitem {ObjectDetector}, \hyperpage{25}
+
+  \indexspace
+
+  \item {eulerAngle}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {exitCode}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+
+  \indexspace
+
+  \item {FA\_DEBUG}
+    \subitem {defines.h}, \hyperpage{30}
+  \item {FlightAutonomy}, \hyperpage{2}
+    \subitem {$\sim$FlightAutonomy}, \hyperpage{5}
+    \subitem {avoidingCalcVelo}, \hyperpage{5}
+    \subitem {avoidingStep}, \hyperpage{5}
+    \subitem {checkTimeouts}, \hyperpage{7}
+    \subitem {connect}, \hyperpage{7}
+    \subitem {currAlg}, \hyperpage{9}
+    \subitem {exitCode}, \hyperpage{10}
+    \subitem {FlightAutonomy}, \hyperpage{5}
+    \subitem {flightCtrl}, \hyperpage{10}
+    \subitem {gateArucos}, \hyperpage{10}
+    \subitem {getExitCode}, \hyperpage{7}
+    \subitem {imgRec}, \hyperpage{10}
+    \subitem {isReady}, \hyperpage{7}
+    \subitem {landingCalcVelo}, \hyperpage{7}
+    \subitem {landingPadID}, \hyperpage{10}
+    \subitem {landingStep}, \hyperpage{8}
+    \subitem {objDetect}, \hyperpage{10}
+    \subitem {ok}, \hyperpage{8}
+    \subitem {performStep}, \hyperpage{8}
+    \subitem {printExitStatus}, \hyperpage{9}
+    \subitem {readArgs}, \hyperpage{9}
+    \subitem {spinOnce}, \hyperpage{9}
+    \subitem {stop}, \hyperpage{9}
+    \subitem {timeoutCounter}, \hyperpage{10}
+  \item {FlightControl}, \hyperpage{11}
+    \subitem {$\sim$FlightControl}, \hyperpage{13}
+    \subitem {action}, \hyperpage{16}
+    \subitem {checkStatus}, \hyperpage{13}
+    \subitem {checkVelo}, \hyperpage{13}
+    \subitem {connect}, \hyperpage{14}
+    \subitem {connectionURL}, \hyperpage{16}
+    \subitem {FlightControl}, \hyperpage{13}
+    \subitem {getAltitude}, \hyperpage{14}
+    \subitem {getEulerAngle}, \hyperpage{14}
+    \subitem {getFlightMode}, \hyperpage{14}
+    \subitem {getSystem}, \hyperpage{14}
+    \subitem {info}, \hyperpage{17}
+    \subitem {land}, \hyperpage{15}
+    \subitem {mavsdk}, \hyperpage{17}
+    \subitem {observeInAir}, \hyperpage{15}
+    \subitem {offboard}, \hyperpage{17}
+    \subitem {printTelem}, \hyperpage{15}
+    \subitem {setConnectionURL}, \hyperpage{15}
+    \subitem {setOffbardVelo}, \hyperpage{15}
+    \subitem {startOffbard}, \hyperpage{16}
+    \subitem {stopOffboard}, \hyperpage{16}
+    \subitem {subscribeTelem}, \hyperpage{16}
+    \subitem {system}, \hyperpage{17}
+    \subitem {telemData}, \hyperpage{17}
+    \subitem {telemetry}, \hyperpage{17}
+  \item {flightCtrl}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+  \item {flightMode}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {FORWARD\_FLIGHT\_TIMEOUT}
+    \subitem {defines.h}, \hyperpage{30}
+  \item {forwardFlight}
+    \subitem {algorithms.h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {gateArucos}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+  \item {gateRacing}
+    \subitem {algorithms.h}, \hyperpage{29}
+  \item {getAltitude}
+    \subitem {FlightControl}, \hyperpage{14}
+  \item {getEulerAngle}
+    \subitem {FlightControl}, \hyperpage{14}
+  \item {getExitCode}
+    \subitem {FlightAutonomy}, \hyperpage{7}
+  \item {getFlightMode}
+    \subitem {FlightControl}, \hyperpage{14}
+  \item {getImage}
+    \subitem {ImageReceiver}, \hyperpage{19}
+  \item {getSystem}
+    \subitem {FlightControl}, \hyperpage{14}
+
+  \indexspace
+
+  \item {health}
+    \subitem {TelemetryData}, \hyperpage{27}
+
+  \indexspace
+
+  \item {ImageReceiver}, \hyperpage{18}
+    \subitem {$\sim$ImageReceiver}, \hyperpage{19}
+    \subitem {apiID}, \hyperpage{21}
+    \subitem {camImage}, \hyperpage{21}
+    \subitem {cap}, \hyperpage{21}
+    \subitem {deviceID}, \hyperpage{21}
+    \subitem {getImage}, \hyperpage{19}
+    \subitem {ImageReceiver}, \hyperpage{19}
+    \subitem {open}, \hyperpage{19}
+    \subitem {receiveImage}, \hyperpage{19}
+    \subitem {setDevice}, \hyperpage{20}
+  \item {imgRec}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+  \item {inAir}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {include/FlightAutonomy/algorithms.h}, \hyperpage{28, 29}
+  \item {include/FlightAutonomy/defines.h}, \hyperpage{29}, 
+		\hyperpage{32}
+  \item {include/FlightAutonomy/FlightAutonomy.h}, \hyperpage{32, 33}
+  \item {include/FlightAutonomy/FlightControl.h}, \hyperpage{34, 35}
+  \item {include/FlightAutonomy/ImageReceiver.h}, \hyperpage{36, 37}
+  \item {include/FlightAutonomy/ObjectDetector.h}, \hyperpage{37, 38}
+  \item {include/FlightAutonomy/TelemetryData.h}, \hyperpage{39, 40}
+  \item {info}
+    \subitem {FlightControl}, \hyperpage{17}
+  \item {IS\_STRAIGHT\_ANGLE}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {isArmed}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {isReady}
+    \subitem {FlightAutonomy}, \hyperpage{7}
+
+  \indexspace
+
+  \item {land}
+    \subitem {FlightControl}, \hyperpage{15}
+  \item {LAND\_ALT}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {landingCalcVelo}
+    \subitem {FlightAutonomy}, \hyperpage{7}
+  \item {landingPadID}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+  \item {landingStep}
+    \subitem {FlightAutonomy}, \hyperpage{8}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{42}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{42}
+    \subitem {printHelp}, \hyperpage{42}
+  \item {markCor}
+    \subitem {ObjectDetector}, \hyperpage{25}
+  \item {markIds}
+    \subitem {ObjectDetector}, \hyperpage{25}
+  \item {mavsdk}
+    \subitem {FlightControl}, \hyperpage{17}
+  \item {MAX\_FLIGHT\_ALT}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {MAX\_VELO\_HORI\_MS}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {MAX\_VELO\_VERT\_MS}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {MAX\_YAWSPEED}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {MID\_THRESHOLD}
+    \subitem {defines.h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {NO\_DETECT\_TIMEOUT}
+    \subitem {defines.h}, \hyperpage{31}
+  \item {normalLanding}
+    \subitem {algorithms.h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {objDetect}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+  \item {ObjectDetector}, \hyperpage{22}
+    \subitem {$\sim$ObjectDetector}, \hyperpage{23}
+    \subitem {calcCenter}, \hyperpage{23}
+    \subitem {calcMarkerSize}, \hyperpage{24}
+    \subitem {detectArucoGate}, \hyperpage{24}
+    \subitem {detectArucoSingle}, \hyperpage{24}
+    \subitem {dict}, \hyperpage{25}
+    \subitem {markCor}, \hyperpage{25}
+    \subitem {markIds}, \hyperpage{25}
+    \subitem {ObjectDetector}, \hyperpage{23}
+    \subitem {params}, \hyperpage{25}
+    \subitem {rejected}, \hyperpage{25}
+  \item {observeInAir}
+    \subitem {FlightControl}, \hyperpage{15}
+  \item {odom}
+    \subitem {TelemetryData}, \hyperpage{27}
+  \item {offboard}
+    \subitem {FlightControl}, \hyperpage{17}
+  \item {ok}
+    \subitem {FlightAutonomy}, \hyperpage{8}
+  \item {open}
+    \subitem {ImageReceiver}, \hyperpage{19}
+
+  \indexspace
+
+  \item {params}
+    \subitem {ObjectDetector}, \hyperpage{25}
+  \item {performStep}
+    \subitem {FlightAutonomy}, \hyperpage{8}
+  \item {printExitStatus}
+    \subitem {FlightAutonomy}, \hyperpage{9}
+  \item {printHelp}
+    \subitem {main.cpp}, \hyperpage{42}
+  \item {printTelem}
+    \subitem {FlightControl}, \hyperpage{15}
+
+  \indexspace
+
+  \item {RACING\_ALT}
+    \subitem {defines.h}, \hyperpage{32}
+  \item {readArgs}
+    \subitem {FlightAutonomy}, \hyperpage{9}
+  \item {receiveImage}
+    \subitem {ImageReceiver}, \hyperpage{19}
+  \item {rejected}
+    \subitem {ObjectDetector}, \hyperpage{25}
+
+  \indexspace
+
+  \item {setConnectionURL}
+    \subitem {FlightControl}, \hyperpage{15}
+  \item {setDevice}
+    \subitem {ImageReceiver}, \hyperpage{20}
+  \item {setOffbardVelo}
+    \subitem {FlightControl}, \hyperpage{15}
+  \item {spinOnce}
+    \subitem {FlightAutonomy}, \hyperpage{9}
+  \item {src/FlightAutonomy.cpp}, \hyperpage{41}
+  \item {src/FlightControl.cpp}, \hyperpage{41}
+  \item {src/ImageReceiver.cpp}, \hyperpage{41}
+  \item {src/main.cpp}, \hyperpage{42}
+  \item {src/ObjectDetector.cpp}, \hyperpage{42}
+  \item {startOffbard}
+    \subitem {FlightControl}, \hyperpage{16}
+  \item {stop}
+    \subitem {FlightAutonomy}, \hyperpage{9}
+  \item {stopOffboard}
+    \subitem {FlightControl}, \hyperpage{16}
+  \item {subscribeTelem}
+    \subitem {FlightControl}, \hyperpage{16}
+  \item {system}
+    \subitem {FlightControl}, \hyperpage{17}
+
+  \indexspace
+
+  \item {telemData}
+    \subitem {FlightControl}, \hyperpage{17}
+  \item {telemetry}
+    \subitem {FlightControl}, \hyperpage{17}
+  \item {TelemetryData}, \hyperpage{26}
+    \subitem {altitude}, \hyperpage{27}
+    \subitem {batteryPercent}, \hyperpage{27}
+    \subitem {eulerAngle}, \hyperpage{27}
+    \subitem {flightMode}, \hyperpage{27}
+    \subitem {health}, \hyperpage{27}
+    \subitem {inAir}, \hyperpage{27}
+    \subitem {isArmed}, \hyperpage{27}
+    \subitem {odom}, \hyperpage{27}
+    \subitem {UUID}, \hyperpage{28}
+  \item {timeoutCounter}
+    \subitem {FlightAutonomy}, \hyperpage{10}
+
+  \indexspace
+
+  \item {UUID}
+    \subitem {TelemetryData}, \hyperpage{28}
 
 \end{theindex}

@@ -8,10 +8,10 @@
  */
 class ImageReceiver
 {
-    cv::VideoCapture cap;    /**< Obiekt przechwytujący stream video */
-    int deviceID = 0;        /**< Kamera 0 - domyślna */
-    int apiID = cv::CAP_ANY; /**< Domyślnie autodetekcja */
-    cv::Mat camImage;        /**< Najnowsza ramka odebrana z kamery*/
+    cv::VideoCapture cap;    ///< Obiekt przechwytujący stream video
+    int deviceID = 0;        ///< Kamera 0 - domyślna
+    int apiID = cv::CAP_ANY; ///< Domyślnie autodetekcja
+    cv::Mat camImage;        ///< Najnowsza ramka odebrana z kamer
 
 public:
     /**

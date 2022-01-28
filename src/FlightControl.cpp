@@ -24,6 +24,9 @@ void FlightControl::subscribeTelem()
 
     telemetry->subscribe_odometry([this](mavsdk::Telemetry::Odometry odo)
                                   { this->telemData.odom = odo; });
+
+    telemetry->subscribe_flight_mode([this](mavsdk::Telemetry::FlightMode fm)
+                                     { this->telemData.flightMode = fm; });
 }
 
 bool FlightControl::connect()
@@ -49,11 +52,11 @@ bool FlightControl::connect()
     int i = 0;
     while (!telemetry->health_all_ok() && i < 10)
     {
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         i++;
     }
 
-    if(i == 9)
+    if (i == 9)
     {
         return false;
     }
@@ -165,4 +168,48 @@ bool FlightControl::land()
 float FlightControl::getAltitude()
 {
     return telemData.altitude;
+}
+
+mavsdk::Telemetry::FlightMode FlightControl::getFlightMode()
+{
+    return telemData.flightMode;
+}
+
+bool FlightControl::checkVelo(mavsdk::Offboard::VelocityBodyYawspeed &velocities)
+{
+    if (velocities.forward_m_s > MAX_VELO_HORI_MS)
+    {
+        velocities.forward_m_s = MAX_VELO_HORI_MS;
+    }
+    else
+    {
+        if (velocities.forward_m_s < -MAX_VELO_HORI_MS)
+        {
+            velocities.forward_m_s = -MAX_VELO_HORI_MS;
+        }
+    }
+
+    if (velocities.right_m_s > MAX_VELO_HORI_MS)
+    {
+        velocities.right_m_s = MAX_VELO_HORI_MS;
+    }
+    else
+    {
+        if (velocities.right_m_s < -MAX_VELO_HORI_MS)
+        {
+            velocities.right_m_s = -MAX_VELO_HORI_MS;
+        }
+    }
+
+    if (velocities.down_m_s > MAX_VELO_VERT_MS)
+    {
+        velocities.down_m_s = MAX_VELO_VERT_MS;
+    }
+    else
+    {
+        if (velocities.down_m_s < -MAX_VELO_VERT_MS)
+        {
+            velocities.down_m_s = -MAX_VELO_VERT_MS;
+        }
+    }
 }

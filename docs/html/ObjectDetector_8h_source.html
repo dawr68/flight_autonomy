@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Flight Autonomy: Plik źródłowy include/FlightAutonomy/ObjectDetector.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Flight Autonomy
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2ea800da776b1209610a77f4becdf1d2.html">FlightAutonomy</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ObjectDetector.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ObjectDetector_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="defines_8h.html">FlightAutonomy/defines.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;opencv2/core/mat.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;opencv2/imgproc.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;opencv2/aruco.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classObjectDetector.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classObjectDetector.html">ObjectDetector</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classObjectDetector.html#ababefd3ca74cc552f425a47dd8234bb1">   15</a></span>    std::vector&lt;int&gt; <a class="code hl_variable" href="classObjectDetector.html#ababefd3ca74cc552f425a47dd8234bb1">markIds</a>;                       </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classObjectDetector.html#a32389df648761553be27c04116826601">   16</a></span>    std::vector&lt;std::vector&lt;cv::Point2f&gt;&gt; <a class="code hl_variable" href="classObjectDetector.html#a32389df648761553be27c04116826601">markCor</a>;  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classObjectDetector.html#adcfd1d28b723e56feca19ea45e0ade1b">   17</a></span>    std::vector&lt;std::vector&lt;cv::Point2f&gt;&gt; <a class="code hl_variable" href="classObjectDetector.html#adcfd1d28b723e56feca19ea45e0ade1b">rejected</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classObjectDetector.html#a63ebdbd1c1c5882afc2bdeea776edb47">   19</a></span>    cv::Ptr&lt;cv::aruco::DetectorParameters&gt; <a class="code hl_variable" href="classObjectDetector.html#a63ebdbd1c1c5882afc2bdeea776edb47">params</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classObjectDetector.html#af2c6102a02f97c41d677e03f501fd7cb">   20</a></span>    cv::Ptr&lt;cv::aruco::Dictionary&gt; <a class="code hl_variable" href="classObjectDetector.html#af2c6102a02f97c41d677e03f501fd7cb">dict</a>;           </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="classObjectDetector.html#a604cad611c81493d4e376b3d1fe186f3">ObjectDetector</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classObjectDetector.html#a604cad611c81493d4e376b3d1fe186f3">ObjectDetector</a>(cv::Ptr&lt;cv::aruco::DetectorParameters&gt; _params, cv::Ptr&lt;cv::aruco::Dictionary&gt; _dict);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classObjectDetector.html#a8e1099d1e64f69cb97b25d77f05eea15">   39</a></span>    <a class="code hl_function" href="classObjectDetector.html#a8e1099d1e64f69cb97b25d77f05eea15">~ObjectDetector</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    cv::Point2f <a class="code hl_function" href="classObjectDetector.html#acdcd3f0af79bf85ea54928b67eb5f6e9">detectArucoSingle</a>(<span class="keyword">const</span> cv::Mat &amp;img, <span class="keywordtype">int</span> arucoID);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::tuple&lt;cv::Point2f, float, float&gt; <a class="code hl_function" href="classObjectDetector.html#ad1b3d8e58f38c8a18b6c6b645c99bc2f">detectArucoGate</a>(<span class="keyword">const</span> cv::Mat &amp;img, <span class="keywordtype">int</span> arucoIDs[4]);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    cv::Point2f <a class="code hl_function" href="classObjectDetector.html#a28b3a6a97363e3e3a1732b44fc8258d9">calcCenter</a>(std::vector&lt;cv::Point2f&gt; corners);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classObjectDetector.html#a9c64bd94d1838414450fcecc8f6284b6">calcMarkerSize</a>(std::vector&lt;cv::Point2f&gt; corners, <span class="keywordtype">int</span> imgHeight);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="ttc" id="aclassObjectDetector_html"><div class="ttname"><a href="classObjectDetector.html">ObjectDetector</a></div><div class="ttdoc">Klasa odpowiedzialna za analizę i wykrywanie oraz określanie pozycji obiektów (w tym znaczników Aruco...</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:14</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a28b3a6a97363e3e3a1732b44fc8258d9"><div class="ttname"><a href="classObjectDetector.html#a28b3a6a97363e3e3a1732b44fc8258d9">ObjectDetector::calcCenter</a></div><div class="ttdeci">cv::Point2f calcCenter(std::vector&lt; cv::Point2f &gt; corners)</div><div class="ttdoc">Oblicza środek znacznika aruco na podstawie przekazanego wektora koordynatów wierzchołków.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.cpp:76</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a32389df648761553be27c04116826601"><div class="ttname"><a href="classObjectDetector.html#a32389df648761553be27c04116826601">ObjectDetector::markCor</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; cv::Point2f &gt; &gt; markCor</div><div class="ttdoc">Wektor wektorów koordynatów każdego wykrytecho znacznika.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:16</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a604cad611c81493d4e376b3d1fe186f3"><div class="ttname"><a href="classObjectDetector.html#a604cad611c81493d4e376b3d1fe186f3">ObjectDetector::ObjectDetector</a></div><div class="ttdeci">ObjectDetector()</div><div class="ttdoc">Konstruuje obiekt klasy ObjectDetector inicjalizując listę parametrów i słownik wartościami domyślnym...</div><div class="ttdef"><b>Definition:</b> ObjectDetector.cpp:3</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a63ebdbd1c1c5882afc2bdeea776edb47"><div class="ttname"><a href="classObjectDetector.html#a63ebdbd1c1c5882afc2bdeea776edb47">ObjectDetector::params</a></div><div class="ttdeci">cv::Ptr&lt; cv::aruco::DetectorParameters &gt; params</div><div class="ttdoc">Wskaźnik na parametry algorytmu wykrywającego znaczniki.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:19</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a8e1099d1e64f69cb97b25d77f05eea15"><div class="ttname"><a href="classObjectDetector.html#a8e1099d1e64f69cb97b25d77f05eea15">ObjectDetector::~ObjectDetector</a></div><div class="ttdeci">~ObjectDetector()=default</div><div class="ttdoc">Destruktor domyślny.</div></div>
+<div class="ttc" id="aclassObjectDetector_html_a9c64bd94d1838414450fcecc8f6284b6"><div class="ttname"><a href="classObjectDetector.html#a9c64bd94d1838414450fcecc8f6284b6">ObjectDetector::calcMarkerSize</a></div><div class="ttdeci">float calcMarkerSize(std::vector&lt; cv::Point2f &gt; corners, int imgHeight)</div><div class="ttdoc">Oblicza względny rozmiar znacznika na ramce obrazu.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.cpp:81</div></div>
+<div class="ttc" id="aclassObjectDetector_html_ababefd3ca74cc552f425a47dd8234bb1"><div class="ttname"><a href="classObjectDetector.html#ababefd3ca74cc552f425a47dd8234bb1">ObjectDetector::markIds</a></div><div class="ttdeci">std::vector&lt; int &gt; markIds</div><div class="ttdoc">Wektor wszystkich wykrytych na obrazie znaczników.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:15</div></div>
+<div class="ttc" id="aclassObjectDetector_html_acdcd3f0af79bf85ea54928b67eb5f6e9"><div class="ttname"><a href="classObjectDetector.html#acdcd3f0af79bf85ea54928b67eb5f6e9">ObjectDetector::detectArucoSingle</a></div><div class="ttdeci">cv::Point2f detectArucoSingle(const cv::Mat &amp;img, int arucoID)</div><div class="ttdoc">Wykrywa znaczniki Aruco na przekazanej ramce obrazu i oblicza koordynaty środka znacznika....</div><div class="ttdef"><b>Definition:</b> ObjectDetector.cpp:13</div></div>
+<div class="ttc" id="aclassObjectDetector_html_ad1b3d8e58f38c8a18b6c6b645c99bc2f"><div class="ttname"><a href="classObjectDetector.html#ad1b3d8e58f38c8a18b6c6b645c99bc2f">ObjectDetector::detectArucoGate</a></div><div class="ttdeci">std::tuple&lt; cv::Point2f, float, float &gt; detectArucoGate(const cv::Mat &amp;img, int arucoIDs[4])</div><div class="ttdoc">Wykrywa bramkę składającą się z czterech znaczników i oblicza jej środek. Zwraca (-1,...</div><div class="ttdef"><b>Definition:</b> ObjectDetector.cpp:34</div></div>
+<div class="ttc" id="aclassObjectDetector_html_adcfd1d28b723e56feca19ea45e0ade1b"><div class="ttname"><a href="classObjectDetector.html#adcfd1d28b723e56feca19ea45e0ade1b">ObjectDetector::rejected</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; cv::Point2f &gt; &gt; rejected</div><div class="ttdoc">Wektor odrzuconych potencjalnych obiektów będących znacznikami.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:17</div></div>
+<div class="ttc" id="aclassObjectDetector_html_af2c6102a02f97c41d677e03f501fd7cb"><div class="ttname"><a href="classObjectDetector.html#af2c6102a02f97c41d677e03f501fd7cb">ObjectDetector::dict</a></div><div class="ttdeci">cv::Ptr&lt; cv::aruco::Dictionary &gt; dict</div><div class="ttdoc">Wskaźnik na słownik znaczników.</div><div class="ttdef"><b>Definition:</b> ObjectDetector.h:20</div></div>
+<div class="ttc" id="adefines_8h_html"><div class="ttname"><a href="defines_8h.html">defines.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

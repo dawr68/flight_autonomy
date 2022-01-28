@@ -10,22 +10,37 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <mavsdk/plugins/offboard/offboard.h>
 
+#include "defines.h"
 #include "TelemetryData.h"
 
+/**
+ * @brief Klasa odpowiedzialna za komunikację z autopilotem poprzez protoków MAVLink.
+ * Zapewnia odbiór kluczowych danych telemetrycznych i pozwala na sterowanie poprzez komendy offboard.
+ */
 class FlightControl
 {
-    std::string connectionURL;
+    std::string connectionURL; ///< Adres połączenia protokołu MAVLink
 
-    mavsdk::Mavsdk mavsdk;
-    std::shared_ptr<mavsdk::System> system;
-    std::shared_ptr<mavsdk::Info> info;
-    std::shared_ptr<mavsdk::Telemetry> telemetry;
-    std::shared_ptr<mavsdk::Action> action;
-    std::shared_ptr<mavsdk::Offboard> offboard;
+    mavsdk::Mavsdk mavsdk;                        ///< Pozwala na zarządzanie połączeniami
+    std::shared_ptr<mavsdk::System> system;       ///< Obiekt reprezentujący system (autopilot)
+    std::shared_ptr<mavsdk::Info> info;           ///< Dostarcza informacji o systemie
+    std::shared_ptr<mavsdk::Telemetry> telemetry; ///< Pozwala na odbiór danych telemetrycznych
+    std::shared_ptr<mavsdk::Action> action;       ///< Pozwala na wykonywanie prostych akcji
+    std::shared_ptr<mavsdk::Offboard> offboard;   ///< Pozwala na kontrolę w trybie offboard
 
-    TelemetryData telemData;
+    TelemetryData telemData; ///< Przechowuje dane telemetryczne odebrane przez MAVLink
 
+    /**
+     * @brief Zwraca obecny system
+     *
+     * @return std::shared_ptr<mavsdk::System> Obecny system
+     */
     std::shared_ptr<mavsdk::System> getSystem();
+
+    /**
+     * @brief Subskrybuje wymagane tematy
+     *
+     */
     void subscribeTelem();
 
 public:
@@ -120,4 +135,20 @@ public:
      * @return float Wysokość AGL maszyny.
      */
     float getAltitude();
+
+    /**
+     * @brief Zwraca aktualny tryb lotu.
+     *
+     * @return Aktualny tryb lotu.
+     */
+    mavsdk::Telemetry::FlightMode getFlightMode();
+
+    /**
+     * @brief Sprawdza czy zadane prędkości mieszczą się w dopuszczalnych wartościach i jeżeli nie mieszczą się, wprowadza korektę.
+     *
+     * @param velocities Prędkości podlegające sprawdzeniu.
+     * @return true Wartości prędkości mieszczą się w zadanym przedziale.
+     * @return false Wartości prędkości nie mieszczą się w zadanym przedziale, wprowadzona zastała korekta.
+     */
+    bool checkVelo(mavsdk::Offboard::VelocityBodyYawspeed &velocities);
 };

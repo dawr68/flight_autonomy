@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['imagereceiver',['ImageReceiver',['../classImageReceiver.html',1,'']]]
+  ['imagereceiver_0',['ImageReceiver',['../classImageReceiver.html',1,'']]]
 ];
